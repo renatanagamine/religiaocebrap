@@ -12,6 +12,7 @@
       display: flex;
       min-height: 100vh;
       flex-direction: column;
+      background-color: #fff;
     }
     .content-wrapper {
       display: flex;
@@ -19,15 +20,17 @@
     }
     .sidebar {
       width: 18%;
-      background-color: #732982; /* roxo da logo */
+      background-color: #ffffff;
       padding: 25px 20px;
       box-sizing: border-box;
-      color: white;
+      color: #333;
+      border-right: 1px solid #ddd;
     }
     .sidebar h1 {
       font-size: 1.4em;
       margin-top: 0;
-      color: white;
+      margin-bottom: 30px;
+      color: #732982;
     }
     .sidebar ul {
       list-style-type: none;
@@ -45,7 +48,7 @@
     }
     .sidebar ul li a {
       text-decoration: none;
-      color: white;
+      color: #333;
       font-weight: 400;
     }
     .sidebar ul li a:hover {
@@ -64,18 +67,21 @@
     }
     .main-content-header img {
       max-height: 80px;
+      border: 1px solid red;
+      background-color: white;
     }
     h2 {
       color: #ec008c;
     }
     footer {
-      background-color: #732982; /* igual à barra lateral */
-      color: white;
+      background-color: #ffffff;
+      color: #333;
       padding: 20px;
       font-size: 0.9em;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      border-top: 1px solid #ddd;
     }
     .footer-info {
       margin-left: 20px;
@@ -83,9 +89,11 @@
     .footer-logo {
       height: 60px;
       margin-left: 20px;
+      border: 1px solid red;
+      background-color: white;
     }
     a.footer-link {
-      color: white;
+      color: #333;
       text-decoration: none;
     }
     a.footer-link:hover {
@@ -96,7 +104,7 @@
 <body>
   <div class="content-wrapper">
     <div class="sidebar">
-      <h1>Observatório da Religião e Interseccionalidades</h1>
+      <h1>Observatório da Religião e<br>Interseccionalidades</h1>
       <nav>
         <ul>
           <li><a href="/">Sobre</a></li>
@@ -118,10 +126,10 @@
 
     <div class="main-content">
       <div class="main-content-header">
-        <img src="/static/observatorio-logo.png" alt="Logo Observatório">
-        <h2>Bem-vindos ao Observatório!</h2>
+        <img src="/static/observatorio-logo.jpg" alt="Logo Observatório">
+        <h2>Bem-vinda ao Observatório</h2>
       </div>
-      <p>Este é um espaço dedicado ao estudo das intersecções da religião com etnia, raça, gênero e orientação sexual.</p>
+      <p>Este é um espaço dedicado ao estudo das intersecções entre religião e diferentes esferas sociais, políticas e culturais.</p>
     </div>
   </div>
 
