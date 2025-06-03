@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Observatório da Religião e Interseccionalidades</title>
+  <title>Georreferenciamento e classificação de organizações e associações religiosas</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -34,6 +34,8 @@
       margin-bottom: 30px;
       max-width: 100%;
       height: auto;
+      margin-top: -60px;
+      margin-left: -45px;
     }
     .sidebar nav {
       width: 100%;
@@ -66,16 +68,15 @@
       box-sizing: border-box;
     }
     .main-content-header {
-      display: flex;
-      align-items: center;
-      gap: 20px;
       margin-bottom: 20px;
-    }
-    .main-content-header img {
-      max-height: 80px;
     }
     h2 {
       color: #000;
+    }
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
     }
     footer {
       background-color: #ffffff;
@@ -92,7 +93,7 @@
     }
     .footer-logo {
       height: 140px;
-      margin-left: 20px;
+      margin-left: -45px;
     }
     a.footer-link {
       color: #000;
@@ -106,37 +107,36 @@
 <body>
   <div class="content-wrapper">
     <div class="sidebar">
-      <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="sidebar-logo" style="margin-top: -60px; margin-left: -45px;">
-      <nav>
+            <nav>
         <ul>
-          <li><a href="index.html">Sobre</a></li>
+          <li><a href="../index.html">Sobre</a></li>
           <li>
-            <a href="pesquisas/index.html">Pesquisas</a>
+            <a href="index.html">Pesquisas</a>
             <ul>
-              <li><a href="pesquisas/agrocristianismo.html">Agrocristianismo</a></li>
-              <li><a href="pesquisas/classificacao.html">Classificação de organizações</a></li>
-              <li><a href="pesquisas/aglom.html">Aglomerações religiosas</a></li>
-              <li><a href="pesquisas/registros.html">Registros</a></li>
-              <li><a href="pesquisas/representacao.html">Representação na mídia</a></li>
+              <li><a href="agrocristianismo.html">Agrocristianismo</a></li>
+              <li><a href="classificacao.html">Classificação de organizações</a></li>
+              <li><a href="aglom.html">Aglomerações religiosas</a></li>
+              <li><a href="registros.html">Registros</a></li>
+              <li><a href="representacao.html">Representação na mídia</a></li>
             </ul>
           </li>
-          <li><a href="em-debate.html">Em debate</a></li>
-          <li><a href="contato.html">Contato</a></li>
+          <li><a href="../em-debate.html">Em debate</a></li>
+          <li><a href="../contato.html">Contato</a></li>
         </ul>
       </nav>
     </div>
 
     <div class="main-content">
       <div class="main-content-header">
-        <h2>Bem-vindos ao Observatório</h2>
+        <h2>Georreferenciamento e classificação de organizações e associações religiosas</h2>
       </div>
-      <p>Este é um espaço dedicado ao estudo das relações entre religião e outras diferenças importantes na vida social, como etnia, gênero, orientação sexual e raça.</p>
+      <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZGMwNjRhNDQtZjI1Ny00YWUwLTgyMjAtNjZjYjhkNTZhY2NmIiwidCI6IjA1NWY4ODIzLTRmMWQtNDRkNC1hMjEzLTNiYjQ0Y2NmYWI0NiJ9" allowFullScreen="true"></iframe>
     </div>
   </div>
 
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
-      <img src="static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo" style="margin-left: -45px;">
+      <img src="../static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo">
     </a>
     <div class="footer-info">
       <p>
