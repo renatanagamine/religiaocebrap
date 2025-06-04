@@ -18,24 +18,25 @@
     .content-wrapper {
       display: flex;
       flex: 1;
+      align-items: flex-start;
     }
     .sidebar {
-      width: 18%;
+      width: 24%;
       background-color: #ffffff;
-      padding: 25px 20px;
+      padding: 24px 20px 25px 20px;
       box-sizing: border-box;
       color: #000;
       border-right: 1px solid #ddd;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
     }
     .sidebar-logo {
-      margin-bottom: 30px;
-      max-width: 100%;
+      margin-bottom: 20px;
+      max-width: 90%;
       height: auto;
-      margin-top: -60px;
-      margin-left: -35px;
+      margin-top: -70px;
+      margin-left: -45px;
     }
     .sidebar nav {
       width: 100%;
@@ -43,16 +44,17 @@
     .sidebar ul {
       list-style-type: none;
       padding: 0;
+      line-height: 1.6;
     }
     .sidebar ul li {
-      margin: 16px 0;
+      margin: 8px 0;
     }
     .sidebar ul li ul {
       margin-top: 5px;
       margin-left: 15px;
     }
     .sidebar ul li ul li {
-      margin: 10px 0;
+      margin: 6px 0;
     }
     .sidebar ul li a {
       text-decoration: none;
@@ -64,8 +66,10 @@
     }
     .main-content {
       flex: 1;
-      padding: 20px;
+      padding: 40px 60px 20px 40px;
       box-sizing: border-box;
+      line-height: 2;
+      max-width: 950px;
     }
     .main-content-header {
       display: flex;
@@ -76,8 +80,12 @@
     .main-content-header img {
       max-height: 80px;
     }
-    h2 {
+    h2, h3 {
       color: #000;
+      margin-top: 0;
+    }
+    h3 {
+      margin-top: 40px;
     }
     footer {
       background-color: #ffffff;
@@ -94,7 +102,7 @@
     }
     .footer-logo {
       height: 140px;
-      margin-left: 20px;
+      margin-left: -45px;
     }
     a.footer-link {
       color: #000;
@@ -115,9 +123,12 @@
           <li>
             <a href="pesquisas/index.html">Pesquisas</a>
             <ul>
-              <li><a href="pesquisas/agrocristianismo.html">Agrocristianismo</a></li>
-              <li><a href="pesquisas/aglom.html">Aglomerações de estabelecimentos religiosos</a></li>
-              <li><a href="pesquisas/classificacao.html">Classificação de organizações e associações religiosas</a></li>
+              <li><a href="pesquisas/agrocristianismo.html">Agrocristianismo</a>
+                <ul>
+                  <li><a href="pesquisas/aglom.html">Aglomerações de estabelecimentos religiosos</a></li>
+                  <li><a href="pesquisas/classificacao.html">Classificação de organizações e associações religiosas</a></li>
+                </ul>
+              </li>
               <li><a href="pesquisas/registros.html">Registros no tempo</a></li>
               <li><a href="pesquisas/representacao.html">Representação da religião na mídia</a></li>
             </ul>
@@ -138,7 +149,7 @@
 
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
-      <img src="static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo" style="margin-left: -35px;">
+      <img src="static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo">
     </a>
     <div class="footer-info">
       <p>
