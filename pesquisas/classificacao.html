@@ -71,13 +71,16 @@
       line-height: 2;
       max-width: 1100px;
     }
+    .main-content-header {
+      margin-bottom: 48px;
+    }
     h2 {
       color: #000;
       margin-top: 0;
     }
     iframe {
       width: 100%;
-      height: 800px;
+      height: 700px;
       border: none;
     }
     footer {
@@ -109,7 +112,7 @@
 <body>
   <div class="content-wrapper">
     <div class="sidebar">
-      <img src="/religiaocebrap/static/observatorio-logo.jpg" alt="Logo Observatório" class="sidebar-logo">
+      <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="sidebar-logo">
       <nav>
         <ul>
           <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
@@ -133,14 +136,16 @@
     </div>
 
     <div class="main-content">
-      <h2>Georreferenciamento e classificação de organizações e associações religiosas (CNPJ/Receita Federal)</h2>
+      <div class="main-content-header">
+        <h2>Georreferenciamento e classificação de organizações e associações religiosas (CNPJ/Receita Federal)</h2>
+      </div>
       <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZGMwNjRhNDQtZjI1Ny00YWUwLTgyMjAtNjZjYjhkNTZhY2NmIiwidCI6IjA1NWY4ODIzLTRmMWQtNDRkNC1hMjEzLTNiYjQ0Y2NmYWI0NiJ9" allowfullscreen></iframe>
     </div>
   </div>
 
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
-      <img src="/religiaocebrap/static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo">
+      <img src="static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo">
     </a>
     <div class="footer-info">
       <p>
