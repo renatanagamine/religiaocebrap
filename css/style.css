@@ -18,6 +18,7 @@ body {
   position: relative;
   overflow: hidden;
 }
+
 .hero-logo {
   width: 62vw;
   max-height: 72vh;
@@ -25,10 +26,10 @@ body {
   margin: 0 auto;
 }
 
-/* === ALTERAÇÃO AQUI: seta maior e dupla === */
+/* === Seta rosa única e visível === */
 .scroll-indicator {
   position: absolute;
-  bottom: 60px; /* Subida da seta */
+  bottom: 60px; /* Seta levemente mais para cima */
   animation: bounce 2s infinite;
   text-align: center;
   left: 50%;
@@ -38,9 +39,6 @@ body {
 }
 
 .scroll-indicator svg {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 90px;
   height: 90px;
   stroke: #e6007e;
@@ -81,6 +79,7 @@ body {
   color: #000;
   transition: color 0.3s ease;
 }
+
 .menu-bar a:hover {
   text-decoration: underline;
   color: #555;
@@ -90,6 +89,7 @@ body {
   position: relative;
   display: inline-block;
 }
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -104,11 +104,13 @@ body {
   transition: opacity 0.3s ease;
   pointer-events: none;
 }
+
 .dropdown:hover .dropdown-content {
   display: block;
   opacity: 1;
   pointer-events: auto;
 }
+
 .dropdown-content a {
   display: block;
   padding: 10px 16px;
@@ -116,6 +118,7 @@ body {
   text-decoration: none;
   font-size: 0.95rem;
 }
+
 .dropdown-content a:hover {
   background-color: #f0f0f0;
 }
@@ -125,6 +128,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .submenu a::before {
   content: "▸ ";
 }
@@ -133,4 +137,3 @@ body {
   max-width: 62vw;
   height: auto;
 }
-
