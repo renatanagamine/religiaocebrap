@@ -21,13 +21,13 @@
       position: absolute;
       bottom: 60px;
       left: 50px;
-      max-width: 850px;
+      max-width: 900px; /* logo aumentada */
       height: auto;
     }
 
     .scroll-indicator {
       position: absolute;
-      top: 58%; /* baixadas */
+      top: 60%; /* mais baixa */
       right: 40px;
       width: 130px;
       height: 130px;
@@ -38,36 +38,22 @@
     .scroll-indicator svg {
       stroke: white;
       fill: none;
-      stroke-width: 3;
+      stroke-width: 4;
       filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.7));
-      position: absolute;
-    }
-
-    .outer-arrow {
-      width: 130px;
-      height: 130px;
-      top: 0;
-      left: 0;
-    }
-
-    .inner-arrow {
-      width: 80px;   /* menor que a externa */
-      height: 80px;
-      top: 35px;     /* separação real */
-      left: 35px;
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 <body>
 
   <div class="hero-section">
+    <!-- LOGO -->
     <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" />
 
+    <!-- SETA ÚNICA, GRANDE, BRANCA, COM SOMBRA -->
     <a href="sobre.html" class="scroll-indicator" aria-label="Ir para a página Sobre">
-      <svg class="outer-arrow" viewBox="0 0 24 24">
-        <path d="M8 5 L16 12 L8 19" />
-      </svg>
-      <svg class="inner-arrow" viewBox="0 0 24 24">
+      <svg viewBox="0 0 24 24">
         <path d="M8 5 L16 12 L8 19" />
       </svg>
     </a>
