@@ -28,7 +28,7 @@ body {
 /* === ALTERAÇÃO AQUI: seta maior e dupla === */
 .scroll-indicator {
   position: absolute;
-  bottom: 30px;
+  bottom: 60px; /* Subida da seta */
   animation: bounce 2s infinite;
   text-align: center;
   left: 50%;
