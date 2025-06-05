@@ -9,7 +9,7 @@ body {
   flex-direction: column;
 }
 
-/* Tela inicial com logo ocupando quase toda a tela */
+/* Tela inicial com logo ocupando toda a tela */
 .hero-section {
   height: 100vh;
   display: flex;
@@ -21,15 +21,15 @@ body {
 }
 .hero-logo {
   width: 80vw;
-  max-height: 80vh;
+  max-height: 85vh;
   height: auto;
 }
 .scroll-indicator {
-  font-size: 2em;
+  font-size: 4em;
   animation: bounce 2s infinite;
-  color: #a020f0;
+  color: #e6007e; /* rosa da logo */
   text-align: center;
-  margin-top: -20px;
+  margin-top: -10px;
   z-index: 10;
 }
 @keyframes bounce {
@@ -46,7 +46,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 0;
+  padding: 60px 0 40px 0;
   font-size: 1.1em;
   gap: 40px;
 }
@@ -100,12 +100,11 @@ body {
   display: block;
 }
 
-/* Logo do Cebrap proporcional e clicável */
+/* Logo do Cebrap proporcional à do Observatório */
 .footer-logo {
   width: 80vw;
   height: auto;
-  max-height: 80vh;
-  cursor: pointer;
+  max-height: 85vh;
 }
 
 /* Oculta conteúdo e rodapé nesta página */
