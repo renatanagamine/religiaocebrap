@@ -9,7 +9,7 @@ body {
   color: #000;
 }
 
-/* Tela inicial ocupa 100vh com logo centralizada */
+/* Tela inicial ocupa 100vh com logo centralizada e grande */
 .hero-section {
   height: 100vh;
   display: flex;
@@ -19,9 +19,10 @@ body {
   position: relative;
 }
 .hero-logo {
-  max-width: 320px;
+  width: 100%;
+  max-width: none;
   height: auto;
-  margin-bottom: 20px;
+  object-fit: contain;
 }
 .scroll-indicator {
   position: absolute;
@@ -71,21 +72,39 @@ body {
 .sidebar ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
   line-height: 1.6;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  position: relative;
 }
 .sidebar ul li {
-  position: relative;
   margin: 0;
+  position: relative;
   transition: transform 0.2s ease, color 0.2s ease;
 }
 .sidebar ul li:hover {
   transform: translateY(-2px);
+}
+.sidebar ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 10;
+  min-width: 260px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: left;
+}
+.sidebar ul li:hover ul {
+  display: block;
+}
+.sidebar ul li ul li {
+  margin: 6px 0;
+  white-space: nowrap;
 }
 .sidebar ul li a {
   text-decoration: none;
@@ -97,24 +116,6 @@ body {
   text-decoration: underline;
   color: #555;
 }
-
-/* Submenu estilo drop-down */
-.sidebar ul li ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 10px 15px;
-  z-index: 10;
-  flex-direction: column;
-  gap: 10px;
-}
-.sidebar ul li:hover ul {
-  display: flex;
-}
-
 .main-content {
   display: none;
 }
@@ -134,7 +135,7 @@ footer {
   margin-left: 20px;
 }
 .footer-logo {
-  height: 110px;
+  height: 90px;
   margin-left: 20px;
 }
 a.footer-link {
