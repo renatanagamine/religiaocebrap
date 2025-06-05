@@ -1,82 +1,128 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Observatório da Religião e Interseccionalidades</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .hero {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #fff;
-      flex-direction: column;
-      position: relative;
-    }
-    .scroll-indicator {
-      position: absolute;
-      bottom: 20px;
-      font-size: 1.2em;
-      color: #888;
-      animation: bounce 2s infinite;
-    }
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(-8px);
-      }
-      60% {
-        transform: translateY(-4px);
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="hero">
-    <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="sidebar-logo">
-    <div class="scroll-indicator">▼ role para ver o menu</div>
-  </div>
+/* === style.css === */
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #fff;
+  color: #000;
+}
 
-  <div class="sidebar">
-    <nav>
-      <ul>
-        <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
-        <li>
-          <a href="/religiaocebrap/pesquisas/index.html">Pesquisas</a>
-          <ul>
-            <li><a href="/religiaocebrap/pesquisas/agrocristianismo.html">Agrocristianismo</a></li>
-            <li><a href="/religiaocebrap/pesquisas/classificacao.html">Classificação de organizações</a></li>
-            <li><a href="/religiaocebrap/pesquisas/aglom.html">Aglomerações de estabelecimentos religiosos</a></li>
-            <li><a href="/religiaocebrap/pesquisas/registros.html">Registros</a></li>
-            <li><a href="/religiaocebrap/pesquisas/representacao.html">Representação na mídia</a></li>
-          </ul>
-        </li>
-        <li><a href="/religiaocebrap/em-debate.html">Em debate</a></li>
-        <li><a href="/religiaocebrap/contato.html">Contato</a></li>
-      </ul>
-    </nav>
-  </div>
+/* Tela inicial ocupa 100vh com logo centralizada */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.hero-logo {
+  max-width: 320px;
+  height: auto;
+  margin-bottom: 20px;
+}
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  font-size: 1.2em;
+  animation: bounce 2s infinite;
+  color: #000;
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 
-  <footer>
-    <a href="https://cebrap.org.br/" target="_blank">
-      <img src="static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo">
-    </a>
-    <div class="footer-info">
-      <p>
-        <a class="footer-link" href="https://cebrap.org.br/" target="_blank"><strong>CEBRAP</strong></a><br>
-        R. Morgado de Mateus, 615<br>
-        Vila Mariana, São Paulo – SP, Brazil<br>
-        CEP 04015-051<br>
-        (11) 5574 0399<br>
-        (11) 5574 5928<br>
-        <a class="footer-link" href="https://cebrap.org.br/">Contato</a>
-      </p>
-    </div>
-  </footer>
-</body>
-</html>
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  flex: 1;
+}
+.sidebar {
+  width: 100%;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+.sidebar-logo {
+  margin-bottom: 20px;
+  max-width: 220px;
+  height: auto;
+  margin-top: 10px;
+}
+.sidebar nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  line-height: 1.6;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.sidebar ul li {
+  margin: 0;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.sidebar ul li:hover {
+  transform: translateY(-2px);
+}
+.sidebar ul li ul {
+  display: none;
+}
+.sidebar ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+.sidebar ul li a:hover {
+  text-decoration: underline;
+  color: #555;
+}
+.main-content {
+  display: none;
+}
+footer {
+  background-color: #ffffff;
+  color: #000;
+  padding: 20px;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #ddd;
+  width: 100%;
+  box-sizing: border-box;
+}
+.footer-info {
+  margin-left: 20px;
+}
+.footer-logo {
+  height: 110px;
+  margin-left: 20px;
+}
+a.footer-link {
+  color: #000;
+  text-decoration: none;
+}
+a.footer-link:hover {
+  text-decoration: underline;
+}
