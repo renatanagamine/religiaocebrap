@@ -14,32 +14,33 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   position: relative;
   overflow: hidden;
+  padding-left: 5vw;
 }
 .hero-logo {
-  width: 80vw;
-  max-height: 80vh;
+  width: 75vw;
+  max-height: 75vh;
   height: auto;
 }
 .scroll-indicator {
-  font-size: 7em;
+  font-size: 8em;
   color: #e6007e; /* rosa da logo */
   text-align: center;
   margin-top: -10px;
   line-height: 0.2;
   font-weight: 200;
-  transform: scaleX(1.5);
+  transform: scaleX(1.7);
 }
 
 @keyframes bounce {
   0%, 100% {
-    transform: translateY(0) scaleX(1.5);
+    transform: translateY(0) scaleX(1.7);
   }
   50% {
-    transform: translateY(-10px) scaleX(1.5);
+    transform: translateY(-10px) scaleX(1.7);
   }
 }
 
@@ -71,7 +72,7 @@ body {
   color: #555;
 }
 
-/* Dropdown horizontal */
+/* Dropdown horizontal com submenu aninhado */
 .dropdown {
   position: relative;
 }
@@ -100,6 +101,13 @@ body {
 }
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+/* Submenu interno de Agrocristianismo */
+.dropdown-content .submenu {
+  margin-left: 15px;
+  padding-left: 10px;
+  border-left: 2px solid #eee;
 }
 
 /* Logo do Cebrap proporcional */
