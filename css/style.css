@@ -3,13 +3,14 @@ body {
   margin: 0;
   font-family: 'Lato', sans-serif;
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  min-height: 100vh;
   background-color: #fff;
   color: #000;
+  overflow-x: hidden;
 }
 
-/* Tela inicial ocupa 100vh com logo em tela cheia */
+/* === Hero Section === */
 .hero-section {
   height: 100vh;
   display: flex;
@@ -18,12 +19,16 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  padding: 20px;
 }
+
 .hero-logo {
   width: 90vw;
   max-height: 90vh;
   height: auto;
+  object-fit: contain;
 }
+
 .scroll-indicator {
   position: absolute;
   bottom: 20px;
@@ -32,6 +37,7 @@ body {
   color: #000;
   text-align: center;
 }
+
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
@@ -41,7 +47,7 @@ body {
   }
 }
 
-/* Menu minimalista */
+/* === Menu Minimalista === */
 .menu-bar {
   background-color: #fff;
   display: flex;
@@ -52,47 +58,57 @@ body {
   font-size: 0.95em;
   border-top: 1px solid #ddd;
   flex-wrap: wrap;
+  z-index: 10;
 }
+
 .menu-bar a {
   text-decoration: none;
   color: #000;
   font-weight: 400;
   transition: color 0.3s ease;
 }
+
 .menu-bar a:hover {
   text-decoration: underline;
   color: #555;
 }
 
-/* Dropdown de pesquisas */
+/* === Dropdown Pesquisas === */
 .dropdown {
   position: relative;
 }
+
 .dropdown-content {
   display: none;
   position: absolute;
+  top: 100%;
+  left: 0;
   background-color: #fff;
-  min-width: 220px;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-  z-index: 1;
+  min-width: 260px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 100;
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: 10px 0;
 }
+
 .dropdown-content a {
   display: block;
-  padding: 8px 12px;
+  padding: 8px 16px;
   color: #000;
   text-decoration: none;
   font-size: 0.9em;
 }
+
 .dropdown-content a:hover {
   background-color: #f0f0f0;
 }
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Oculta o conteúdo principal e rodapé nesta página */
-.main-content, footer {
+/* === Ocultar Conteúdo e Rodapé na Index === */
+.main-content,
+footer {
   display: none;
 }
