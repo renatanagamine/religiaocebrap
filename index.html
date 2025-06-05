@@ -10,6 +10,39 @@
     html {
       scroll-behavior: smooth;
     }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 60px;
+      animation: bounce 2s infinite;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 90px;
+    }
+
+    .scroll-indicator svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 90px;
+      height: 90px;
+      stroke: white;
+      stroke-width: 2;
+      fill: none;
+      display: block;
+      filter: drop-shadow(0 0 4px rgba(0,0,0,0.7));
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translate(-50%, 0);
+      }
+      50% {
+        transform: translate(-50%, -10px);
+      }
+    }
   </style>
 </head>
 <body>
@@ -17,17 +50,17 @@
   <!-- Logo do Observatório em tela cheia -->
   <div class="hero-section">
     <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo smaller" />
-    
-    <!-- Setas concêntricas clicáveis -->
-    <a href="#menu" class="scroll-indicator" aria-label="Ir para o menu">
-      <!-- Seta menor -->
-      <svg viewBox="0 0 24 24">
-        <path d="M6 13 L12 19 L18 13" />
-      </svg>
-      <!-- Seta maior ao redor -->
-      <svg viewBox="0 0 24 24">
-        <path d="M4 15 L12 23 L20 15" />
-      </svg>
+
+    <!-- Setas concêntricas brancas com sombra e clique -->
+    <a href="#menu">
+      <div class="scroll-indicator">
+        <svg viewBox="0 0 24 24">
+          <path d="M6 13 L12 19 L18 13" />
+        </svg>
+        <svg viewBox="0 0 24 24">
+          <path d="M4 15 L12 23 L20 15" />
+        </svg>
+      </div>
     </a>
   </div>
 
