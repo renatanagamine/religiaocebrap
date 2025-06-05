@@ -2,15 +2,14 @@
 body {
   margin: 0;
   font-family: 'Lato', sans-serif;
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
   background-color: #fff;
   color: #000;
-  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-/* === Hero Section === */
+/* Tela inicial com logo ocupando toda a tela */
 .hero-section {
   height: 100vh;
   display: flex;
@@ -19,16 +18,12 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding: 20px;
 }
-
 .hero-logo {
   width: 90vw;
   max-height: 90vh;
   height: auto;
-  object-fit: contain;
 }
-
 .scroll-indicator {
   position: absolute;
   bottom: 20px;
@@ -37,7 +32,6 @@ body {
   color: #000;
   text-align: center;
 }
-
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
@@ -47,68 +41,71 @@ body {
   }
 }
 
-/* === Menu Minimalista === */
-.menu-bar {
-  background-color: #fff;
+/* Menu vertical entre as logos */
+.menu-wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   gap: 30px;
-  padding: 20px 0;
-  font-size: 0.95em;
-  border-top: 1px solid #ddd;
-  flex-wrap: wrap;
-  z-index: 10;
+  padding: 40px 0;
+  font-size: 1.1em;
 }
-
+.menu-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+}
 .menu-bar a {
   text-decoration: none;
   color: #000;
   font-weight: 400;
   transition: color 0.3s ease;
 }
-
 .menu-bar a:hover {
   text-decoration: underline;
   color: #555;
 }
 
-/* === Dropdown Pesquisas === */
+/* Dropdown lateral */
 .dropdown {
   position: relative;
 }
-
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;
-  left: 0;
+  left: 100%;
+  top: 0;
   background-color: #fff;
-  min-width: 260px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  z-index: 100;
+  min-width: 220px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  z-index: 1;
   border: 1px solid #ddd;
-  padding: 10px 0;
+  padding: 10px;
 }
-
 .dropdown-content a {
   display: block;
-  padding: 8px 16px;
+  padding: 8px 12px;
   color: #000;
   text-decoration: none;
   font-size: 0.9em;
+  text-align: left;
 }
-
 .dropdown-content a:hover {
   background-color: #f0f0f0;
 }
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* === Ocultar Conteúdo e Rodapé na Index === */
-.main-content,
-footer {
+/* Logo do Cebrap abaixo */
+.footer-logo {
+  height: 110px;
+  margin: 40px 0;
+}
+
+/* Oculta conteúdo e rodapé nesta página */
+.main-content, footer {
   display: none;
 }
