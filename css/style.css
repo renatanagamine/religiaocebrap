@@ -20,17 +20,17 @@ body {
   overflow: hidden;
 }
 .hero-logo {
-  width: 85vw;
-  max-height: 85vh;
+  width: 80vw;
+  max-height: 80vh;
   height: auto;
 }
 .scroll-indicator {
-  font-size: 5em;
+  font-size: 7em;
   color: #e6007e; /* rosa da logo */
   text-align: center;
-  margin-top: -20px;
+  margin-top: -10px;
   line-height: 0.2;
-  font-weight: 300;
+  font-weight: 200;
   transform: scaleX(1.5);
 }
 
