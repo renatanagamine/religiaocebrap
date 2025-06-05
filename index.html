@@ -13,34 +13,40 @@
 
     .hero-section {
       position: relative;
-      text-align: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero-logo.smaller {
-      margin-left: -30px; /* desloca um pouco a logo para a esquerda */
+      margin-left: -15px; /* deslocamento sutil da logo */
+      max-width: 90%;
+      height: auto;
     }
 
     .scroll-indicator {
-      position: fixed;
-      bottom: 40px;
-      right: 30px;
-      width: 60px;
-      height: 60px;
-      animation: bounce 2s infinite;
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 70px;
+      height: 70px;
       z-index: 1000;
+      animation: bounce 2s infinite;
     }
 
     .scroll-indicator svg {
       position: absolute;
       top: 0;
       left: 0;
-      width: 60px;
-      height: 60px;
+      width: 70px;
+      height: 70px;
       stroke: white;
       stroke-width: 2;
       fill: none;
       display: block;
-      filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
+      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.6));
     }
 
     .scroll-indicator svg:last-child {
@@ -50,50 +56,29 @@
 
     @keyframes bounce {
       0%, 100% {
-        transform: translateX(0);
+        transform: translateY(-50%) translateX(0);
       }
       50% {
-        transform: translateX(6px);
+        transform: translateY(-50%) translateX(5px);
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo do Observatório -->
+  <!-- Logo centralizada, levemente à esquerda -->
   <div class="hero-section">
     <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo smaller" />
-  </div>
 
-  <!-- Setas laterais fixas à direita -->
-  <a href="sobre.html" class="scroll-indicator" aria-label="Ir para a página Sobre">
-    <svg viewBox="0 0 24 24">
-      <path d="M8 5 L16 12 L8 19" />
-    </svg>
-    <svg viewBox="0 0 24 24">
-      <path d="M6 5 L14 12 L6 19" />
-    </svg>
-  </a>
-
-  <!-- Menu -->
-  <div class="menu-wrapper">
-    <nav class="menu-bar">
-      <a href="sobre.html">Sobre</a>
-      <div class="dropdown">
-        <a href="pesquisas/index.html">Pesquisas</a>
-        <div class="dropdown-content">
-          <a href="pesquisas/agrocristianismo.html">Agrocristianismo</a>
-          <div class="submenu">
-            <a href="pesquisas/aglom.html">Aglomerações</a>
-            <a href="pesquisas/classificacao.html">Classificação</a>
-          </div>
-          <a href="pesquisas/registros.html">Registros no tempo</a>
-          <a href="pesquisas/representacao.html">Representações da religião no Brasil</a>
-        </div>
-      </div>
-      <a href="em-debate.html">Em debate</a>
-      <a href="contato.html">Contato</a>
-    </nav>
+    <!-- Setas brancas concêntricas com sombra, na lateral direita -->
+    <a href="sobre.html" class="scroll-indicator" aria-label="Ir para a página Sobre">
+      <svg viewBox="0 0 24 24">
+        <path d="M8 5 L16 12 L8 19" />
+      </svg>
+      <svg viewBox="0 0 24 24">
+        <path d="M6 5 L14 12 L6 19" />
+      </svg>
+    </a>
   </div>
 
 </body>
