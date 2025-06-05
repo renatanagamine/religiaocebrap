@@ -21,15 +21,15 @@ body {
 }
 .hero-logo {
   width: 80vw;
-  max-height: 85vh;
+  max-height: 80vh;
   height: auto;
 }
 .scroll-indicator {
-  font-size: 4em;
+  font-size: 3em;
   animation: bounce 2s infinite;
-  color: #e6007e; /* rosa da logo */
+  color: #e6007e;
   text-align: center;
-  margin-top: -10px;
+  margin-top: 10px;
   z-index: 10;
 }
 @keyframes bounce {
@@ -46,7 +46,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 0 40px 0;
+  padding: 40px 0;
   font-size: 1.1em;
   gap: 40px;
 }
@@ -100,11 +100,12 @@ body {
   display: block;
 }
 
-/* Logo do Cebrap proporcional à do Observatório */
+/* Logo do Cebrap proporcional */
 .footer-logo {
-  width: 80vw;
+  width: auto;
   height: auto;
-  max-height: 85vh;
+  max-width: 80vw;
+  max-height: 80vh;
 }
 
 /* Oculta conteúdo e rodapé nesta página */
