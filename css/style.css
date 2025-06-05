@@ -20,21 +20,23 @@ body {
   overflow: hidden;
 }
 .hero-logo {
-  width: 65vw;
-  max-height: 75vh;
+  width: 62vw;
+  max-height: 72vh;
   height: auto;
+  margin: 0 auto;
 }
 .scroll-indicator {
   position: absolute;
   bottom: 20px;
-  font-size: 3rem;
-  font-weight: 300;
+  margin-top: 30px;
   animation: bounce 2s infinite;
-  color: #e6007e; /* rosa da logo */
   text-align: center;
-  line-height: 1;
   left: 50%;
   transform: translateX(-50%);
+}
+.scroll-indicator svg {
+  display: block;
+  margin: 0 auto;
 }
 
 @keyframes bounce {
@@ -118,6 +120,6 @@ body {
 }
 
 .footer-logo {
-  max-width: 65vw;
+  max-width: 62vw;
   height: auto;
 }
