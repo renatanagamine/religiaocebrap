@@ -2,70 +2,94 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sobre - Observatório da Religião e Interseccionalidades</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Observatório da Religião e Interseccionalidades</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 60px;
+      animation: bounce 2s infinite;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 90px;
+    }
+
+    .scroll-indicator svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 90px;
+      height: 90px;
+      stroke: white;
+      stroke-width: 2;
+      fill: none;
+      display: block;
+      filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translate(-50%, 0);
+      }
+      50% {
+        transform: translate(-50%, -10px);
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="content-wrapper">
-    <div class="sidebar">
-      <!-- ✅ LOGO clicável sem quebrar layout -->
-      <a href="/religiaocebrap/">
-        <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="sidebar-logo" />
-      </a>
 
-      <nav>
-        <ul>
-          <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
-          <li>
-            <a href="/religiaocebrap/pesquisas/index.html">Pesquisas</a>
-            <ul>
-              <li><a href="/religiaocebrap/pesquisas/agrocristianismo.html">Agrocristianismo</a>
-                <ul>
-                  <li><a href="/religiaocebrap/pesquisas/aglom.html">Aglomerações</a></li>
-                  <li><a href="/religiaocebrap/pesquisas/classificacao.html">Classificação</a></li>
-                </ul>
-              </li>
-              <li><a href="/religiaocebrap/pesquisas/registros.html">Registros no tempo</a></li>
-              <li><a href="/religiaocebrap/pesquisas/representacao.html">Representação na mídia</a></li>
-            </ul>
-          </li>
-          <li><a href="/religiaocebrap/em-debate.html">Em debate</a></li>
-          <li><a href="/religiaocebrap/contato.html">Contato</a></li>
-        </ul>
-      </nav>
-    </div>
+  <!-- Logo do Observatório em tela cheia -->
+  <div class="hero-section">
+    <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo smaller" />
 
-    <div class="main-content">
-      <div class="main-content-header">
-        <h2>Sobre o Observatório</h2>
-      </div>
-
-      <h3>Quem somos</h3>
-      <p>O Observatório da Religião e Interseccionalidades é um grupo de pesquisa sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social no Brasil do Núcleo de Religiões no Mundo Contemporâneo do Cebrap.</p>
-      <p>O grupo está vinculado ao Projeto Temático Fapesp "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6).</p>
-      
-      <h3>Nossa missão</h3>
-      <p>Produzir dados e transformá-los em matéria-prima para a construção de novas percepções e compreensão a respeito dos fenômenos sociais associados à religião no espaço público brasileiro.</p>
-    </div>
+    <!-- Setas concêntricas brancas com sombra e clique -->
+    <a href="#menu" class="scroll-indicator" aria-label="Ir para o menu">
+      <svg viewBox="0 0 24 24">
+        <path d="M6 13 L12 19 L18 13" />
+      </svg>
+      <svg viewBox="0 0 24 24">
+        <path d="M4 15 L12 23 L20 15" />
+      </svg>
+    </a>
   </div>
 
-  <footer>
+  <!-- Âncora fantasma para corrigir posição ao rolar -->
+  <span id="menu" style="display: block; height: 100px; margin-top: -100px;"></span>
+
+  <!-- Menu horizontal entre logos -->
+  <div class="menu-wrapper">
+    <nav class="menu-bar">
+      <a href="sobre.html">Sobre</a>
+      <div class="dropdown">
+        <a href="pesquisas/index.html">Pesquisas</a>
+        <div class="dropdown-content">
+          <a href="pesquisas/agrocristianismo.html">Agrocristianismo</a>
+          <div class="submenu">
+            <a href="pesquisas/aglom.html">Aglomerações</a>
+            <a href="pesquisas/classificacao.html">Classificação</a>
+          </div>
+          <a href="pesquisas/registros.html">Registros no tempo</a>
+          <a href="pesquisas/representacao.html">Representações da religião no Brasil</a>
+        </div>
+      </div>
+      <a href="em-debate.html">Em debate</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+
+    <!-- Logo do Cebrap em tamanho proporcional -->
     <a href="https://cebrap.org.br/" target="_blank">
       <img src="static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo" />
     </a>
-    <div class="footer-info">
-      <p>
-        <a class="footer-link" href="https://cebrap.org.br/" target="_blank"><strong>CEBRAP</strong></a><br />
-        R. Morgado de Mateus, 615<br />
-        Vila Mariana, São Paulo – SP, Brazil<br />
-        CEP 04015-051<br />
-        (11) 5574 0399<br />
-        (11) 5574 5928<br />
-        <a class="footer-link" href="https://cebrap.org.br/">Contato</a>
-      </p>
-    </div>
-  </footer>
+  </div>
+
 </body>
 </html>
