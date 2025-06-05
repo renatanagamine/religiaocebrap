@@ -12,14 +12,13 @@
     }
 
     .scroll-indicator {
-      position: absolute;
-      bottom: 60px;
-      animation: bounce 2s infinite;
-      text-align: center;
-      left: 50%;
-      transform: translateX(-50%);
+      position: fixed;
+      bottom: 40px;
+      right: 30px;
       width: 90px;
       height: 90px;
+      animation: bounce 2s infinite;
+      z-index: 1000;
     }
 
     .scroll-indicator svg {
@@ -35,37 +34,39 @@
       filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
     }
 
+    .scroll-indicator svg:last-child {
+      top: 10px;
+      left: 10px;
+    }
+
     @keyframes bounce {
       0%, 100% {
-        transform: translate(-50%, 0);
+        transform: translateX(0);
       }
       50% {
-        transform: translate(-50%, -10px);
+        transform: translateX(6px);
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo do Observatório em tela cheia -->
+  <!-- Logo do Observatório -->
   <div class="hero-section">
     <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo smaller" />
 
-    <!-- Setas apontando para a direita e com link para sobre.html -->
+    <!-- Setas brancas concêntricas com sombra, fixas à direita -->
     <a href="sobre.html" class="scroll-indicator" aria-label="Ir para a página Sobre">
       <svg viewBox="0 0 24 24">
-        <path d="M10 6 L16 12 L10 18" />
+        <path d="M8 5 L16 12 L8 19" />
       </svg>
       <svg viewBox="0 0 24 24">
-        <path d="M8 4 L16 12 L8 20" />
+        <path d="M6 5 L14 12 L6 19" />
       </svg>
     </a>
   </div>
 
-  <!-- Âncora fantasma para corrigir posição ao rolar -->
-  <span id="menu" style="display: block; height: 100px; margin-top: -100px;"></span>
-
-  <!-- Menu horizontal entre logos -->
+  <!-- Menu -->
   <div class="menu-wrapper">
     <nav class="menu-bar">
       <a href="sobre.html">Sobre</a>
