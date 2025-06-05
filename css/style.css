@@ -28,15 +28,19 @@ body {
 .scroll-indicator {
   position: absolute;
   bottom: 20px;
-  margin-top: 30px;
   animation: bounce 2s infinite;
   text-align: center;
   left: 50%;
   transform: translateX(-50%);
 }
 .scroll-indicator svg {
+  width: 30px;
+  height: 30px;
   display: block;
-  margin: 0 auto;
+  margin: 5px auto;
+  stroke: #e6007e;
+  stroke-width: 2;
+  fill: none;
 }
 
 @keyframes bounce {
