@@ -2,44 +2,50 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Observatório da Religião e Interseccionalidades</title>
+  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    .splash-screen {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .splash-logo {
-      max-width: 70%;
-      height: auto;
-    }
-    .main-content {
-      display: block;
-    }
-  </style>
 </head>
 <body>
-  <div class="splash-screen">
-    <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="splash-logo">
+
+  <!-- Tela inicial com logo e indicador de rolagem -->
+  <section class="hero-section">
+    <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo">
+    <div class="scroll-indicator">&#8595; role para ver mais</div>
+  </section>
+
+  <!-- Menu e conteúdo principal -->
+  <div class="content-wrapper">
+    <div class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
+          <li>
+            <a href="/religiaocebrap/pesquisas/index.html">Pesquisas</a>
+            <ul>
+              <li><a href="/religiaocebrap/pesquisas/agrocristianismo.html">Agrocristianismo</a></li>
+              <li><a href="/religiaocebrap/pesquisas/aglom.html">Aglomerações de estabelecimentos religiosos</a></li>
+              <li><a href="/religiaocebrap/pesquisas/classificacao.html">Classificação de organizações</a></li>
+              <li><a href="/religiaocebrap/pesquisas/registros.html">Registros no tempo</a></li>
+              <li><a href="/religiaocebrap/pesquisas/representacao.html">Representação da religião na mídia</a></li>
+            </ul>
+          </li>
+          <li><a href="/religiaocebrap/em-debate.html">Em debate</a></li>
+          <li><a href="/religiaocebrap/contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="main-content">
+      <div class="main-content-header">
+        <h2>Bem-vindos ao Observatório</h2>
+      </div>
+      <p>O Observatório da Religião e Interseccionalidades analisa o papel da religião e suas intersecções com raça, etnia, gênero, orientação sexual e classe social no Brasil contemporâneo.</p>
+    </div>
   </div>
 
-  <div class="sidebar">
-    <nav>
-      <ul>
-        <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
-        <li>
-          <a href="/religiaocebrap/pesquisas/index.html">Pesquisas</a>
-        </li>
-        <li><a href="/religiaocebrap/em-debate.html">Em debate</a></li>
-        <li><a href="/religiaocebrap/contato.html">Contato</a></li>
-      </ul>
-    </nav>
-  </div>
-
+  <!-- Rodapé -->
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
       <img src="static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo">
@@ -56,5 +62,6 @@
       </p>
     </div>
   </footer>
+
 </body>
 </html>
