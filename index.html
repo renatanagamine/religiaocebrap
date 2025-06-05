@@ -19,19 +19,18 @@
 
     .hero-logo {
       position: absolute;
-      bottom: 60px; /* Mais baixa na tela */
-      left: 0; /* colada na esquerda */
-      max-width: 720px; /* Tamanho grande */
+      bottom: 60px;
+      left: 30px; /* movida um pouco para a direita */
+      max-width: 780px; /* aumentada */
       height: auto;
-      margin-left: 20px;
     }
 
     .scroll-indicator {
       position: absolute;
-      bottom: 150px; /* mesma altura visual da logo */
+      bottom: 150px;
       right: 40px;
-      width: 80px;
-      height: 80px;
+      width: 100px;  /* seta maior */
+      height: 100px;
       cursor: pointer;
       z-index: 1000;
     }
@@ -45,37 +44,25 @@
     }
 
     .outer-arrow {
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
       top: 0;
       left: 0;
     }
 
     .inner-arrow {
-      width: 55px;
-      height: 55px;
-      top: 12px;
-      left: 12px;
-    }
-
-    @media (max-width: 768px) {
-      .hero-logo {
-        max-width: 90%;
-      }
-
-      .scroll-indicator {
-        right: 10px;
-      }
+      width: 60px;   /* seta interna menor */
+      height: 60px;
+      top: 20px;      /* mais afastada da externa */
+      left: 20px;
     }
   </style>
 </head>
 <body>
 
   <div class="hero-section">
-    <!-- LOGO grande, baixa, colada à esquerda -->
     <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" />
 
-    <!-- SETAS concêntricas, com espaçamento, na frente da logo -->
     <a href="sobre.html" class="scroll-indicator" aria-label="Ir para a página Sobre">
       <svg class="outer-arrow" viewBox="0 0 24 24">
         <path d="M8 5 L16 12 L8 19" />
