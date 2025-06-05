@@ -1,16 +1,11 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Observatório da Religião e Interseccionalidades</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
       font-family: 'Lato', sans-serif;
@@ -20,67 +15,76 @@
     .hero-section {
       position: relative;
       height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding-left: 50px;
     }
 
-    .hero-logo.smaller {
-      max-width: 600px;
+    .hero-logo {
+      position: absolute;
+      bottom: 60px; /* Mais baixa na tela */
+      left: 0; /* colada na esquerda */
+      max-width: 720px; /* Tamanho grande */
       height: auto;
+      margin-left: 20px;
     }
 
     .scroll-indicator {
-      position: fixed;
-      top: 50%;
+      position: absolute;
+      bottom: 150px; /* mesma altura visual da logo */
       right: 40px;
-      transform: translateY(-50%);
-      width: 70px;
-      height: 70px;
-      z-index: 1000;
+      width: 80px;
+      height: 80px;
       cursor: pointer;
+      z-index: 1000;
     }
 
     .scroll-indicator svg {
       stroke: white;
       fill: none;
       stroke-width: 3;
-      filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.6)); /* sombra mais visível */
+      filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.7));
+      position: absolute;
     }
 
     .outer-arrow {
-      position: absolute;
+      width: 80px;
+      height: 80px;
       top: 0;
       left: 0;
-      width: 70px;
-      height: 70px;
     }
 
     .inner-arrow {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      width: 50px;
-      height: 50px;
+      width: 55px;
+      height: 55px;
+      top: 12px;
+      left: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-logo {
+        max-width: 90%;
+      }
+
+      .scroll-indicator {
+        right: 10px;
+      }
     }
   </style>
 </head>
 <body>
 
   <div class="hero-section">
-    <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo smaller" />
-  </div>
+    <!-- LOGO grande, baixa, colada à esquerda -->
+    <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" />
 
-  <!-- Setas brancas concêntricas com sombra -->
-  <a href="sobre.html" class="scroll-indicator" aria-label="Ir para a página Sobre">
-    <svg class="outer-arrow" viewBox="0 0 24 24">
-      <path d="M8 5 L16 12 L8 19" />
-    </svg>
-    <svg class="inner-arrow" viewBox="0 0 24 24">
-      <path d="M8 5 L16 12 L8 19" />
-    </svg>
-  </a>
+    <!-- SETAS concêntricas, com espaçamento, na frente da logo -->
+    <a href="sobre.html" class="scroll-indicator" aria-label="Ir para a página Sobre">
+      <svg class="outer-arrow" viewBox="0 0 24 24">
+        <path d="M8 5 L16 12 L8 19" />
+      </svg>
+      <svg class="inner-arrow" viewBox="0 0 24 24">
+        <path d="M8 5 L16 12 L8 19" />
+      </svg>
+    </a>
+  </div>
 
 </body>
 </html>
