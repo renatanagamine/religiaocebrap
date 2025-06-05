@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registros no tempo – Observatório da Religião e Interseccionalidades</title>
+  <title>Registros no tempo</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -48,6 +49,10 @@
     }
     .sidebar ul li {
       margin: 8px 0;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+    .sidebar ul li:hover {
+      transform: translateX(4px);
     }
     .sidebar ul li ul {
       margin-top: 5px;
@@ -60,9 +65,11 @@
       text-decoration: none;
       color: #000;
       font-weight: 400;
+      transition: color 0.3s ease;
     }
     .sidebar ul li a:hover {
       text-decoration: underline;
+      color: #555;
     }
     .main-content {
       flex: 1;
@@ -77,6 +84,9 @@
     h2, h3 {
       color: #000;
       margin-top: 0;
+    }
+    h3 {
+      margin-top: 40px;
     }
     footer {
       background-color: #ffffff;
@@ -131,15 +141,15 @@
     </div>
 
     <div class="main-content">
-      <div class="main-content-header">
+      <div class="main-content-header" data-aos="fade-up">
         <h2>Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</h2>
         <p><strong>Coordenação:</strong> Renata Nagamine<br>
         <strong>Pesquisadoras:</strong> Renata Nagamine, Paula Montero, Camila Nicácio e Olívia Barbosa<br>
         <strong>Duração:</strong> maio de 2025 a outubro de 2026</p>
       </div>
-      <p>Termos como antifeminismo, homoafetividade, identitarismo, intolerância religiosa e racismo religioso se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público. Nosso interesse será compreender de que modo os termos que selecionamos foram usados para conectar contextos de enunciação a um contexto social em transformação.</p>
-      <p>Sabemos de trabalhos anteriores que os termos selecionados se relacionam com práticas semióticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos deles por agentes posicionados em instituições jurídicas e por autodeclarados religiosos. Teremos em mente as seguintes perguntas: Como o agenciamento desses termos conecta religioso e público no Brasil? Como religioso e público se configuram no contexto em que eles são agenciados?</p>
-      <p>Para nos ajudar a responder as perguntas acima, trabalharemos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como ela é construída por uma literatura antropológica voltada a pensar a linguagem como um meio de ação. Segundo a literatura acadêmica, registros são formas linguísticas criadas na comunicação e agenciadas como rótulos nas interações sociais, com a produção de efeitos práticos. São artefatos que indexam e classificam signos. Uma análise dos usos de registros implica perceber como seu agenciamento tipifica pessoas, com a produção de estereótipos, classifica e ordena sujeitos, discursos e performances reunidos sob um nome. Implica perceber, igualmente, como essas formas conectam domínios de ação e transferem autoridade.</p>
+      <p data-aos="fade-up" data-aos-delay="100">Termos como antifeminismo, homoafetividade, identitarismo, intolerância religiosa e racismo religioso se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público. Nosso interesse será compreender de que modo os termos que selecionamos foram usados para conectar contextos de enunciação a um contexto social em transformação.</p>
+      <p data-aos="fade-up" data-aos-delay="200">Sabemos de trabalhos anteriores que os termos selecionados se relacionam com práticas semióticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos deles por agentes posicionados em instituições jurídicas e por autodeclarados religiosos. Teremos em mente as seguintes perguntas: Como o agenciamento desses termos conecta religioso e público no Brasil? Como religioso e público se configuram no contexto em que eles são agenciados?</p>
+      <p data-aos="fade-up" data-aos-delay="300">Para nos ajudar a responder as perguntas acima, trabalharemos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como ela é construída por uma literatura antropológica voltada a pensar a linguagem como um meio de ação. Segundo a literatura acadêmica, registros são formas linguísticas criadas na comunicação e agenciadas como rótulos nas interações sociais, com a produção de efeitos práticos. São artefatos que indexam e classificam signos. Uma análise dos usos de registros implica perceber como seu agenciamento tipifica pessoas, com a produção de estereótipos, classifica e ordena sujeitos, discursos e performances reunidos sob um nome. Implica perceber, igualmente, como essas formas conectam domínios de ação e transferem autoridade.</p>
     </div>
   </div>
 
@@ -159,6 +169,10 @@
       </p>
     </div>
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
-
