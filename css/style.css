@@ -23,10 +23,10 @@ body {
   width: 62vw;
   max-height: 72vh;
   height: auto;
-  margin: 40px auto 0 auto; /* AUMENTADO para baixar a logo */
+  margin: 100px auto 0 auto; /* Logo rebaixada */
 }
 
-/* Seta rosa única */
+/* Setas concêntricas pretas */
 .scroll-indicator {
   position: absolute;
   bottom: 60px;
@@ -38,9 +38,12 @@ body {
 }
 
 .scroll-indicator svg {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 90px;
   height: 90px;
-  stroke: #e6007e;
+  stroke: #000;           /* COR ALTERADA PARA PRETO */
   stroke-width: 2;
   fill: none;
   display: block;
