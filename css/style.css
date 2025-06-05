@@ -20,27 +20,29 @@ body {
   overflow: hidden;
 }
 .hero-logo {
-  width: 70vw;
-  max-height: 80vh;
+  width: 65vw;
+  max-height: 75vh;
   height: auto;
 }
 .scroll-indicator {
   position: absolute;
   bottom: 20px;
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 300;
   animation: bounce 2s infinite;
   color: #e6007e; /* rosa da logo */
   text-align: center;
   line-height: 1;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @keyframes bounce {
   0%, 100% {
-    transform: translateY(0);
+    transform: translate(-50%, 0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translate(-50%, -10px);
   }
 }
 
@@ -83,12 +85,17 @@ body {
   left: 0;
   background-color: #fff;
   min-width: 220px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
   z-index: 1;
   padding: 10px 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 .dropdown:hover .dropdown-content {
   display: block;
+  opacity: 1;
+  pointer-events: auto;
 }
 .dropdown-content a {
   display: block;
@@ -102,13 +109,15 @@ body {
 }
 
 .submenu {
-  padding-left: 20px;
+  padding-left: 24px;
   display: flex;
   flex-direction: column;
 }
-
-.footer-logo {
-  max-width: 70vw;
-  height: auto;
+.submenu a::before {
+  content: "▸ ";
 }
 
+.footer-logo {
+  max-width: 65vw;
+  height: auto;
+}
