@@ -11,12 +11,21 @@
       scroll-behavior: smooth;
     }
 
+    .hero-section {
+      position: relative;
+      text-align: center;
+    }
+
+    .hero-logo.smaller {
+      margin-left: -30px; /* desloca um pouco a logo para a esquerda */
+    }
+
     .scroll-indicator {
       position: fixed;
       bottom: 40px;
       right: 30px;
-      width: 90px;
-      height: 90px;
+      width: 60px;
+      height: 60px;
       animation: bounce 2s infinite;
       z-index: 1000;
     }
@@ -25,8 +34,8 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 90px;
-      height: 90px;
+      width: 60px;
+      height: 60px;
       stroke: white;
       stroke-width: 2;
       fill: none;
@@ -35,8 +44,8 @@
     }
 
     .scroll-indicator svg:last-child {
-      top: 10px;
-      left: 10px;
+      top: 8px;
+      left: 8px;
     }
 
     @keyframes bounce {
@@ -54,17 +63,17 @@
   <!-- Logo do Observatório -->
   <div class="hero-section">
     <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo smaller" />
-
-    <!-- Setas brancas concêntricas com sombra, fixas à direita -->
-    <a href="sobre.html" class="scroll-indicator" aria-label="Ir para a página Sobre">
-      <svg viewBox="0 0 24 24">
-        <path d="M8 5 L16 12 L8 19" />
-      </svg>
-      <svg viewBox="0 0 24 24">
-        <path d="M6 5 L14 12 L6 19" />
-      </svg>
-    </a>
   </div>
+
+  <!-- Setas laterais fixas à direita -->
+  <a href="sobre.html" class="scroll-indicator" aria-label="Ir para a página Sobre">
+    <svg viewBox="0 0 24 24">
+      <path d="M8 5 L16 12 L8 19" />
+    </svg>
+    <svg viewBox="0 0 24 24">
+      <path d="M6 5 L14 12 L6 19" />
+    </svg>
+  </a>
 
   <!-- Menu -->
   <div class="menu-wrapper">
