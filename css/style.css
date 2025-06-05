@@ -23,7 +23,7 @@ body {
   width: 62vw;
   max-height: 72vh;
   height: auto;
-  margin: 100px auto 0 auto; /* Logo rebaixada */
+  margin: 100px auto 0 auto;
 }
 
 /* Setas concêntricas pretas */
@@ -43,7 +43,7 @@ body {
   left: 0;
   width: 90px;
   height: 90px;
-  stroke: #000;           /* COR ALTERADA PARA PRETO */
+  stroke: #000; /* ALTERAÇÃO: setas pretas */
   stroke-width: 2;
   fill: none;
   display: block;
