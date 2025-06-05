@@ -3,13 +3,13 @@ body {
   margin: 0;
   font-family: 'Lato', sans-serif;
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  min-height: 100vh;
   background-color: #fff;
   color: #000;
 }
 
-/* Tela inicial ocupa 100vh com logo centralizada */
+/* Hero section com logo centralizada */
 .hero-section {
   height: 100vh;
   display: flex;
@@ -17,6 +17,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
+  text-align: center;
 }
 .hero-logo {
   max-width: 320px;
@@ -25,7 +26,7 @@ body {
 }
 .scroll-indicator {
   position: absolute;
-  bottom: 20px;
+  bottom: 30px;
   font-size: 1.2em;
   animation: bounce 2s infinite;
   color: #000;
@@ -39,13 +40,19 @@ body {
   }
 }
 
+/* Conteúdo exibido após rolagem */
 .content-wrapper {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   padding: 40px;
   flex: 1;
 }
+
+.show-content .content-wrapper {
+  display: flex;
+}
+
 .sidebar {
   width: 100%;
   background-color: #ffffff;
@@ -86,6 +93,15 @@ body {
 }
 .sidebar ul li ul {
   display: none;
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-top: 5px;
+  list-style-type: none;
+}
+.sidebar ul li:hover ul {
+  display: block;
 }
 .sidebar ul li a {
   text-decoration: none;
@@ -97,9 +113,13 @@ body {
   text-decoration: underline;
   color: #555;
 }
+
 .main-content {
-  display: none;
+  margin-top: 40px;
+  max-width: 1000px;
+  padding: 0 20px;
 }
+
 footer {
   background-color: #ffffff;
   color: #000;
@@ -116,7 +136,7 @@ footer {
   margin-left: 20px;
 }
 .footer-logo {
-  height: 110px;
+  height: 100px;
   margin-left: 20px;
 }
 a.footer-link {
