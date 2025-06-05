@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -21,19 +20,20 @@
     }
 
     .hero-logo.smaller {
-      margin-left: 10px; /* deslocamento suave para a direita */
+      margin-left: 20px; /* Desloca suavemente a logo para a direita */
       max-width: 90%;
       height: auto;
     }
 
     .scroll-indicator {
-      position: absolute;
-      right: 20px; /* mais próximo da lateral direita */
+      position: fixed;
       top: 50%;
+      right: 40px; /* Alinhada à margem direita */
       transform: translateY(-50%);
-      width: 70px;
-      height: 70px;
+      width: 100px; /* Maior */
+      height: 100px;
       z-index: 1000;
+      cursor: pointer;
       animation: bounce 2s infinite;
     }
 
@@ -41,18 +41,17 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 70px;
-      height: 70px;
+      width: 100px;
+      height: 100px;
       stroke: white;
-      stroke-width: 2;
+      stroke-width: 2.5;
       fill: none;
-      display: block;
-      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.6));
+      filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.6));
     }
 
     .scroll-indicator svg:last-child {
-      top: 6px;
-      left: 6px;
+      top: 10px;
+      left: 10px;
     }
 
     @keyframes bounce {
@@ -60,22 +59,24 @@
         transform: translateY(-50%) translateX(0);
       }
       50% {
-        transform: translateY(-50%) translateX(5px);
+        transform: translateY(-50%) translateX(6px);
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- LOGO -->
+  <!-- Logo do Observatório -->
   <div class="hero-section">
     <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo smaller" />
 
-    <!-- SETAS CONCÊNTRICAS LADO DIREITO -->
+    <!-- Setas brancas, concêntricas, maiores e fixas à margem direita -->
     <a href="sobre.html" class="scroll-indicator" aria-label="Ir para a página Sobre">
+      <!-- seta maior atrás -->
       <svg viewBox="0 0 24 24">
         <path d="M8 5 L16 12 L8 19" />
       </svg>
+      <!-- seta menor dentro da anterior -->
       <svg viewBox="0 0 24 24">
         <path d="M6 5 L14 12 L6 19" />
       </svg>
