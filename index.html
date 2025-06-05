@@ -7,9 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    .scroll-indicator svg {
-      stroke: white;
-      filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
@@ -19,8 +18,8 @@
   <div class="hero-section">
     <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo smaller" />
     
-    <!-- Setas concêntricas brancas com sombra -->
-    <div class="scroll-indicator">
+    <!-- Setas concêntricas clicáveis -->
+    <a href="#menu" class="scroll-indicator" aria-label="Ir para o menu">
       <!-- Seta menor -->
       <svg viewBox="0 0 24 24">
         <path d="M6 13 L12 19 L18 13" />
@@ -29,11 +28,11 @@
       <svg viewBox="0 0 24 24">
         <path d="M4 15 L12 23 L20 15" />
       </svg>
-    </div>
+    </a>
   </div>
 
   <!-- Menu horizontal entre logos -->
-  <div class="menu-wrapper">
+  <div class="menu-wrapper" id="menu">
     <nav class="menu-bar">
       <a href="sobre.html">Sobre</a>
       <div class="dropdown">
