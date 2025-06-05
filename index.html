@@ -20,7 +20,7 @@
     }
 
     .hero-logo.smaller {
-      margin-left: 20px; /* Desloca suavemente a logo para a direita */
+      margin-left: 10px;
       max-width: 90%;
       height: auto;
     }
@@ -28,16 +28,16 @@
     .scroll-indicator {
       position: fixed;
       top: 50%;
-      right: 40px; /* Alinhada à margem direita */
+      right: 0;
       transform: translateY(-50%);
-      width: 100px; /* Maior */
+      width: 100px;
       height: 100px;
       z-index: 1000;
       cursor: pointer;
       animation: bounce 2s infinite;
     }
 
-    .scroll-indicator svg {
+    .scroll-indicator .outer-arrow {
       position: absolute;
       top: 0;
       left: 0;
@@ -46,12 +46,19 @@
       stroke: white;
       stroke-width: 2.5;
       fill: none;
-      filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.6));
+      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
     }
 
-    .scroll-indicator svg:last-child {
-      top: 10px;
-      left: 10px;
+    .scroll-indicator .inner-arrow {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 60px;
+      height: 60px;
+      stroke: white;
+      stroke-width: 2.5;
+      fill: none;
+      filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
     }
 
     @keyframes bounce {
@@ -59,26 +66,23 @@
         transform: translateY(-50%) translateX(0);
       }
       50% {
-        transform: translateY(-50%) translateX(6px);
+        transform: translateY(-50%) translateX(5px);
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo do Observatório -->
   <div class="hero-section">
     <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo smaller" />
 
-    <!-- Setas brancas, concêntricas, maiores e fixas à margem direita -->
+    <!-- Setas concêntricas (uma dentro da outra), fixas à direita -->
     <a href="sobre.html" class="scroll-indicator" aria-label="Ir para a página Sobre">
-      <!-- seta maior atrás -->
-      <svg viewBox="0 0 24 24">
+      <svg class="outer-arrow" viewBox="0 0 24 24">
         <path d="M8 5 L16 12 L8 19" />
       </svg>
-      <!-- seta menor dentro da anterior -->
-      <svg viewBox="0 0 24 24">
-        <path d="M6 5 L14 12 L6 19" />
+      <svg class="inner-arrow" viewBox="0 0 24 24">
+        <path d="M8 5 L16 12 L8 19" />
       </svg>
     </a>
   </div>
