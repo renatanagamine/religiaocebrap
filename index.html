@@ -1,124 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sobre - Observatório da Religião e Interseccionalidades</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Lato', sans-serif;
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-      background-color: #fff;
-      color: #000;
-    }
-    .content-wrapper {
-      display: flex;
-      flex: 1;
-      align-items: flex-start;
-    }
-    .sidebar {
-      width: 24%;
-      background-color: #ffffff;
-      padding: 26px 20px 25px 20px;
-      box-sizing: border-box;
-      color: #000;
-      border-right: 1px solid #ddd;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .sidebar-logo {
-      margin-bottom: 20px;
-      max-width: 90%;
-      height: auto;
-      margin-top: -70px;
-      margin-left: -45px;
-    }
-    .sidebar nav {
-      width: 100%;
-    }
-    .sidebar ul {
-      list-style-type: none;
-      padding: 0;
-      line-height: 1.6;
-    }
-    .sidebar ul li {
-      margin: 8px 0;
-      transition: transform 0.2s ease;
-    }
-    .sidebar ul li:hover {
-      transform: translateX(4px);
-    }
-    .sidebar ul li ul {
-      margin-top: 5px;
-      margin-left: 15px;
-    }
-    .sidebar ul li ul li {
-      margin: 6px 0;
-    }
-    .sidebar ul li a {
-      text-decoration: none;
-      color: #000;
-      font-weight: 400;
-    }
-    .sidebar ul li a:hover {
-      text-decoration: underline;
-      color: #555;
-    }
-    .main-content {
-      flex: 1;
-      padding: 40px 60px 20px 40px;
-      box-sizing: border-box;
-      line-height: 2;
-      max-width: 1100px;
-    }
-    .main-content-header {
-      margin-bottom: 48px;
-    }
-    h2, h3 {
-      color: #000;
-      margin-top: 0;
-    }
-    h3 {
-      margin-top: 40px;
-    }
-    footer {
-      background-color: #ffffff;
-      color: #000;
-      padding: 20px;
-      font-size: 0.9em;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid #ddd;
-    }
-    .footer-info {
-      margin-left: 20px;
-    }
-    .footer-logo {
-      height: 140px;
-      margin-left: -45px;
-    }
-    a.footer-link {
-      color: #000;
-      text-decoration: none;
-    }
-    a.footer-link:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <div class="content-wrapper">
     <div class="sidebar">
-      <!-- LOGO CLICÁVEL -->
+      <!-- ✅ LOGO clicável sem quebrar layout -->
       <a href="/religiaocebrap/">
-        <img src="../static/observatorio-logo.jpg" alt="Logo Observatório" class="sidebar-logo">
+        <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="sidebar-logo" />
       </a>
+
       <nav>
         <ul>
           <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
@@ -127,12 +23,12 @@
             <ul>
               <li><a href="/religiaocebrap/pesquisas/agrocristianismo.html">Agrocristianismo</a>
                 <ul>
-                  <li><a href="/religiaocebrap/pesquisas/aglom.html">Aglomerações de estabelecimentos religiosos</a></li>
-                  <li><a href="/religiaocebrap/pesquisas/classificacao.html">Classificação de organizações e associações religiosas</a></li>
+                  <li><a href="/religiaocebrap/pesquisas/aglom.html">Aglomerações</a></li>
+                  <li><a href="/religiaocebrap/pesquisas/classificacao.html">Classificação</a></li>
                 </ul>
               </li>
               <li><a href="/religiaocebrap/pesquisas/registros.html">Registros no tempo</a></li>
-              <li><a href="/religiaocebrap/pesquisas/representacao.html">Representação da religião na mídia</a></li>
+              <li><a href="/religiaocebrap/pesquisas/representacao.html">Representação na mídia</a></li>
             </ul>
           </li>
           <li><a href="/religiaocebrap/em-debate.html">Em debate</a></li>
@@ -157,16 +53,16 @@
 
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
-      <img src="../static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo">
+      <img src="static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo" />
     </a>
     <div class="footer-info">
       <p>
-        <a class="footer-link" href="https://cebrap.org.br/" target="_blank"><strong>CEBRAP</strong></a><br>
-        R. Morgado de Mateus, 615<br>
-        Vila Mariana, São Paulo – SP, Brazil<br>
-        CEP 04015-051<br>
-        (11) 5574 0399<br>
-        (11) 5574 5928<br>
+        <a class="footer-link" href="https://cebrap.org.br/" target="_blank"><strong>CEBRAP</strong></a><br />
+        R. Morgado de Mateus, 615<br />
+        Vila Mariana, São Paulo – SP, Brazil<br />
+        CEP 04015-051<br />
+        (11) 5574 0399<br />
+        (11) 5574 5928<br />
         <a class="footer-link" href="https://cebrap.org.br/">Contato</a>
       </p>
     </div>
