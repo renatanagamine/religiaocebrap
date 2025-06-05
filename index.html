@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -20,14 +21,14 @@
     }
 
     .hero-logo.smaller {
-      margin-left: -15px; /* deslocamento sutil da logo */
+      margin-left: 10px; /* deslocamento suave para a direita */
       max-width: 90%;
       height: auto;
     }
 
     .scroll-indicator {
       position: absolute;
-      right: 40px;
+      right: 20px; /* mais próximo da lateral direita */
       top: 50%;
       transform: translateY(-50%);
       width: 70px;
@@ -50,8 +51,8 @@
     }
 
     .scroll-indicator svg:last-child {
-      top: 8px;
-      left: 8px;
+      top: 6px;
+      left: 6px;
     }
 
     @keyframes bounce {
@@ -66,11 +67,11 @@
 </head>
 <body>
 
-  <!-- Logo centralizada, levemente à esquerda -->
+  <!-- LOGO -->
   <div class="hero-section">
     <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo smaller" />
 
-    <!-- Setas brancas concêntricas com sombra, na lateral direita -->
+    <!-- SETAS CONCÊNTRICAS LADO DIREITO -->
     <a href="sobre.html" class="scroll-indicator" aria-label="Ir para a página Sobre">
       <svg viewBox="0 0 24 24">
         <path d="M8 5 L16 12 L8 19" />
