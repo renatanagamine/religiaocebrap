@@ -23,15 +23,14 @@ body {
   width: 62vw;
   max-height: 72vh;
   height: auto;
-  margin: 0 auto;
+  margin: 40px auto 0 auto; /* AUMENTADO para baixar a logo */
 }
 
-/* === Seta rosa única e visível === */
+/* Seta rosa única */
 .scroll-indicator {
   position: absolute;
-  bottom: 60px; /* Seta levemente mais para cima */
+  bottom: 60px;
   animation: bounce 2s infinite;
-  text-align: center;
   left: 50%;
   transform: translateX(-50%);
   width: 90px;
