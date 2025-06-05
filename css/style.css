@@ -20,24 +20,26 @@ body {
   overflow: hidden;
 }
 .hero-logo {
-  width: 80vw;
-  max-height: 80vh;
+  width: 85vw;
+  max-height: 85vh;
   height: auto;
 }
 .scroll-indicator {
-  font-size: 3em;
-  animation: bounce 2s infinite;
-  color: #e6007e;
+  font-size: 5em;
+  color: #e6007e; /* rosa da logo */
   text-align: center;
-  margin-top: 10px;
-  z-index: 10;
+  margin-top: -20px;
+  line-height: 0.2;
+  font-weight: 300;
+  transform: scaleX(1.5);
 }
+
 @keyframes bounce {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(0) scaleX(1.5);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-10px) scaleX(1.5);
   }
 }
 
@@ -102,10 +104,10 @@ body {
 
 /* Logo do Cebrap proporcional */
 .footer-logo {
-  width: auto;
+  max-width: 85vw;
+  max-height: 85vh;
   height: auto;
-  max-width: 80vw;
-  max-height: 80vh;
+  width: auto;
 }
 
 /* Oculta conteúdo e rodapé nesta página */
