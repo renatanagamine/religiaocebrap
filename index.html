@@ -9,7 +9,39 @@
   <style>
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 80px;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 60px;
+      animation: bounce 2s infinite;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 90px;
+    }
+
+    .scroll-indicator svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 90px;
+      height: 90px;
+      stroke: white;
+      stroke-width: 2;
+      fill: none;
+      display: block;
+      filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translate(-50%, 0);
+      }
+      50% {
+        transform: translate(-50%, -10px);
+      }
     }
   </style>
 </head>
@@ -18,9 +50,9 @@
   <!-- Logo do Observatório em tela cheia -->
   <div class="hero-section">
     <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo smaller" />
-    
-    <!-- Setas concêntricas brancas com sombra, clicáveis -->
-    <a href="#menu" class="scroll-indicator">
+
+    <!-- Setas concêntricas brancas com sombra e clique -->
+    <a href="#menu" class="scroll-indicator" aria-label="Ir para o menu">
       <svg viewBox="0 0 24 24">
         <path d="M6 13 L12 19 L18 13" />
       </svg>
@@ -49,8 +81,10 @@
       <a href="em-debate.html">Em debate</a>
       <a href="contato.html">Contato</a>
     </nav>
+  </div>
 
-    <!-- Logo do Cebrap em tamanho proporcional -->
+  <!-- Logo do Cebrap movida para fora da âncora -->
+  <div style="text-align: center; padding-top: 20px;">
     <a href="https://cebrap.org.br/" target="_blank">
       <img src="static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo" />
     </a>
