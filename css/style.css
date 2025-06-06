@@ -1,56 +1,65 @@
-/* Esconde em desktop */
-.mobile-only {
-  display: none;
-}
-
-/* SETA: aparece só no mobile, abaixo da logo */
-.scroll-down {
-  margin-top: 24px;
-  animation: bounce 2s infinite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 48px;
-  height: 48px;
-}
-
-.scroll-down svg {
-  width: 100%;
-  height: 100%;
-}
-
-/* Animação da seta */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-/* RESPONSIVIDADE */
 @media (max-width: 768px) {
-  .mobile-only {
-    display: block;
+  /* 1. Esconde informações de endereço no rodapé, mantendo só a logo */
+  .footer-info {
+    display: none;
   }
 
+  /* 2. Reduz a logo do Cebrap */
+  .footer-logo {
+    height: 100px !important;
+  }
+
+  /* 3. Esconde seta lateral (scroll-indicator) */
   .scroll-indicator {
-    display: none; /* esconde a seta lateral antiga no mobile */
+    display: none !important;
   }
 
-  .hero-section {
+  /* 3. Mostra seta para baixo centralizada */
+  .scroll-down {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    text-align: center;
+    align-items: center;
+    animation: bounce 2s infinite;
+    width: 48px;
+    height: 48px;
+    margin-top: 20px;
   }
 
-  .hero-logo {
-    width: 80vw;
-    margin-top: 60px;
-    max-height: 60vh;
-    height: auto;
+  .scroll-down svg {
+    width: 100%;
+    height: 100%;
+    stroke: white;
+    stroke-width: 2;
+    fill: none;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
+  }
+
+  /* 4. Menu horizontal simplificado */
+  .top-menu {
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .menu-bar {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu-bar li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+  }
+
+  .menu-bar li a:hover {
+    text-decoration: underline;
   }
 }
