@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre - Observatório da Religião e Interseccionalidades</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Lato', sans-serif;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
       background-color: #fff;
       color: #000;
     }
-
     .content-wrapper {
       display: flex;
+      flex: 1;
+      align-items: flex-start;
     }
-
     .sidebar {
       width: 24%;
       background-color: #ffffff;
@@ -29,7 +32,6 @@
       flex-direction: column;
       align-items: flex-start;
     }
-
     .sidebar-logo {
       margin-bottom: 20px;
       max-width: 90%;
@@ -37,47 +39,38 @@
       margin-top: -70px;
       margin-left: -45px;
     }
-
     .sidebar nav {
       width: 100%;
     }
-
     .sidebar ul {
       list-style-type: none;
       padding: 0;
       line-height: 1.6;
     }
-
     .sidebar ul li {
       margin: 8px 0;
       transition: transform 0.2s ease, color 0.2s ease;
     }
-
     .sidebar ul li:hover {
       transform: translateX(4px);
     }
-
     .sidebar ul li ul {
       margin-top: 5px;
       margin-left: 15px;
     }
-
     .sidebar ul li ul li {
       margin: 6px 0;
     }
-
     .sidebar ul li a {
       text-decoration: none;
       color: #000;
       font-weight: 400;
       transition: color 0.3s ease;
     }
-
     .sidebar ul li a:hover {
       text-decoration: underline;
       color: #555;
     }
-
     .main-content {
       flex: 1;
       padding: 40px 60px 20px 40px;
@@ -85,20 +78,16 @@
       line-height: 2;
       max-width: 1100px;
     }
-
     .main-content-header {
       margin-bottom: 48px;
     }
-
     h2, h3 {
       color: #000;
       margin-top: 0;
     }
-
     h3 {
       margin-top: 40px;
     }
-
     footer {
       background-color: #ffffff;
       color: #000;
@@ -109,172 +98,59 @@
       justify-content: space-between;
       border-top: 1px solid #ddd;
     }
-
     .footer-info {
       margin-left: 20px;
     }
-
     .footer-logo {
       height: 140px;
       margin-left: -45px;
     }
-
     a.footer-link {
       color: #000;
       text-decoration: none;
     }
-
     a.footer-link:hover {
       text-decoration: underline;
-    }
-
-    /* ========== SOMENTE MOBILE ========== */
-    @media (max-width: 768px) {
-      .sidebar {
-        display: none;
-      }
-
-      .content-wrapper {
-        flex-direction: column;
-      }
-
-      .main-content {
-        width: 100%;
-        padding: 20px;
-        max-width: 100%;
-      }
-
-      .footer-info {
-        display: none;
-      }
-
-      .footer-logo {
-        height: 100px !important;
-      }
-
-      .top-menu {
-        display: block;
-        background-color: white;
-        border-bottom: 1px solid #ccc;
-        padding: 10px 20px;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
-
-      .menu-bar {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        padding: 0;
-      }
-
-      .menu-bar li {
-        position: relative;
-      }
-
-      .menu-bar li a {
-        text-decoration: none;
-        color: #000;
-        font-weight: 500;
-      }
-
-      .submenu-mobile {
-        display: none;
-        flex-direction: column;
-        gap: 8px;
-        margin-top: 8px;
-      }
-
-      .menu-bar li:focus-within .submenu-mobile,
-      .menu-bar li:hover .submenu-mobile {
-        display: flex;
-      }
-
-      .scroll-down {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        animation: bounce 2s infinite;
-        width: 48px;
-        height: 48px;
-        margin-top: 20px;
-      }
-
-      .scroll-down svg {
-        width: 100%;
-        height: 100%;
-        stroke: white;
-        stroke-width: 2;
-        fill: none;
-        filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
-      }
-    }
-
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
     }
   </style>
 </head>
 <body>
-
-  <!-- MENU TOPO (somente mobile) -->
-  <header class="top-menu" style="display: none;">
-    <nav>
-      <ul class="menu-bar">
-        <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
-        <li tabindex="0">
-          <a href="/religiaocebrap/pesquisas/index.html">Pesquisas ▾</a>
-          <ul class="submenu-mobile">
-            <li><a href="/religiaocebrap/pesquisas/agrocristianismo.html">Agrocristianismo</a></li>
-            <li><a href="/religiaocebrap/pesquisas/registros.html">Registros no tempo</a></li>
-            <li><a href="/religiaocebrap/pesquisas/representacao.html">Representações</a></li>
-          </ul>
-        </li>
-        <li><a href="/religiaocebrap/em-debate.html">Em debate</a></li>
-        <li><a href="/religiaocebrap/contato.html">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
-
   <div class="content-wrapper">
     <div class="sidebar">
       <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="sidebar-logo">
-      <!-- menu lateral aqui -->
+      <nav>
+        <ul>
+          <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
+          <li>
+            <a href="/religiaocebrap/pesquisas/index.html">Pesquisas</a>
+            <ul>
+              <li><a href="/religiaocebrap/pesquisas/agrocristianismo.html">Agrocristianismo</a>
+                <ul>
+                  <li><a href="/religiaocebrap/pesquisas/aglom.html">Aglomerações de estabelecimentos religiosos</a></li>
+                  <li><a href="/religiaocebrap/pesquisas/classificacao.html">Classificação de organizações e associações religiosas</a></li>
+                </ul>
+              </li>
+              <li><a href="/religiaocebrap/pesquisas/registros.html">Registros no tempo</a></li>
+              <li><a href="/religiaocebrap/pesquisas/representacao.html">Representações da religião no Brasil</a></li>
+            </ul>
+          </li>
+          <li><a href="/religiaocebrap/em-debate.html">Em debate</a></li>
+          <li><a href="/religiaocebrap/contato.html">Contato</a></li>
+        </ul>
+      </nav>
     </div>
 
     <div class="main-content">
       <div class="main-content-header" data-aos="fade-up">
-        <h2 id="sobre">Sobre o Observatório</h2>
-        <!-- Seta branca no mobile -->
-        <a href="#sobre" class="scroll-down">
-          <svg viewBox="0 0 24 24">
-            <polyline points="6 9 12 15 18 9" fill="none" stroke="#fff" stroke-width="2"/>
-          </svg>
-        </a>
+        <h2>Sobre o Observatório</h2>
       </div>
 
       <h3 data-aos="fade-up" data-aos-delay="100">Quem somos</h3>
-      <p data-aos="fade-up" data-aos-delay="200">
-        O Observatório da Religião e Interseccionalidades é um grupo de pesquisa sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social no Brasil do Núcleo de Religiões no Mundo Contemporâneo do Cebrap.
-      </p>
-      <p data-aos="fade-up" data-aos-delay="300">
-        O grupo está vinculado ao Projeto Temático Fapesp "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6).
-      </p>
+      <p data-aos="fade-up" data-aos-delay="200">O Observatório da Religião e Interseccionalidades é um grupo de pesquisa sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social no Brasil do Núcleo de Religiões no Mundo Contemporâneo do Cebrap.</p>
+      <p data-aos="fade-up" data-aos-delay="300">O grupo está vinculado ao Projeto Temático Fapesp "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6).</p>
 
       <h3 data-aos="fade-up" data-aos-delay="400">O que fazemos</h3>
-      <p data-aos="fade-up" data-aos-delay="500">
-        Produzimos dados e os transformamos em matéria-prima para a construção de novas percepções e compreensão a respeito dos fenômenos sociais associados à religião no espaço público brasileiro.
-      </p>
+      <p data-aos="fade-up" data-aos-delay="500">Produzimos dados e os transformamos em matéria-prima para a construção de novas percepções e compreensão a respeito dos fenômenos sociais associados à religião no espaço público brasileiro.</p>
     </div>
   </div>
 
@@ -296,6 +172,8 @@
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
