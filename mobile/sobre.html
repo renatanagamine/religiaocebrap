@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sobre - Observatório</title>
+  <title>Sobre – Observatório da Religião e Interseccionalidades</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
   <style>
@@ -12,13 +12,14 @@
       font-family: 'Lato', sans-serif;
       background-color: #fff;
       color: #000;
+      position: relative;
     }
 
     .menu-toggle {
       position: fixed;
       top: 15px;
       left: 15px;
-      z-index: 2000;
+      z-index: 1100;
       background: none;
       border: none;
       font-size: 28px;
@@ -36,7 +37,7 @@
       border-right: 1px solid #ddd;
       padding: 20px;
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-      z-index: 1500;
+      z-index: 1200;
       transition: left 0.3s ease;
     }
 
@@ -47,14 +48,14 @@
     .sidebar ul {
       list-style: none;
       padding-left: 0;
-      margin: 0;
     }
 
     .sidebar li {
       margin: 10px 0;
     }
 
-    .sidebar a, .submenu-toggle {
+    .sidebar a,
+    .submenu-toggle {
       text-decoration: none;
       color: #000;
       font-weight: 500;
@@ -63,9 +64,6 @@
       font-family: 'Lato', sans-serif;
       font-size: 1em;
       cursor: pointer;
-      display: block;
-      width: 100%;
-      text-align: left;
     }
 
     .submenu {
@@ -75,10 +73,16 @@
       margin-top: 5px;
     }
 
+    .submenu.open {
+      display: block;
+    }
+
     .hero-section {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
       padding-top: 60px;
       text-align: center;
     }
@@ -87,6 +91,17 @@
       width: 80vw;
       max-width: 300px;
       margin-bottom: 20px;
+    }
+
+    .scroll-text {
+      font-size: 1em;
+      color: #666;
+      animation: fadeInUp 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0.5; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     .main-section {
@@ -108,9 +123,7 @@
   </style>
 </head>
 <body>
-  <button class="menu-toggle" onclick="toggleSidebar()">
-    &#9776;
-  </button>
+  <button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button>
 
   <div class="sidebar" id="sidebar">
     <ul>
@@ -131,6 +144,7 @@
 
   <div class="hero-section">
     <img src="../static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" />
+    <p class="scroll-text">Role a página</p>
   </div>
 
   <section class="main-section">
@@ -156,7 +170,7 @@
 
     function toggleSubmenu() {
       const submenu = document.getElementById('submenu');
-      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      submenu.classList.toggle('open');
     }
   </script>
 </body>
