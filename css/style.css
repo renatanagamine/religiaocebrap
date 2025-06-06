@@ -2,210 +2,110 @@ body {
   margin: 0;
   font-family: 'Lato', sans-serif;
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  flex-direction: column;
   background-color: #fff;
   color: #000;
 }
 
-/* Tela inicial ocupa 100vh com logo centralizada */
-.hero-section {
-  height: 100vh;
+.content-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+  flex: 1;
+  align-items: flex-start;
 }
 
-.hero-logo {
-  width: 62vw;
-  max-height: 72vh;
-  height: auto;
-  margin: 100px auto 0 auto;
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 24%;
+  padding: 26px;
+  box-sizing: border-box;
+  border-right: 1px solid #ccc;
 }
 
-/* Setas concêntricas pretas */
-.scroll-indicator {
-  position: absolute;
-  bottom: 60px;
-  animation: bounce 2s infinite;
-  inset-inline: 0;
-  margin-inline: auto;
-  width: 90px;
-  height: 90px;
-}
-
-.scroll-indicator svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 90px;
-  height: 90px;
-  stroke: #000;
-  stroke-width: 2;
-  fill: none;
+.sidebar a {
   display: block;
+  text-decoration: none;
+  color: #000;
+  margin-bottom: 16px;
+  font-size: 1.05rem;
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+/* ===== MAIN CONTENT ===== */
+.main-content {
+  flex: 1;
+  padding: 40px;
+  box-sizing: border-box;
 }
 
-.menu-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 0;
-  gap: 30px;
+.main-content h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-.menu-bar {
-  display: flex;
-  gap: 40px;
+.main-content p {
   font-size: 1.1rem;
-  font-weight: 400;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  line-height: 1.6;
 }
 
-.menu-bar a {
-  text-decoration: none;
-  color: #000;
-  transition: color 0.3s ease;
-}
-
-.menu-bar a:hover {
-  text-decoration: underline;
-  color: #555;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #fff;
-  min-width: 220px;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
-  z-index: 1;
-  padding: 10px 0;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 10px 16px;
-  color: #000;
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
-.dropdown-content a:hover {
-  background-color: #f0f0f0;
-}
-
-.submenu {
-  padding-left: 24px;
-  display: flex;
-  flex-direction: column;
-}
-
-.submenu a::before {
-  content: "▸ ";
-}
-
-.footer-logo {
-  max-width: 62vw;
-  height: auto;
-}
-
-/* RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS */
+/* ===== RESPONSIVO PARA DISPOSITIVOS MÓVEIS ===== */
 @media (max-width: 768px) {
-  .hero-logo {
-    width: 80vw;
-    margin-top: 60px;
-  }
-
-  .scroll-indicator {
-    width: 60px;
-    height: 60px;
-    bottom: 40px;
-  }
-
-  .scroll-indicator svg {
-    width: 60px;
-    height: 60px;
-    stroke-width: 1.5;
-  }
-
-  .menu-wrapper {
-    padding: 24px 0;
-    gap: 20px;
-  }
-
-  .menu-bar {
-    gap: 20px;
-    font-size: 1rem;
+  .content-wrapper {
     flex-direction: column;
   }
 
-  .dropdown-content {
-    min-width: 180px;
-    font-size: 0.9rem;
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
   }
 
-  .dropdown-content a {
+  .sidebar a {
+    margin: 0;
     padding: 8px 12px;
+    font-size: 1rem;
   }
 
-  .submenu {
-    padding-left: 16px;
+  .main-content {
+    width: 100%;
+    padding: 24px 16px;
   }
 
-  .footer-logo {
-    max-width: 80vw;
+  .main-content h1 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .main-content p {
+    font-size: 1rem;
+    text-align: justify;
   }
 }
 
 @media (max-width: 480px) {
-  .menu-bar {
+  .sidebar {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .sidebar a {
     font-size: 0.95rem;
+    padding: 6px 10px;
   }
 
-  .dropdown-content {
-    min-width: 160px;
+  .main-content {
+    padding: 20px 12px;
   }
 
-  .scroll-indicator {
-    width: 48px;
-    height: 48px;
-    bottom: 30px;
+  .main-content h1 {
+    font-size: 1.4rem;
   }
 
-  .scroll-indicator svg {
-    width: 48px;
-    height: 48px;
-    stroke-width: 1.2;
+  .main-content p {
+    font-size: 0.95rem;
   }
 }
