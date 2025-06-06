@@ -2,25 +2,28 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sobre - Observatório da Religião e Interseccionalidades</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: 'Lato', sans-serif;
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
       background-color: #fff;
       color: #000;
     }
 
+    .top-menu {
+      display: none;
+    }
+
     .content-wrapper {
       display: flex;
-      flex: 1;
+      flex-direction: row;
       align-items: flex-start;
+      flex-wrap: nowrap;
+      width: 100%;
     }
 
     .sidebar {
@@ -133,20 +136,20 @@
       text-decoration: underline;
     }
 
-    /* === APENAS PARA MOBILE === */
+    /* ==== APENAS PARA MOBILE ==== */
     @media (max-width: 768px) {
       .sidebar {
         display: none;
+      }
+
+      .content-wrapper {
+        flex-direction: column;
       }
 
       .main-content {
         width: 100%;
         padding: 20px;
         max-width: 100%;
-      }
-
-      .content-wrapper {
-        flex-direction: column;
       }
 
       .footer-info {
@@ -232,8 +235,8 @@
 </head>
 <body>
 
-  <!-- MENU TOPO (mobile) -->
-  <header class="top-menu" style="display: none;">
+  <!-- MENU MOBILE -->
+  <header class="top-menu">
     <nav>
       <ul class="menu-bar">
         <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
@@ -260,7 +263,8 @@
     <div class="main-content">
       <div class="main-content-header" data-aos="fade-up">
         <h2 id="sobre">Sobre o Observatório</h2>
-        <!-- Seta branca com sombra no mobile -->
+
+        <!-- Seta branca (mobile) -->
         <a href="#sobre" class="scroll-down">
           <svg viewBox="0 0 24 24">
             <polyline points="6 9 12 15 18 9" fill="none" stroke="#fff" stroke-width="2"/>
@@ -295,8 +299,6 @@
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <script>AOS.init();</script>
 </body>
 </html>
