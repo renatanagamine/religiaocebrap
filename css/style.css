@@ -139,3 +139,74 @@ body {
   max-width: 62vw;
   height: auto;
 }
+
+/* RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS */
+
+@media (max-width: 768px) {
+  .hero-logo {
+    width: 80vw;
+    margin-top: 60px;
+  }
+
+  .scroll-indicator {
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+  }
+
+  .scroll-indicator svg {
+    width: 60px;
+    height: 60px;
+    stroke-width: 1.5;
+  }
+
+  .menu-wrapper {
+    padding: 24px 0;
+    gap: 20px;
+  }
+
+  .menu-bar {
+    gap: 20px;
+    font-size: 1rem;
+    flex-direction: column;
+  }
+
+  .dropdown-content {
+    min-width: 180px;
+    font-size: 0.9rem;
+  }
+
+  .dropdown-content a {
+    padding: 8px 12px;
+  }
+
+  .submenu {
+    padding-left: 16px;
+  }
+
+  .footer-logo {
+    max-width: 80vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-bar {
+    font-size: 0.95rem;
+  }
+
+  .dropdown-content {
+    min-width: 160px;
+  }
+
+  .scroll-indicator {
+    width: 48px;
+    height: 48px;
+    bottom: 30px;
+  }
+
+  .scroll-indicator svg {
+    width: 48px;
+    height: 48px;
+    stroke-width: 1.2;
+  }
+}
