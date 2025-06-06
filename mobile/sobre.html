@@ -3,174 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sobre – Observatório da Religião e Interseccionalidades</title>
+  <title>Sobre - Observatório</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Lato', sans-serif;
-      background-color: #fff;
-      color: #000;
-      position: relative;
-    }
-
-    .menu-toggle {
-      position: fixed;
-      top: 15px;
-      left: 15px;
-      z-index: 1100;
-      background: none;
-      border: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: #000;
-    }
-
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 240px;
-      height: 100%;
-      background-color: #fff;
-      border-right: 1px solid #ddd;
-      padding: 20px;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-      z-index: 1200;
-      transition: left 0.3s ease;
-    }
-
-    .sidebar.open {
-      left: 0;
-    }
-
-    .sidebar ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .sidebar li {
-      margin: 10px 0;
-    }
-
-    .sidebar a,
-    .submenu-toggle {
-      text-decoration: none;
-      color: #000;
-      font-weight: 500;
-      background: none;
-      border: none;
-      font-family: 'Lato', sans-serif;
-      font-size: 1em;
-      cursor: pointer;
-    }
-
-    .submenu {
-      display: none;
-      list-style: none;
-      padding-left: 15px;
-      margin-top: 5px;
-    }
-
-    .submenu.open {
-      display: block;
-    }
-
-    .hero-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      height: 100vh;
-      padding-top: 60px;
-      text-align: center;
-    }
-
-    .hero-logo {
-      width: 80vw;
-      max-width: 300px;
-      margin-bottom: 20px;
-    }
-
-    .scroll-text {
-      font-size: 1em;
-      color: #666;
-      animation: fadeInUp 1.5s ease-in-out infinite alternate;
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0.5; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .main-section {
-      padding: 80px 20px 40px;
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.9;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 0 20px;
-    }
-
-    .footer-logo {
-      height: 90px;
-      opacity: 0.9;
-    }
-  </style>
+  <link rel="stylesheet" href="estilos.css"> <!-- Seu CSS separado -->
 </head>
 <body>
-  <button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button>
 
-  <div class="sidebar" id="sidebar">
+  <!-- Botão do menu hambúrguer -->
+  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
     <ul>
       <li><a href="index.html">Início</a></li>
-      <li><a href="sobre.html">Sobre</a></li>
       <li>
-        <button class="submenu-toggle" onclick="toggleSubmenu()">Pesquisas</button>
+        <button class="submenu-toggle" onclick="toggleSubmenu()">Pesquisas ▼</button>
         <ul class="submenu" id="submenu">
           <li><a href="pesquisas/agrocristianismo.html">Agrocristianismo</a></li>
-          <li><a href="pesquisas/registros.html">Registros</a></li>
+          <li><a href="pesquisas/registros.html">Registros no tempo</a></li>
           <li><a href="pesquisas/representacao.html">Representações da religião</a></li>
         </ul>
       </li>
+      <li><a href="sobre.html">Sobre</a></li>
       <li><a href="em-debate.html">Em debate</a></li>
       <li><a href="contato.html">Contato</a></li>
     </ul>
-  </div>
+  </nav>
 
-  <div class="hero-section">
-    <img src="../static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" />
-    <p class="scroll-text">Role a página</p>
-  </div>
+  <!-- Conteúdo principal -->
+  <main class="main-section">
+    <h2>Sobre o Observatório</h2>
+    <p>O Observatório da Religião e Interseccionalidades é um grupo de pesquisa sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social no Brasil do Núcleo de Religiões no Mundo Contemporâneo do Cebrap.</p>
+    <p>O grupo está vinculado ao Projeto Temático Fapesp "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6).</p>
 
-  <section class="main-section">
-    <h1 data-aos="fade-up">Sobre o Observatório</h1>
-    <p data-aos="fade-up" data-aos-delay="100">O Observatório da Religião e Interseccionalidades é um grupo de pesquisa sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social no Brasil do Núcleo de Religiões no Mundo Contemporâneo do Cebrap.</p>
-    <p data-aos="fade-up" data-aos-delay="200">O grupo está vinculado ao Projeto Temático Fapesp "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6).</p>
-  </section>
+    <h2>O que fazemos</h2>
+    <p>Produzimos dados e os transformamos em matéria-prima para a construção de novas percepções e compreensão a respeito dos fenômenos sociais associados à religião no espaço público brasileiro.</p>
+  </main>
 
+  <!-- Rodapé -->
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
-      <img src="../static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo">
+      <img src="static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo">
     </a>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Scripts -->
   <script>
-    AOS.init();
-
     function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('open');
+      document.getElementById("sidebar").classList.toggle("open");
     }
 
     function toggleSubmenu() {
-      const submenu = document.getElementById('submenu');
-      submenu.classList.toggle('open');
+      document.getElementById("submenu").classList.toggle("open");
     }
   </script>
 </body>
