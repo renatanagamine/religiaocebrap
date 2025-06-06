@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Registros no tempo</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="fade-in">
 
@@ -13,43 +12,47 @@
     <ul>
       <li><a href="index.html">Início</a></li>
       <li><a href="sobre.html">Sobre</a></li>
-      <li><a href="#">Pesquisas</a></li>
+      <li>
+        <button class="submenu-toggle">Pesquisas</button>
+        <ul class="submenu">
+          <li><a href="agrocristianismo.html">Agrocristianismo</a></li>
+          <li><a href="registros.html">Registros no tempo</a></li>
+          <li><a href="representacoes.html">Representações</a></li>
+        </ul>
+      </li>
       <li><a href="#">Em debate</a></li>
       <li><a href="#">Contato</a></li>
     </ul>
   </nav>
 
-  <div class="main-section">
-    <img src="../static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" />
+  <main class="main-section">
+    <h2>Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</h2>
+    <p><strong>Coordenação:</strong> Renata Nagamine<br>
+    <strong>Pesquisadoras:</strong> Olívia Barbosa, Paula Montero, Renata Nagamine e Camila Nicácio<br>
+    <strong>Duração:</strong> maio de 2025 a outubro de 2026</p>
 
-    <h1 data-aos="fade-up">Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</h1>
+    <p>Formas semióticas como antifeminismo, homoafetividade, intolerância religiosa, racismo religioso e racismo ambiental se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público. Nosso interesse é compreender de que modo os termos que selecionamos foram usados para conectar contextos de enunciação a um contexto social em transformação.</p>
 
-    <p data-aos="fade-up" data-aos-delay="100">
-      <strong>Coordenação:</strong> Renata Nagamine<br>
-      <strong>Pesquisadoras:</strong> Olívia Barbosa, Paula Montero, Renata Nagamine e Camila Nicácio<br>
-      <strong>Duração:</strong> maio de 2025 a outubro de 2026
-    </p>
+    <p>Sabemos de trabalhos anteriores que as formas selecionadas se relacionam com práticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos desses registros na vida sócio-política brasileira. Teremos em mente as seguintes perguntas: Como o agenciamento desses termos conecta religioso e público no Brasil? Como religioso e público se configuram no contexto em que eles são agenciados?</p>
 
-    <p data-aos="fade-up" data-aos-delay="200">
-      Formas semióticas como antifeminismo, homoafetividade, intolerância religiosa, racismo religioso e racismo ambiental se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público. Nosso interesse é compreender de que modo os termos que selecionamos foram usados para conectar contextos de enunciação a um contexto social em transformação.
-    </p>
+    <p>Para responder as perguntas acima, analisaremos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como elaborada pela literatura antropológica sobre semiótica. Segundo esta literatura, registros são formas linguísticas criadas na comunicação e agenciadas como rótulos nas interações sociais, com a produção de efeitos práticos. São artefatos que indexam e classificam signos. Uma análise dos usos de registros implica perceber como seu agenciamento tipifica pessoas, com a produção de estereótipos, classifica e ordena sujeitos, discursos e performances reunidos sob um nome. Implica perceber, igualmente, como essas formas conectam domínios de ação e transferem autoridade.</p>
+  </main>
 
-    <p data-aos="fade-up" data-aos-delay="300">
-      Sabemos de trabalhos anteriores que as formas selecionadas se relacionam com práticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos desses registros na vida sócio-política brasileira. Teremos em mente as seguintes perguntas: Como o agenciamento desses termos conecta religioso e público no Brasil? Como religioso e público se configuram no contexto em que eles são agenciados?
-    </p>
-
-    <p data-aos="fade-up" data-aos-delay="400">
-      Para responder as perguntas acima, analisaremos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como elaborada pela literatura antropológica sobre semiótica. Segundo esta literatura, registros são formas linguísticas criadas na comunicação e agenciadas como rótulos nas interações sociais, com a produção de efeitos práticos. São artefatos que indexam e classificam signos. Uma análise dos usos de registros implica perceber como seu agenciamento tipifica pessoas, com a produção de estereótipos, classifica e ordena sujeitos, discursos e performances reunidos sob um nome. Implica perceber, igualmente, como essas formas conectam domínios de ação e transferem autoridade.
-    </p>
-  </div>
-
-  <div class="mobile-footer">
-    <a href="https://cebrap.org.br" target="_blank">
-      <img src="../static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo">
+  <footer class="mobile-footer">
+    <a href="https://cebrap.org.br/" target="_blank">
+      <img src="../static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo" />
     </a>
-  </div>
+  </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.querySelector('.submenu-toggle');
+      const submenu = document.querySelector('.submenu');
+
+      toggle.addEventListener('click', function () {
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
 </body>
 </html>
