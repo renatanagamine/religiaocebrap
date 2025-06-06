@@ -14,16 +14,8 @@
       color: #000;
     }
 
-    .top-menu {
-      display: none;
-    }
-
     .content-wrapper {
       display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      flex-wrap: nowrap;
-      width: 100%;
     }
 
     .sidebar {
@@ -136,7 +128,7 @@
       text-decoration: underline;
     }
 
-    /* ==== APENAS PARA MOBILE ==== */
+    /* ========== SOMENTE MOBILE ========== */
     @media (max-width: 768px) {
       .sidebar {
         display: none;
@@ -235,8 +227,8 @@
 </head>
 <body>
 
-  <!-- MENU MOBILE -->
-  <header class="top-menu">
+  <!-- MENU TOPO (somente mobile) -->
+  <header class="top-menu" style="display: none;">
     <nav>
       <ul class="menu-bar">
         <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
@@ -257,14 +249,13 @@
   <div class="content-wrapper">
     <div class="sidebar">
       <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="sidebar-logo">
-      <!-- menu lateral já existente -->
+      <!-- menu lateral aqui -->
     </div>
 
     <div class="main-content">
       <div class="main-content-header" data-aos="fade-up">
         <h2 id="sobre">Sobre o Observatório</h2>
-
-        <!-- Seta branca (mobile) -->
+        <!-- Seta branca no mobile -->
         <a href="#sobre" class="scroll-down">
           <svg viewBox="0 0 24 24">
             <polyline points="6 9 12 15 18 9" fill="none" stroke="#fff" stroke-width="2"/>
@@ -273,11 +264,17 @@
       </div>
 
       <h3 data-aos="fade-up" data-aos-delay="100">Quem somos</h3>
-      <p data-aos="fade-up" data-aos-delay="200">O Observatório da Religião e Interseccionalidades é um grupo de pesquisa sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social no Brasil do Núcleo de Religiões no Mundo Contemporâneo do Cebrap.</p>
-      <p data-aos="fade-up" data-aos-delay="300">O grupo está vinculado ao Projeto Temático Fapesp "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6).</p>
+      <p data-aos="fade-up" data-aos-delay="200">
+        O Observatório da Religião e Interseccionalidades é um grupo de pesquisa sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social no Brasil do Núcleo de Religiões no Mundo Contemporâneo do Cebrap.
+      </p>
+      <p data-aos="fade-up" data-aos-delay="300">
+        O grupo está vinculado ao Projeto Temático Fapesp "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6).
+      </p>
 
       <h3 data-aos="fade-up" data-aos-delay="400">O que fazemos</h3>
-      <p data-aos="fade-up" data-aos-delay="500">Produzimos dados e os transformamos em matéria-prima para a construção de novas percepções e compreensão a respeito dos fenômenos sociais associados à religião no espaço público brasileiro.</p>
+      <p data-aos="fade-up" data-aos-delay="500">
+        Produzimos dados e os transformamos em matéria-prima para a construção de novas percepções e compreensão a respeito dos fenômenos sociais associados à religião no espaço público brasileiro.
+      </p>
     </div>
   </div>
 
