@@ -175,6 +175,7 @@ a.footer-link:hover {
   .main-content {
     width: 100%;
     padding: 20px;
+    display: block; /* <- necessário para garantir visibilidade */
   }
 
   .footer-info {
@@ -246,6 +247,7 @@ a.footer-link:hover {
   }
 
   .mobile-nav ul li ul {
+    display: none; /* <-- necessário para o JS controlar visibilidade */
     margin-top: 6px;
     margin-left: 12px;
   }
