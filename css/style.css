@@ -1,4 +1,4 @@
-body {
+body { 
   margin: 0;
   font-family: 'Lato', sans-serif;
   background-color: #fff;
@@ -161,6 +161,11 @@ a.footer-link:hover {
   text-decoration: underline;
 }
 
+/* === CLASSE DE ESCONDER ELEMENTOS === */
+.hidden {
+  display: none !important;
+}
+
 /* === MOBILE ONLY (max-width: 768px) === */
 @media (max-width: 768px) {
   .sidebar {
@@ -196,10 +201,56 @@ a.footer-link:hover {
     width: 60px;
     height: 60px;
     display: block;
+    cursor: pointer;
   }
 
   .scroll-indicator svg {
+    stroke: white;
+    fill: none;
+    stroke-width: 4;
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.7));
     width: 100%;
     height: 100%;
+    transform: rotate(90deg); /* seta apontando para baixo */
+  }
+
+  .scroll-indicator a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* === MENU SUPERIOR MOBILE COM DROPDOWN === */
+  .mobile-nav {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 15px;
+  }
+
+  .mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-nav > ul > li {
+    margin-bottom: 10px;
+  }
+
+  .mobile-nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .mobile-nav ul li ul {
+    margin-top: 6px;
+    margin-left: 12px;
+  }
+
+  .desktop-only {
+    display: none !important;
   }
 }
