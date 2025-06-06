@@ -1,27 +1,15 @@
-/* Oculta elementos por padrão */
+/* Esconde em desktop */
 .mobile-only {
   display: none;
 }
 
-/* Menu lateral */
-.sidebar {
-  width: 24%;
-  padding: 20px;
-}
-
-/* Conteúdo principal */
-.main-content {
-  width: 76%;
-  padding: 40px;
-}
-
-/* Seta para descer */
+/* SETA: aparece só no mobile, abaixo da logo */
 .scroll-down {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 24px;
   animation: bounce 2s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 48px;
   height: 48px;
 }
@@ -31,51 +19,38 @@
   height: 100%;
 }
 
-/* Animação */
+/* Animação da seta */
 @keyframes bounce {
   0%, 100% {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
   50% {
-    transform: translateX(-50%) translateY(-10px);
+    transform: translateY(-10px);
   }
 }
 
-/* Responsivo: apenas para celular */
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
-
-  .main-content {
-    width: 100%;
-    padding: 20px;
-  }
-
   .mobile-only {
     display: block;
   }
 
-  .top-mobile-menu {
+  .scroll-indicator {
+    display: none; /* esconde a seta lateral antiga no mobile */
+  }
+
+  .hero-section {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 20px;
-    padding: 12px;
-    background-color: #fff;
-    border-bottom: 1px solid #ccc;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    text-align: center;
   }
 
-  .top-mobile-menu a {
-    text-decoration: none;
-    color: #000;
-    font-size: 1rem;
-    font-weight: 500;
-  }
-
-  .top-mobile-menu a:hover {
-    text-decoration: underline;
+  .hero-logo {
+    width: 80vw;
+    margin-top: 60px;
+    max-height: 60vh;
+    height: auto;
   }
 }
