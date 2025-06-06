@@ -1,62 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Observatório da Religião e Interseccionalidades</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .submenu {
-      display: none;
-      padding-left: 15px;
-      list-style: none;
-      margin-top: 6px;
-    }
-
-    .submenu li {
-      margin: 6px 0;
-    }
-
-    .submenu-toggle {
-      background: none;
-      border: none;
-      font-family: 'Lato', sans-serif;
-      font-size: 1em;
-      padding: 0;
-      margin: 0;
-      font-weight: 500;
-      cursor: pointer;
-      color: #000;
-      text-align: left;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body class="fade-in">
+
   <div class="hero-section">
     <img src="../static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" />
   </div>
 
-  <section id="sobre" class="main-section">
-    <nav class="mobile-nav">
-      <ul>
-        <li><a href="#sobre">Sobre</a></li>
-        <li>
-          <button class="submenu-toggle">Pesquisas</button>
-          <ul class="submenu">
-            <li><a href="#agro">Agrocristianismo</a></li>
-            <li><a href="#registros">Registros</a></li>
-            <li><a href="#representacoes">Representações</a></li>
-          </ul>
-        </li>
-        <li><a href="#em-debate">Em debate</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-
+  <div class="main-section">
     <h2>Sobre o Observatório</h2>
     <p>O Observatório da Religião e Interseccionalidades é um grupo de pesquisa sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social no Brasil do Núcleo de Religiões no Mundo Contemporâneo do Cebrap.</p>
-  </section>
+    <p>O grupo está vinculado ao Projeto Temático Fapesp "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6).</p>
+  </div>
 
   <script>
     document.querySelectorAll('a').forEach(link => {
@@ -69,17 +30,6 @@
           setTimeout(() => window.location.href = href, 300);
         }
       });
-    });
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const toggle = document.querySelector('.submenu-toggle');
-      const submenu = document.querySelector('.submenu');
-
-      if (toggle && submenu) {
-        toggle.addEventListener('click', function () {
-          submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-        });
-      }
     });
   </script>
 </body>
