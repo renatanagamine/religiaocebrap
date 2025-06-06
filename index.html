@@ -27,9 +27,9 @@
 
     .scroll-indicator {
       position: absolute;
-      top: 56%;        /* subida */
-      right: 130px;    /* mais para a esquerda */
-      width: 190px;    /* seta aumentada */
+      top: 56%;
+      right: 130px;
+      width: 190px;
       height: 190px;
       cursor: pointer;
       z-index: 1000;
@@ -53,6 +53,40 @@
         transform: scale(1.08);
       }
     }
+
+    /* === MOBILE ONLY === */
+    @media (max-width: 768px) {
+      .hero-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: auto;
+        padding-top: 40px;
+      }
+
+      .hero-logo {
+        position: static;
+        width: 80vw;
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .scroll-indicator {
+        position: static;
+        width: 60px;
+        height: 60px;
+        margin-bottom: 30px;
+      }
+
+      .scroll-indicator svg {
+        transform: rotate(90deg); /* seta apontando para baixo */
+      }
+
+      .hidden {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -60,12 +94,17 @@
   <div class="hero-section">
     <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" />
 
-    <a href="sobre.html" class="scroll-indicator" aria-label="Ir para a página Sobre">
+    <a href="sobre.html" class="scroll-indicator" id="scrollLink" aria-label="Ir para a página Sobre">
       <svg viewBox="0 0 24 24">
         <path d="M8 5 L16 12 L8 19" />
       </svg>
     </a>
   </div>
 
+  <script>
+    document.getElementById("scrollLink").addEventListener("click", function () {
+      this.classList.add("hidden");
+    });
+  </script>
 </body>
 </html>
