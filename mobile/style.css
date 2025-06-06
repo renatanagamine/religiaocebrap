@@ -1,4 +1,4 @@
-body {
+body { 
   margin: 0;
   font-family: 'Lato', sans-serif;
   background-color: #fff;
@@ -30,7 +30,7 @@ body {
   border-right: 1px solid #ddd;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-  z-index: 1090;
+  z-index: 1200;
   transition: left 0.3s ease;
   overflow-y: auto;
 }
@@ -60,12 +60,16 @@ body {
   cursor: pointer;
 }
 
-/* Submenu (inicialmente oculto) */
+/* Submenu */
 .submenu {
   display: none;
   list-style: none;
   padding-left: 15px;
   margin-top: 5px;
+}
+
+.submenu.open {
+  display: block;
 }
 
 .submenu li {
