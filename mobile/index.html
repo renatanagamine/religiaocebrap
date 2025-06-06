@@ -1,110 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Observatório da Religião e Interseccionalidades</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Lato', sans-serif;
-      background-color: #fff;
-      color: #000;
-      padding: 0;
-      opacity: 1;
-      transition: opacity 0.4s ease;
-    }
-
-    body.fade-in {
-      animation: fadeIn 0.4s ease forwards;
-    }
-
-    body.fade-out {
-      opacity: 0;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .hero-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 40px;
-    }
-
-    .hero-logo {
-      width: 80vw;
-      max-width: 300px;
-      margin-bottom: 20px;
-    }
-
-    .scroll-indicator {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 30px;
-      animation: pulse 2s infinite ease-in-out;
-      cursor: pointer;
-      transition: transform 0.3s ease, filter 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .scroll-indicator:hover {
-      transform: scale(1.15);
-      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9));
-    }
-
-    .scroll-indicator svg {
-      stroke: white;
-      fill: none;
-      stroke-width: 8;
-      width: 100%;
-      height: 100%;
-      filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.7));
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-    }
-
-    .mobile-nav {
-      background-color: #fff;
-      border-bottom: 1px solid #ccc;
-      padding: 10px 15px;
-    }
-
-    .mobile-nav ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      padding: 0;
-      margin: 0;
-    }
-
-    .mobile-nav li {
-      position: relative;
-    }
-
-    .mobile-nav ul li a {
-      text-decoration: none;
-      color: #000;
-      font-weight: 500;
-    }
-
     .submenu {
       display: none;
       padding-left: 15px;
       list-style: none;
       margin-top: 6px;
-      flex-direction: column;
     }
 
     .submenu li {
@@ -123,32 +30,6 @@
       color: #000;
       text-align: left;
     }
-
-    .main-section {
-      padding: 20px;
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    .main-section p {
-      line-height: 1.8;
-    }
-
-    .main-section h1, .main-section h2 {
-      margin-top: 30px;
-    }
-
-    .mobile-footer {
-      text-align: center;
-      padding: 40px 0 20px;
-      background-color: #fff;
-    }
-
-    .footer-logo {
-      height: 90px;
-      opacity: 0.9;
-    }
   </style>
 </head>
 <body class="fade-in">
@@ -161,7 +42,7 @@
         <ul class="submenu">
           <li><a href="agrocristianismo.html">Agrocristianismo</a></li>
           <li><a href="registros.html">Registros no tempo</a></li>
-          <li><a href="representacoes.html">Representações</a></li>
+          <li><a href="representacoes.html">Representações da religião</a></li>
         </ul>
       </li>
       <li><a href="#">Em debate</a></li>
@@ -179,12 +60,22 @@
   </div>
 
   <footer class="mobile-footer">
-    <a href="https://cebrap.org.br/" target="_blank">
-      <img src="static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo">
-    </a>
+    <img src="static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo">
   </footer>
 
   <script>
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (!href.startsWith('#') && !this.target) {
+          e.preventDefault();
+          document.body.classList.remove('fade-in');
+          document.body.classList.add('fade-out');
+          setTimeout(() => window.location.href = href, 300);
+        }
+      });
+    });
+
     document.addEventListener('DOMContentLoaded', function () {
       const toggle = document.querySelector('.submenu-toggle');
       const submenu = document.querySelector('.submenu');
