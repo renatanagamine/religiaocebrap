@@ -113,7 +113,7 @@
       text-decoration: underline;
     }
 
-    /* Apenas no mobile */
+    /* CONFIGURAÇÕES PARA DISPOSITIVOS MÓVEIS */
     @media (max-width: 768px) {
       .sidebar {
         display: none;
@@ -124,32 +124,70 @@
         padding: 20px;
       }
 
+      .footer-info {
+        display: none;
+      }
+
+      .footer-logo {
+        height: 100px !important;
+      }
+
+      .scroll-indicator {
+        display: none !important;
+      }
+
       .scroll-down {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 20px;
         animation: bounce 2s infinite;
         width: 48px;
         height: 48px;
+        margin-top: 20px;
       }
 
       .scroll-down svg {
         width: 100%;
         height: 100%;
+        stroke: white;
+        stroke-width: 2;
+        fill: none;
+        filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
       }
 
       .mobile-only {
         display: block;
       }
+
+      .top-menu {
+        background-color: white;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .menu-bar {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      .menu-bar li a {
+        text-decoration: none;
+        color: #000;
+        font-weight: 500;
+      }
+
+      .menu-bar li a:hover {
+        text-decoration: underline;
+      }
     }
 
-    /* Esconde a seta fora do mobile */
-    .mobile-only {
-      display: none;
-    }
-
-    /* Animação da seta */
     @keyframes bounce {
       0%, 100% {
         transform: translateY(0);
@@ -161,6 +199,19 @@
   </style>
 </head>
 <body>
+
+  <!-- MENU TOPO -->
+  <header class="top-menu">
+    <nav>
+      <ul class="menu-bar">
+        <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
+        <li><a href="/religiaocebrap/pesquisas/index.html">Pesquisas</a></li>
+        <li><a href="/religiaocebrap/em-debate.html">Em debate</a></li>
+        <li><a href="/religiaocebrap/contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <div class="content-wrapper">
     <div class="sidebar">
       <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="sidebar-logo">
@@ -189,9 +240,11 @@
     <div class="main-content">
       <div class="main-content-header" data-aos="fade-up">
         <h2 id="sobre">Sobre o Observatório</h2>
+
+        <!-- Seta branca com sombra (somente mobile) -->
         <a href="#sobre" class="scroll-down mobile-only">
           <svg viewBox="0 0 24 24">
-            <polyline points="6 9 12 15 18 9" fill="none" stroke="#000" stroke-width="2"/>
+            <polyline points="6 9 12 15 18 9" fill="none" />
           </svg>
         </a>
       </div>
