@@ -3,42 +3,91 @@ body {
   font-family: 'Lato', sans-serif;
   background-color: #fff;
   color: #000;
+  padding: 0;
+  opacity: 1;
+  transition: opacity 0.4s ease;
 }
 
-/* Transição ao carregar */
-.fade-in {
-  animation: fadeIn 1s ease-in-out;
+body.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+body.fade-out {
+  opacity: 0;
 }
 
 @keyframes fadeIn {
   from { opacity: 0; }
-  to   { opacity: 1; }
+  to { opacity: 1; }
 }
 
-/* Menu mobile */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.hero-logo {
+  width: 80vw;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.scroll-indicator {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 30px;
+  animation: pulse 2s infinite ease-in-out;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-indicator:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9));
+}
+
+.scroll-indicator svg {
+  stroke: white;
+  fill: none;
+  stroke-width: 8;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.7));
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
 .mobile-nav {
   background-color: #fff;
-  padding: 20px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 15px;
 }
 
 .mobile-nav ul {
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
   padding: 0;
   margin: 0;
 }
 
 .mobile-nav li {
-  margin-bottom: 10px;
+  position: relative;
 }
 
-.mobile-nav a,
-.submenu-toggle {
+.mobile-nav ul li a {
   text-decoration: none;
   color: #000;
   font-weight: 500;
-  font-size: 1em;
-  display: inline-block;
 }
 
 .submenu {
@@ -46,6 +95,7 @@ body {
   padding-left: 15px;
   list-style: none;
   margin-top: 6px;
+  flex-direction: column;
 }
 
 .submenu li {
@@ -58,34 +108,35 @@ body {
   font-family: 'Lato', sans-serif;
   font-size: 1em;
   padding: 0;
+  margin: 0;
+  font-weight: 500;
   cursor: pointer;
+  color: #000;
   text-align: left;
 }
 
-/* Conteúdo principal */
 .main-section {
-  padding: 24px;
-  line-height: 1.8;
-}
-
-.main-section h2 {
-  font-size: 1.4em;
-  margin-bottom: 16px;
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .main-section p {
-  margin-bottom: 18px;
+  line-height: 1.8;
 }
 
-/* Rodapé */
-.mobile-footer {
-  padding: 24px 0;
-  display: flex;
-  justify-content: center;
-  border-top: 1px solid #ddd;
+.main-section h1, .main-section h2 {
   margin-top: 30px;
 }
 
+.mobile-footer {
+  text-align: center;
+  padding: 40px 0 20px;
+  background-color: #fff;
+}
+
 .footer-logo {
-  height: 80px;
+  height: 90px;
+  opacity: 0.9;
 }
