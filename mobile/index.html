@@ -30,21 +30,33 @@
       color: #000;
       text-align: left;
     }
-
-    .scroll-indicator svg {
-      transform: rotate(90deg); /* seta apontando para baixo */
-    }
   </style>
 </head>
 <body class="fade-in">
-  
-
   <div class="hero-section">
     <img src="../static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" />
-    
   </div>
 
-  
+  <section id="sobre" class="main-section">
+    <nav class="mobile-nav">
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li>
+          <button class="submenu-toggle">Pesquisas</button>
+          <ul class="submenu">
+            <li><a href="#agro">Agrocristianismo</a></li>
+            <li><a href="#registros">Registros</a></li>
+            <li><a href="#representacoes">Representações</a></li>
+          </ul>
+        </li>
+        <li><a href="#em-debate">Em debate</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <h2>Sobre o Observatório</h2>
+    <p>O Observatório da Religião e Interseccionalidades é um grupo de pesquisa sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social no Brasil do Núcleo de Religiões no Mundo Contemporâneo do Cebrap.</p>
+  </section>
 
   <script>
     document.querySelectorAll('a').forEach(link => {
