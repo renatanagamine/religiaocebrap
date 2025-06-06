@@ -1,4 +1,4 @@
-/* ESCONDER MENU TOPO NO DESKTOP */
+/* ESCONDER MENU TOPO NO DESKTOP */ 
 .top-menu {
   display: none;
 }
@@ -8,10 +8,35 @@
   /* Mostra o menu topo e esconde o menu lateral */
   .top-menu {
     display: block;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
 
   .sidebar {
     display: none !important;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .main-content {
+    width: 100%;
+    padding: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footer-info {
+    display: none;
+  }
+
+  .footer-logo {
+    height: 100px !important;
   }
 
   .hero-section {
