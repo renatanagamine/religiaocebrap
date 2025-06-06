@@ -1,20 +1,39 @@
+/* ESCONDER MENU TOPO NO DESKTOP */
+.top-menu {
+  display: none;
+}
+
+/* MOSTRAR SOMENTE EM DISPOSITIVOS MÓVEIS */
 @media (max-width: 768px) {
-  /* 1. Esconde informações de endereço no rodapé, mantendo só a logo */
-  .footer-info {
-    display: none;
+  /* Mostra o menu topo e esconde o menu lateral */
+  .top-menu {
+    display: block;
   }
 
-  /* 2. Reduz a logo do Cebrap */
-  .footer-logo {
-    height: 100px !important;
+  .sidebar {
+    display: none !important;
   }
 
-  /* 3. Esconde seta lateral (scroll-indicator) */
+  .hero-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+  }
+
+  .hero-logo {
+    position: static;
+    width: 80vw;
+    max-width: 100%;
+    margin-top: 20px;
+    margin-bottom: 16px;
+  }
+
   .scroll-indicator {
     display: none !important;
   }
 
-  /* 3. Mostra seta para baixo centralizada */
   .scroll-down {
     display: flex;
     justify-content: center;
@@ -34,23 +53,19 @@
     filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
   }
 
-  /* 4. Menu horizontal simplificado */
-  .top-menu {
-    background-color: white;
-    border-bottom: 1px solid #ccc;
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
   .menu-bar {
     list-style: none;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 12px;
     justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 0;
+  }
+
+  .menu-bar > li {
+    position: relative;
   }
 
   .menu-bar li a {
@@ -59,7 +74,24 @@
     font-weight: 500;
   }
 
-  .menu-bar li a:hover {
-    text-decoration: underline;
+  .submenu-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .menu-bar li:focus-within .submenu-mobile,
+  .menu-bar li:hover .submenu-mobile {
+    display: flex;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
