@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Observatório da Religião e Interseccionalidades</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      background-color: white;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .hero-section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding-top: 60px;
+    }
+
+    .hero-logo {
+      max-width: 90%;
+      height: auto;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #f4f4f4;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 8px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong>Observatório</strong></div>
+    <nav>
+      <a href="#pesquisas">Pesquisas</a>
+      <a href="#em-debate">Em debate</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <div class="hero-section">
+    <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" data-aos="zoom-in" />
+  </div>
+
+  <section id="pesquisas" data-aos="fade-up">
+    <h2>Pesquisas</h2>
+    <p>Conheça nossas frentes de pesquisa: Agrocristianismo, Registros no tempo e Representações da religião.</p>
+    <a href="pesquisas.html" class="btn">Saiba mais</a>
+  </section>
+
+  <section id="em-debate" data-aos="fade-up">
+    <h2>Em debate</h2>
+    <p>Artigos de opinião, entrevistas e participações em eventos que conectam religião e interseccionalidades.</p>
+    <a href="emdebate.html" class="btn">Saiba mais</a>
+  </section>
+
+  <section id="contato" data-aos="fade-up">
+    <h2>Contato</h2>
+    <p>Entre em contato pelo email observatorio@exemplo.org ou acesse nosso <a href="https://github.com/renatanagamine/religiaocebrap" target="_blank">GitHub</a>.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Observatório da Religião e Interseccionalidades</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
