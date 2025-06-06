@@ -4,6 +4,21 @@ body {
   background-color: #fff;
   color: #000;
   padding: 0;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+body.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .hero-section {
@@ -22,40 +37,27 @@ body {
 .scroll-indicator {
   width: 60px;
   height: 60px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   animation: pulse 2s infinite ease-in-out;
   cursor: pointer;
-  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.4s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-decoration: none;
+  justify-content: center;
 }
 
 .scroll-indicator:hover {
   transform: scale(1.15);
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9));
-  opacity: 0.9;
 }
 
 .scroll-indicator svg {
   stroke: white;
   fill: none;
   stroke-width: 4;
-  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.7));
   width: 100%;
   height: 100%;
-}
-
-.scroll-label {
-  margin-top: 6px;
-  font-size: 0.9rem;
-  color: #000;
-  font-weight: 500;
-}
-
-.fade-out {
-  opacity: 0;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.7));
 }
 
 .main-section {
