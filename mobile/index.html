@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Observatório da Religião e Interseccionalidades</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="hero-section">
+    <img src="../static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" />
+    <a href="sobre.html" class="scroll-indicator" id="scrollLink" aria-label="Ir para a página Sobre">
+      <svg viewBox="0 0 24 24">
+        <path d="M8 5 L16 12 L8 19" />
+      </svg>
+    </a>
+  </div>
+
+  <script>
+    document.getElementById("scrollLink").addEventListener("click", function () {
+      this.classList.add("hidden");
+    });
+  </script>
+</body>
+</html>
