@@ -28,6 +28,7 @@
       background-color: #ffffff;
       padding: 26px 20px 25px 20px;
       box-sizing: border-box;
+      color: #000;
       border-right: 1px solid #ddd;
       display: flex;
       flex-direction: column;
@@ -95,8 +96,8 @@
     }
 
     h2, h3 {
-      margin-top: 0;
       color: #000;
+      margin-top: 0;
     }
 
     h3 {
@@ -132,16 +133,6 @@
       text-decoration: underline;
     }
 
-    .hidden {
-      display: none !important;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-    }
-
-    /* === MOBILE ONLY === */
     @media (max-width: 768px) {
       .sidebar {
         display: none;
@@ -212,16 +203,19 @@
       }
 
       .mobile-nav ul li ul {
-        display: none;
         margin-top: 5px;
         margin-left: 15px;
+        display: none;
       }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
     }
   </style>
 </head>
 <body>
-
-  <!-- LOGO E SETA MOBILE -->
   <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="mobile-logo" style="display:none;">
   <a href="/religiaocebrap/sobre.html" id="scrollLink" style="display:none;">
     <div class="scroll-indicator" id="scrollArrow">
@@ -231,7 +225,6 @@
     </div>
   </a>
 
-  <!-- MENU MOBILE -->
   <nav class="mobile-nav" style="display:none;">
     <ul>
       <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
@@ -250,7 +243,6 @@
     </ul>
   </nav>
 
-  <!-- CONTEÚDO PRINCIPAL -->
   <div class="content-wrapper">
     <div class="sidebar">
       <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="sidebar-logo">
@@ -296,7 +288,6 @@
     </div>
   </div>
 
-  <!-- RODAPÉ -->
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
       <img src="static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo">
@@ -319,9 +310,9 @@
     AOS.init();
 
     if (window.innerWidth <= 768) {
-      document.querySelector('.mobile-logo')?.style.display = 'block';
-      document.querySelector('#scrollLink')?.style.display = 'block';
-      document.querySelector('.mobile-nav')?.style.display = 'block';
+      document.querySelector('.mobile-logo').style.display = 'block';
+      document.querySelector('#scrollLink').style.display = 'block';
+      document.querySelector('.mobile-nav').style.display = 'block';
     }
 
     document.getElementById("scrollLink")?.addEventListener("click", function () {
@@ -329,7 +320,7 @@
     });
 
     document.querySelectorAll('.mobile-nav > ul > li > a').forEach(link => {
-      link.addEventListener('click', function (e) {
+      link.addEventListener('click', function(e) {
         const submenu = this.nextElementSibling;
         if (submenu && submenu.tagName === 'UL') {
           e.preventDefault();
