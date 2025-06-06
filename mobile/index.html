@@ -10,9 +10,10 @@
 
   <div class="hero-section">
     <img src="../static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" />
+
     <a href="sobre.html" class="scroll-indicator" id="scrollLink" aria-label="Ir para a página Sobre">
-      <svg viewBox="0 0 100 100">
-        <polyline points="20,40 50,70 80,40" stroke-width="8" />
+      <svg viewBox="0 0 24 24">
+        <path d="M8 5 L16 12 L8 19" />
       </svg>
     </a>
   </div>
@@ -23,7 +24,7 @@
       e.preventDefault();
       document.body.classList.add("fade-out");
       setTimeout(() => {
-        window.location.href = "sobre.html";
+        window.location.href = this.href;
       }, 400);
     });
   </script>
