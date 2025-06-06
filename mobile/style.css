@@ -3,8 +3,7 @@ body {
   font-family: 'Lato', sans-serif;
   background-color: #fff;
   color: #000;
-  text-align: left;
-  padding: 20px;
+  padding: 0;
 }
 
 .hero-section {
@@ -23,9 +22,20 @@ body {
 .scroll-indicator {
   width: 60px;
   height: 60px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   animation: pulse 2s infinite ease-in-out;
   cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.scroll-indicator:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9));
+  opacity: 0.9;
 }
 
 .scroll-indicator svg {
@@ -33,22 +43,54 @@ body {
   fill: none;
   stroke-width: 4;
   filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.7));
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-label {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #000;
+  font-weight: 500;
+}
+
+.fade-out {
+  opacity: 0;
 }
 
 .main-section {
+  padding: 20px;
   max-width: 700px;
   margin: 0 auto;
+  text-align: left;
 }
 
 h1, h2 {
   margin-top: 30px;
 }
 
-.hidden {
-  display: none !important;
-}
-
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.08); }
+}
+
+.mobile-nav {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 15px;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
 }

@@ -14,12 +14,18 @@
       <svg viewBox="0 0 24 24">
         <path d="M8 5 L16 12 L8 19" />
       </svg>
+      <span class="scroll-label">Sobre</span>
     </a>
   </div>
 
   <script>
-    document.getElementById("scrollLink").addEventListener("click", function () {
-      this.classList.add("hidden");
+    const link = document.getElementById("scrollLink");
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      link.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = "sobre.html";
+      }, 400);
     });
   </script>
 </body>
