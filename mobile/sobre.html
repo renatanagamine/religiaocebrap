@@ -14,6 +14,63 @@
       color: #000;
     }
 
+    .menu-toggle {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1100;
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #000;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 240px;
+      height: 100%;
+      background-color: #fff;
+      border-right: 1px solid #ddd;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+      z-index: 1000;
+      transition: left 0.3s ease;
+    }
+
+    .sidebar.open {
+      left: 0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar li {
+      margin: 10px 0;
+    }
+
+    .sidebar a, .submenu-toggle {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+      background: none;
+      border: none;
+      font-family: 'Lato', sans-serif;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .submenu {
+      display: none;
+      list-style: none;
+      padding-left: 15px;
+      margin-top: 5px;
+    }
+
     .hero-section {
       display: flex;
       flex-direction: column;
@@ -57,59 +114,14 @@
       height: 90px;
       opacity: 0.9;
     }
-
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 240px;
-      height: 100%;
-      background-color: #fff;
-      border-right: 1px solid #ddd;
-      padding: 20px;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-      z-index: 1000;
-    }
-
-    .sidebar h2 {
-      margin-top: 0;
-    }
-
-    .sidebar ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .sidebar li {
-      margin: 10px 0;
-    }
-
-    .sidebar a {
-      text-decoration: none;
-      color: #000;
-      font-weight: 500;
-    }
-
-    .submenu {
-      display: none;
-      list-style: none;
-      padding-left: 15px;
-      margin-top: 5px;
-    }
-
-    .submenu-toggle {
-      background: none;
-      border: none;
-      padding: 0;
-      font-size: 1em;
-      cursor: pointer;
-      font-family: 'Lato', sans-serif;
-      color: #000;
-    }
   </style>
 </head>
 <body>
-  <div class="sidebar">
+  <button class="menu-toggle" onclick="toggleSidebar()">
+    &#9776;
+  </button>
+
+  <div class="sidebar" id="sidebar">
     <ul>
       <li><a href="index.html">Início</a></li>
       <li><a href="sobre.html">Sobre</a></li>
@@ -146,6 +158,10 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
+
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
 
     function toggleSubmenu() {
       const submenu = document.getElementById('submenu');
