@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sobre - Observatório</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="estilos.css"> <!-- Seu CSS separado -->
+  <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
 
-  <!-- Botão do menu hambúrguer -->
+  <!-- Botão do menu hamburguer -->
   <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
 
   <!-- Sidebar -->
@@ -47,15 +47,18 @@
     </a>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Script -->
   <script>
     function toggleSidebar() {
-      document.getElementById("sidebar").classList.toggle("open");
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
     }
 
     function toggleSubmenu() {
-      document.getElementById("submenu").classList.toggle("open");
+      const submenu = document.getElementById('submenu');
+      submenu.classList.toggle('open');
     }
   </script>
+
 </body>
 </html>
