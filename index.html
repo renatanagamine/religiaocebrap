@@ -15,11 +15,6 @@
     .hero-section {
       position: relative;
       height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
     }
 
     .hero-logo {
@@ -59,13 +54,16 @@
       }
     }
 
-    /* Escondido por padrão */
-    .mobile-only {
-      display: none;
-    }
-
-    /* RESPONSIVO PARA DISPOSITIVOS MÓVEIS */
+    /* Apenas para mobile */
     @media (max-width: 768px) {
+      .hero-section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: flex;
+      }
+
       .hero-logo {
         position: static;
         width: 80vw;
@@ -74,7 +72,7 @@
       }
 
       .scroll-indicator {
-        display: none;
+        display: none !important;
       }
 
       .scroll-down {
@@ -90,11 +88,48 @@
       .scroll-down svg {
         width: 100%;
         height: 100%;
+        stroke: white;
+        stroke-width: 2;
+        fill: none;
+        filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
       }
 
       .mobile-only {
         display: block;
       }
+
+      .top-menu {
+        background-color: white;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .menu-bar {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      .menu-bar li a {
+        text-decoration: none;
+        color: #000;
+        font-weight: 500;
+      }
+
+      .menu-bar li a:hover {
+        text-decoration: underline;
+      }
+    }
+
+    /* Esconde por padrão */
+    .mobile-only {
+      display: none;
     }
 
     @keyframes bounce {
@@ -109,20 +144,32 @@
 </head>
 <body>
 
+  <!-- Menu fixo no topo -->
+  <header class="top-menu">
+    <nav>
+      <ul class="menu-bar">
+        <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
+        <li><a href="/religiaocebrap/pesquisas/index.html">Pesquisas</a></li>
+        <li><a href="/religiaocebrap/em-debate.html">Em debate</a></li>
+        <li><a href="/religiaocebrap/contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <div class="hero-section">
     <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" />
 
-    <!-- Seta lateral grande (escondida no mobile) -->
+    <!-- Seta lateral para desktop -->
     <a href="sobre.html" class="scroll-indicator" aria-label="Ir para a página Sobre">
       <svg viewBox="0 0 24 24">
         <path d="M8 5 L16 12 L8 19" />
       </svg>
     </a>
 
-    <!-- Seta para baixo (só no mobile) -->
+    <!-- Seta para baixo para mobile -->
     <a href="sobre.html" class="scroll-down mobile-only" aria-label="Ir para a página Sobre">
       <svg viewBox="0 0 24 24">
-        <polyline points="6 9 12 15 18 9" fill="none" stroke="#000" stroke-width="2"/>
+        <polyline points="6 9 12 15 18 9" fill="none" stroke="#fff" stroke-width="2"/>
       </svg>
     </a>
   </div>
