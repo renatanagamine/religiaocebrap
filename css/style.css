@@ -31,8 +31,8 @@ body {
   position: absolute;
   bottom: 60px;
   animation: bounce 2s infinite;
-  left: 50%;
-  transform: translateX(-50%);
+  inset-inline: 0;
+  margin-inline: auto;
   width: 90px;
   height: 90px;
 }
@@ -43,7 +43,7 @@ body {
   left: 0;
   width: 90px;
   height: 90px;
-  stroke: #000; /* ALTERAÇÃO: setas pretas */
+  stroke: #000;
   stroke-width: 2;
   fill: none;
   display: block;
@@ -51,10 +51,10 @@ body {
 
 @keyframes bounce {
   0%, 100% {
-    transform: translate(-50%, 0);
+    transform: translateY(0);
   }
   50% {
-    transform: translate(-50%, -10px);
+    transform: translateY(-10px);
   }
 }
 
@@ -141,7 +141,6 @@ body {
 }
 
 /* RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS */
-
 @media (max-width: 768px) {
   .hero-logo {
     width: 80vw;
