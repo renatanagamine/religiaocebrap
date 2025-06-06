@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
@@ -112,6 +112,52 @@
     a.footer-link:hover {
       text-decoration: underline;
     }
+
+    /* Apenas no mobile */
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      .main-content {
+        width: 100%;
+        padding: 20px;
+      }
+
+      .scroll-down {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        animation: bounce 2s infinite;
+        width: 48px;
+        height: 48px;
+      }
+
+      .scroll-down svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .mobile-only {
+        display: block;
+      }
+    }
+
+    /* Esconde a seta fora do mobile */
+    .mobile-only {
+      display: none;
+    }
+
+    /* Animação da seta */
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
   </style>
 </head>
 <body>
@@ -142,7 +188,12 @@
 
     <div class="main-content">
       <div class="main-content-header" data-aos="fade-up">
-        <h2>Sobre o Observatório</h2>
+        <h2 id="sobre">Sobre o Observatório</h2>
+        <a href="#sobre" class="scroll-down mobile-only">
+          <svg viewBox="0 0 24 24">
+            <polyline points="6 9 12 15 18 9" fill="none" stroke="#000" stroke-width="2"/>
+          </svg>
+        </a>
       </div>
 
       <h3 data-aos="fade-up" data-aos-delay="100">Quem somos</h3>
