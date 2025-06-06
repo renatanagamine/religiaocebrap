@@ -15,24 +15,26 @@
     }
 
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #fff;
-      border-bottom: 1px solid #ddd;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      z-index: 1000;
-    }
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 1000;
+}
 
     nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
+  margin: 0 8px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  white-space: nowrap;
+}
 
     .hero-section {
       height: 100vh;
@@ -100,7 +102,7 @@
 </head>
 <body>
   <header>
-    <div><strong>Observatório</strong></div>
+    <div><a href="https://cebrap.org.br/" target="_blank" style="text-decoration: none; color: #000;"><strong>Cebrap</strong></a></div>
     <nav>
       <a href="#sobre">Sobre</a>
       <a href="#pesquisas">Pesquisas</a>
