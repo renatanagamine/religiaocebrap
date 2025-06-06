@@ -54,21 +54,41 @@
       }
     }
 
-    /* Apenas para mobile */
+    /* ESCONDE O MENU TOPO POR PADRÃO */
+    .top-menu {
+      display: none;
+    }
+
+    /* APENAS PARA MOBILE */
     @media (max-width: 768px) {
+      .top-menu {
+        display: block;
+        background-color: white;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .sidebar {
+        display: none !important;
+      }
+
       .hero-section {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        text-align: center;
         display: flex;
+        text-align: center;
       }
 
       .hero-logo {
         position: static;
         width: 80vw;
         max-width: 100%;
-        margin-bottom: 20px;
+        margin-top: 20px;
+        margin-bottom: 16px;
       }
 
       .scroll-indicator {
@@ -94,26 +114,19 @@
         filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
       }
 
-      .mobile-only {
-        display: block;
-      }
-
-      .top-menu {
-        background-color: white;
-        border-bottom: 1px solid #ccc;
-        padding: 10px 20px;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
-
       .menu-bar {
         list-style: none;
         display: flex;
-        gap: 20px;
+        flex-direction: column;
+        gap: 12px;
         justify-content: center;
+        align-items: center;
         margin: 0;
         padding: 0;
+      }
+
+      .menu-bar > li {
+        position: relative;
       }
 
       .menu-bar li a {
@@ -122,14 +135,17 @@
         font-weight: 500;
       }
 
-      .menu-bar li a:hover {
-        text-decoration: underline;
+      .submenu-mobile {
+        display: none;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 8px;
       }
-    }
 
-    /* Esconde por padrão */
-    .mobile-only {
-      display: none;
+      .menu-bar li:focus-within .submenu-mobile,
+      .menu-bar li:hover .submenu-mobile {
+        display: flex;
+      }
     }
 
     @keyframes bounce {
@@ -144,30 +160,38 @@
 </head>
 <body>
 
-  <!-- Menu fixo no topo -->
+  <!-- MENU SUPERIOR (VISÍVEL SÓ NO MOBILE) -->
   <header class="top-menu">
     <nav>
       <ul class="menu-bar">
         <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
-        <li><a href="/religiaocebrap/pesquisas/index.html">Pesquisas</a></li>
+        <li tabindex="0">
+          <a href="/religiaocebrap/pesquisas/index.html">Pesquisas ▾</a>
+          <ul class="submenu-mobile">
+            <li><a href="/religiaocebrap/pesquisas/agrocristianismo.html">Agrocristianismo</a></li>
+            <li><a href="/religiaocebrap/pesquisas/registros.html">Registros no tempo</a></li>
+            <li><a href="/religiaocebrap/pesquisas/representacao.html">Representações</a></li>
+          </ul>
+        </li>
         <li><a href="/religiaocebrap/em-debate.html">Em debate</a></li>
         <li><a href="/religiaocebrap/contato.html">Contato</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- CONTEÚDO PRINCIPAL -->
   <div class="hero-section">
     <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" />
 
-    <!-- Seta lateral para desktop -->
+    <!-- SETA LATERAL PARA DESKTOP -->
     <a href="sobre.html" class="scroll-indicator" aria-label="Ir para a página Sobre">
       <svg viewBox="0 0 24 24">
         <path d="M8 5 L16 12 L8 19" />
       </svg>
     </a>
 
-    <!-- Seta para baixo para mobile -->
-    <a href="sobre.html" class="scroll-down mobile-only" aria-label="Ir para a página Sobre">
+    <!-- SETA PARA BAIXO (SÓ NO MOBILE) -->
+    <a href="sobre.html" class="scroll-down" aria-label="Ir para a página Sobre">
       <svg viewBox="0 0 24 24">
         <polyline points="6 9 12 15 18 9" fill="none" stroke="#fff" stroke-width="2"/>
       </svg>
