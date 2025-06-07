@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registros no tempo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Lato', sans-serif;
-      background-color: #fff;
+      background-color: white;
       color: #000;
       scroll-behavior: smooth;
     }
@@ -21,15 +21,15 @@
       width: 100%;
       background-color: #fff;
       border-bottom: 1px solid #ddd;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 40px;
       z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
     }
 
     .logo {
-      height: 56px;
+      height: 90px;
     }
 
     nav {
@@ -50,19 +50,72 @@
       background-color: #f5f5f5;
     }
 
-    main {
-      padding: 160px 20px 60px;
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+      z-index: 1001;
+      min-width: 200px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 16px;
+      color: #333;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f5f5f5;
+    }
+
+    .hero-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 160px;
+      padding-bottom: 80px;
+      text-align: center;
+    }
+
+    .hero-logo {
+      max-width: 700px;
+      width: 90%;
+      height: auto;
+    }
+
+    section {
+      padding: 40px 20px;
       max-width: 800px;
       margin: 0 auto;
-      line-height: 1.8;
     }
 
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
     }
 
-    p {
+    section h3 {
+      margin-top: 40px;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.9;
       margin-bottom: 20px;
     }
 
@@ -73,7 +126,6 @@
       justify-content: space-between;
       align-items: center;
       font-size: 0.95rem;
-      border-top: 1px solid #ddd;
     }
 
     footer img {
@@ -86,20 +138,21 @@
     }
 
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
       nav {
         flex-wrap: wrap;
         justify-content: center;
         gap: 16px;
-        padding-top: 10px;
       }
+
+      .hero-logo {
+        max-width: 90%;
+      }
+
       footer {
         flex-direction: column;
         text-align: center;
       }
+
       footer p {
         margin-top: 20px;
         text-align: center;
@@ -114,24 +167,44 @@
     </a>
     <nav>
       <a href="/religiaocebrap/sobre.html">Sobre</a>
-      <a href="/religiaocebrap/pesquisas/index.html">Pesquisas</a>
+      <div class="dropdown">
+        <a href="/religiaocebrap/pesquisas/index.html">Pesquisas</a>
+        <div class="dropdown-content">
+          <div class="dropdown">
+            <a href="/religiaocebrap/pesquisas/agrocristianismo.html">Agrocristianismo ▸</a>
+            <div class="dropdown-content" style="left: 100%; top: 0;">
+              <a href="/religiaocebrap/pesquisas/aglom.html">Aglomerações religiosas</a>
+              <a href="/religiaocebrap/pesquisas/classificacao.html">Classificação de organizações</a>
+            </div>
+          </div>
+          <a href="/religiaocebrap/pesquisas/registros.html">Registros no tempo</a>
+          <a href="/religiaocebrap/pesquisas/representacao.html">Representações da religião</a>
+        </div>
+      </div>
       <a href="/religiaocebrap/em-debate.html">Em debate</a>
       <a href="/religiaocebrap/contato.html">Contato</a>
     </nav>
   </header>
 
-  <main>
-    <h2 data-aos="fade-up">Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</h2>
-    <p data-aos="fade-up" data-aos-delay="100"><strong>Coordenação:</strong> Renata Nagamine<br>
+  <div class="hero-section">
+    <img src="/religiaocebrap/static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" data-aos="zoom-in" />
+  </div>
+
+  <section data-aos="fade-up">
+    <h2>Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</h2>
+    <p><strong>Coordenação:</strong> Renata Nagamine<br>
     <strong>Pesquisadoras:</strong> Olívia Barbosa, Paula Montero, Renata Nagamine e Camila Nicácio<br>
     <strong>Duração:</strong> maio de 2025 a outubro de 2026</p>
 
-    <p data-aos="fade-up" data-aos-delay="200">Formas semióticas como antifeminismo, homoafetividade, intolerância religiosa, racismo religioso e racismo ambiental se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público. Nosso interesse é compreender de que modo os termos que selecionamos foram usados para conectar contextos de enunciação a um contexto social em transformação.</p>
+    <h3>Objetivo</h3>
+    <p>Formas semióticas como antifeminismo, homoafetividade, intolerância religiosa, racismo religioso e racismo ambiental se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público. Nosso interesse é compreender de que modo os termos que selecionamos foram usados para conectar contextos de enunciação a um contexto social em transformação.</p>
 
-    <p data-aos="fade-up" data-aos-delay="300">Sabemos de trabalhos anteriores que as formas selecionadas se relacionam com práticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos desses registros na vida sócio-política brasileira. Teremos em mente as seguintes perguntas: Como o agenciamento desses termos conecta religioso e público no Brasil? Como religioso e público se configuram no contexto em que eles são agenciados?</p>
+    <h3>Questões de pesquisa</h3>
+    <p>Sabemos de trabalhos anteriores que as formas selecionadas se relacionam com práticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos desses registros na vida sócio-política brasileira. Teremos em mente as seguintes perguntas: Como o agenciamento desses termos conecta religioso e público no Brasil? Como religioso e público se configuram no contexto em que eles são agenciados?</p>
 
-    <p data-aos="fade-up" data-aos-delay="400">Para responder as perguntas acima, analisaremos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como elaborada pela literatura antropológica sobre semática. Segundo esta literatura, registros são formas linguísticas criadas na comunicação e agenciadas como rótulos nas interações sociais, com a produção de efeitos práticos. São artefatos que indexam e classificam signos. Uma análise dos usos de registros implica perceber como seu agenciamento tipifica pessoas, com a produção de estereótipos, classifica e ordena sujeitos, discursos e performances reunidos sob um nome. Implica perceber, igualmente, como essas formas conectam domínios de ação e transferem autoridade.</p>
-  </main>
+    <h3>Material e método</h3>
+    <p>Para responder as perguntas acima, analisaremos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como elaborada pela literatura antropológica sobre semática. Segundo esta literatura, registros são formas linguísticas criadas na comunicação e agenciadas como rótulos nas interações sociais, com a produção de efeitos práticos. São artefatos que indexam e classificam signos. Uma análise dos usos de registros implica perceber como seu agenciamento tipifica pessoas, com a produção de estereótipos, classifica e ordena sujeitos, discursos e performances reunidos sob um nome. Implica perceber, igualmente, como essas formas conectam domínios de ação e transferem autoridade.</p>
+  </section>
 
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
