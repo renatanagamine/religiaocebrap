@@ -14,64 +14,58 @@
       color: #000;
       scroll-behavior: smooth;
     }
+
     header {
       position: fixed;
       top: 0;
       width: 100%;
       background-color: #fff;
       border-bottom: 1px solid #ddd;
-      z-index: 1000;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       padding: 10px 40px;
+      z-index: 1000;
     }
+
     .logo {
-      height: 60px;
+      height: 56px;
     }
+
     nav {
       display: flex;
       gap: 40px;
     }
+
     nav a {
       text-decoration: none;
       color: #333;
       font-weight: 500;
-      white-space: nowrap;
       padding: 6px 12px;
       border-radius: 4px;
       transition: background-color 0.2s ease-in-out;
     }
+
     nav a:hover {
       background-color: #f5f5f5;
     }
-    .hero-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding-top: 140px;
-      padding-bottom: 60px;
-      text-align: center;
-    }
-    .hero-logo {
+
+    main {
+      padding: 160px 20px 60px;
       max-width: 800px;
-      height: auto;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
       margin: 0 auto;
+      line-height: 1.8;
     }
-    section h2 {
-      font-size: 2rem;
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    p {
       margin-bottom: 20px;
     }
-    section p {
-      font-size: 1.1rem;
-      line-height: 1.9;
-      margin-bottom: 20px;
-    }
+
     footer {
       padding: 20px 40px;
       background-color: #f4f4f4;
@@ -79,22 +73,28 @@
       justify-content: space-between;
       align-items: center;
       font-size: 0.95rem;
+      border-top: 1px solid #ddd;
     }
+
     footer img {
       height: 110px;
     }
+
     footer p {
       margin: 0;
       text-align: right;
     }
+
     @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
       nav {
         flex-wrap: wrap;
         justify-content: center;
         gap: 16px;
-      }
-      .hero-logo {
-        max-width: 90%;
+        padding-top: 10px;
       }
       footer {
         flex-direction: column;
@@ -109,7 +109,9 @@
 </head>
 <body>
   <header>
-    <a href="/religiaocebrap/index.html"><img src="/religiaocebrap/static/observatorio-logo.jpg" alt="Logo Observatório" class="logo"></a>
+    <a href="/religiaocebrap/index.html">
+      <img src="/religiaocebrap/static/observatorio-logo.jpg" alt="Logo Observatório" class="logo">
+    </a>
     <nav>
       <a href="/religiaocebrap/sobre.html">Sobre</a>
       <a href="/religiaocebrap/pesquisas/index.html">Pesquisas</a>
@@ -118,19 +120,18 @@
     </nav>
   </header>
 
-  <div class="hero-section">
-    <img src="/religiaocebrap/static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" data-aos="zoom-in" />
-  </div>
+  <main>
+    <h2 data-aos="fade-up">Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</h2>
+    <p data-aos="fade-up" data-aos-delay="100"><strong>Coordenação:</strong> Renata Nagamine<br>
+    <strong>Pesquisadoras:</strong> Olívia Barbosa, Paula Montero, Renata Nagamine e Camila Nicácio<br>
+    <strong>Duração:</strong> maio de 2025 a outubro de 2026</p>
 
-  <section data-aos="fade-up">
-    <h2>Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</h2>
-    <p><strong>Coordenação:</strong> Renata Nagamine<br>
-      <strong>Pesquisadoras:</strong> Olívia Barbosa, Paula Montero, Renata Nagamine e Camila Nicácio<br>
-      <strong>Duração:</strong> maio de 2025 a outubro de 2026</p>
-    <p>Formas semióticas como antifeminismo, homoafetividade, intolerância religiosa, racismo religioso e racismo ambiental se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público. Nosso interesse é compreender de que modo os termos que selecionamos foram usados para conectar contextos de enunciação a um contexto social em transformação.</p>
-    <p>Sabemos de trabalhos anteriores que as formas selecionadas se relacionam com práticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos desses registros na vida sócio-política brasileira. Teremos em mente as seguintes perguntas: Como o agenciamento desses termos conecta religioso e público no Brasil? Como religioso e público se configuram no contexto em que eles são agenciados?</p>
-    <p>Para responder as perguntas acima, analisaremos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como elaborada pela literatura antropológica sobre semática. Segundo esta literatura, registros são formas linguísticas criadas na comunicação e agenciadas como rótulos nas interações sociais, com a produção de efeitos práticos. São artefatos que indexam e classificam signos. Uma análise dos usos de registros implica perceber como seu agenciamento tipifica pessoas, com a produção de estereótipos, classifica e ordena sujeitos, discursos e performances reunidos sob um nome. Implica perceber, igualmente, como essas formas conectam domínios de ação e transferem autoridade.</p>
-  </section>
+    <p data-aos="fade-up" data-aos-delay="200">Formas semióticas como antifeminismo, homoafetividade, intolerância religiosa, racismo religioso e racismo ambiental se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público. Nosso interesse é compreender de que modo os termos que selecionamos foram usados para conectar contextos de enunciação a um contexto social em transformação.</p>
+
+    <p data-aos="fade-up" data-aos-delay="300">Sabemos de trabalhos anteriores que as formas selecionadas se relacionam com práticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos desses registros na vida sócio-política brasileira. Teremos em mente as seguintes perguntas: Como o agenciamento desses termos conecta religioso e público no Brasil? Como religioso e público se configuram no contexto em que eles são agenciados?</p>
+
+    <p data-aos="fade-up" data-aos-delay="400">Para responder as perguntas acima, analisaremos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como elaborada pela literatura antropológica sobre semática. Segundo esta literatura, registros são formas linguísticas criadas na comunicação e agenciadas como rótulos nas interações sociais, com a produção de efeitos práticos. São artefatos que indexam e classificam signos. Uma análise dos usos de registros implica perceber como seu agenciamento tipifica pessoas, com a produção de estereótipos, classifica e ordena sujeitos, discursos e performances reunidos sob um nome. Implica perceber, igualmente, como essas formas conectam domínios de ação e transferem autoridade.</p>
+  </main>
 
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
