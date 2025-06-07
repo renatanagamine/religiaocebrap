@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
@@ -15,26 +15,26 @@
     }
 
     header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 10px 40px;
-  z-index: 1000;
-  gap: 40px;
-}
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 10px 40px;
+      z-index: 1000;
+      gap: 40px;
+    }
 
     nav a {
-  margin: 0 8px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  white-space: nowrap;
-}
+      margin: 0 8px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      white-space: nowrap;
+    }
 
     .hero-section {
       height: 100vh;
@@ -63,9 +63,9 @@
     }
 
     section p {
-  font-size: 1.1rem;
-  line-height: 1.9;
-}
+      font-size: 1.1rem;
+      line-height: 1.9;
+    }
 
     .btn {
       display: inline-block;
@@ -85,10 +85,10 @@
 
     @media (max-width: 768px) {
       nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
 
       nav a {
         margin: 8px 0;
@@ -98,7 +98,8 @@
         max-width: 80%;
       }
     }
-      .dropdown {
+
+    .dropdown {
       position: relative;
       display: inline-block;
     }
@@ -129,54 +130,75 @@
       display: block;
     }
 
-    nav {
-  margin-left: 60px;
+    .dropdown-content .dropdown {
+      position: relative;
     }
-</style>
+
+    .dropdown-content .dropdown-content {
+      top: 0;
+      left: 100%;
+      position: absolute;
+      display: none;
+    }
+
+    .dropdown-content .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    nav {
+      margin-left: 60px;
+    }
+  </style>
 </head>
 <body>
   <header>
-  <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-    <a href="https://cebrap.org.br/" target="_blank" style="padding-left: 0;">
-      <img src="static/cebrap-logo.png" alt="Logo Cebrap" style="height: 84px; display: block;">
-    </a>
-    <nav style="padding-right: 60px; display: flex; gap: 16px;">
-      <a href="sobre.html">Sobre</a>
-      <div class="dropdown">
-        <a href="pesquisas.html">Pesquisas</a>
-        <div class="dropdown-content">
-          <a href="agrocristianismo.html">Agrocristianismo</a>
-          <a href="registros.html">Registros no tempo</a>
-          <a href="representacoes.html">Representações da religião</a>
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <a href="https://cebrap.org.br/" target="_blank" style="padding-left: 0;">
+        <img src="static/cebrap-logo.png" alt="Logo Cebrap" style="height: 84px; display: block;">
+      </a>
+      <nav style="padding-right: 60px; display: flex; gap: 16px;">
+        <a href="sobre.html">Sobre</a>
+        <div class="dropdown">
+          <a href="#">Pesquisas</a>
+          <div class="dropdown-content">
+            <div class="dropdown">
+              <a href="agrocristianismo.html">Agrocristianismo ▸</a>
+              <div class="dropdown-content">
+                <a href="aglom.html">Aglomerações religiosas</a>
+                <a href="classificacao.html">Classificação de organizações</a>
+              </div>
+            </div>
+            <a href="registros.html">Registros no tempo</a>
+            <a href="representacao.html">Representações da religião</a>
+          </div>
         </div>
-      </div>
-      <a href="emdebate.html">Em debate</a>
-      <a href="contato.html">Contato</a>
-    </nav>
-  </div>
-</header>
+        <a href="emdebate.html">Em debate</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+    </div>
+  </header>
 
   <div class="hero-section" style="padding-top: 0;">
     <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" data-aos="zoom-in" />
   </div>
 
   <section id="sobre" data-aos="fade-up">
-  <h2>Sobre</h2>
-  <p>O Observatório da Religião e Interseccionalidades reúne pesquisas que analisam o papel da religião em contextos sociais diversos, buscando compreender seus cruzamentos com questões políticas, de gênero, raça e outras dimensões da vida pública.</p>
-  <p>Trata-se de um espaço de articulação entre pesquisadores/as de diferentes formações, instituições e trajetórias, interessados/as em compreender como a religião é mobilizada em disputas políticas no Brasil contemporâneo.</p>
-  <p>Produzindo e analisando dados, o Observatório contribui para a reflexão crítica sobre o lugar da religião na ação social e na produção de desigualdades no Brasil.</p>
-  <a href="sobre.html" class="btn">Saiba mais</a>
-</section>
+    <h2>Sobre</h2>
+    <p>O Observatório da Religião e Interseccionalidades reúne pesquisas que analisam o papel da religião em contextos sociais diversos, buscando compreender seus cruzamentos com questões políticas, de gênero, raça e outras dimensões da vida pública.</p>
+    <p>Trata-se de um espaço de articulação entre pesquisadores/as de diferentes formações, instituições e trajetórias, interessados/as em compreender como a religião é mobilizada em disputas políticas no Brasil contemporâneo.</p>
+    <p>Produzindo e analisando dados, o Observatório contribui para a reflexão crítica sobre o lugar da religião na ação social e na produção de desigualdades no Brasil.</p>
+    <a href="sobre.html" class="btn">Saiba mais</a>
+  </section>
 
   <section id="pesquisas" data-aos="fade-up">
-  <h2>Pesquisas</h2>
-  <p>Conheça nossas frentes de pesquisa:</p>
-  <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-    <a href="agrocristianismo.html" class="btn" style="width: fit-content;">Agrocristianismo</a>
-    <a href="registros.html" class="btn" style="width: fit-content;">Registros no tempo</a>
-    <a href="representacoes.html" class="btn" style="width: fit-content;">Representações da religião</a>
-  </div>
-</section>
+    <h2>Pesquisas</h2>
+    <p>Conheça nossas frentes de pesquisa:</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+      <a href="agrocristianismo.html" class="btn" style="width: fit-content;">Agrocristianismo</a>
+      <a href="registros.html" class="btn" style="width: fit-content;">Registros no tempo</a>
+      <a href="representacao.html" class="btn" style="width: fit-content;">Representações da religião</a>
+    </div>
+  </section>
 
   <section id="em-debate" data-aos="fade-up">
     <h2>Em debate</h2>
