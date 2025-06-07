@@ -43,7 +43,7 @@
       justify-content: center;
       flex-direction: column;
       text-align: center;
-      padding-top: 40px;
+      padding-top: 20px;
     }
 
     .hero-logo {
@@ -78,9 +78,21 @@
     }
 
     footer {
-      text-align: center;
-      padding: 40px 20px;
+      padding: 20px 40px;
       background-color: #f4f4f4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    footer img {
+      height: 90px;
+    }
+
+    footer p {
+      margin: 0;
+      text-align: right;
     }
 
     @media (max-width: 768px) {
@@ -96,6 +108,16 @@
 
       .hero-logo {
         max-width: 80%;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      footer p {
+        text-align: center;
+        margin-top: 20px;
       }
     }
 
@@ -213,19 +235,16 @@
 
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
-      <img src="static/cebrap-logo.png" alt="Logo Cebrap" style="height: 140px; margin-left: -45px;">
+      <img src="static/cebrap-logo.png" alt="Logo Cebrap">
     </a>
-    <div style="margin-left: 20px; text-align: left;">
-      <p>
-        <a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;"><strong>CEBRAP</strong></a><br>
-        R. Morgado de Mateus, 615<br>
-        Vila Mariana, São Paulo – SP, Brazil<br>
-        CEP 04015-051<br>
-        (11) 5574 0399<br>
-        (11) 5574 5928<br>
-        <a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">Contato</a>
-      </p>
-    </div>
+    <p>
+      <strong><a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">CEBRAP</a></strong><br>
+      R. Morgado de Mateus, 615<br>
+      Vila Mariana, São Paulo – SP, Brazil<br>
+      CEP 04015-051<br>
+      (11) 5574 0399 | (11) 5574 5928<br>
+      <a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">Contato</a>
+    </p>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
