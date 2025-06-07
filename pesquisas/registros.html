@@ -15,40 +15,106 @@
     }
 
     header {
+      position: fixed;
+      top: 0;
       width: 100%;
       background-color: #fff;
       border-bottom: 1px solid #ddd;
-      padding: 16px 0;
+      z-index: 1000;
+    }
+
+    nav {
       display: flex;
       justify-content: center;
       align-items: center;
+      gap: 40px;
+      padding: 20px 0;
+    }
+
+    nav a {
+      margin: 0 8px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      white-space: nowrap;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    nav a:hover,
+    .dropdown-content a:hover {
+      background-color: #f5f5f5;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      flex-direction: column;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+      border-radius: 4px;
+    }
+
+    .dropdown:hover > .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+    }
+
+    .dropdown-content .dropdown:hover > .dropdown-content {
+      display: block;
+    }
+
+    .hero-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 200px;
+      padding-bottom: 100px;
+      text-align: center;
     }
 
     .hero-logo {
-      max-width: 320px;
+      max-width: 700px;
       height: auto;
     }
 
-    main {
+    section {
       padding: 80px 20px;
       max-width: 800px;
       margin: 0 auto;
     }
 
-    section {
-      margin-bottom: 60px;
-    }
-
-    h2 {
+    section h2 {
       font-size: 2rem;
       margin-bottom: 20px;
-      color: #000;
     }
 
-    p {
+    section p {
       font-size: 1.1rem;
       line-height: 1.9;
-      color: #000;
     }
 
     footer {
@@ -70,6 +136,16 @@
     }
 
     @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      nav a {
+        margin: 8px 0;
+      }
+
       .hero-logo {
         max-width: 80%;
       }
@@ -88,29 +164,40 @@
 </head>
 <body>
   <header>
-    <img src="/religiaocebrap/static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" data-aos="zoom-in" />
+    <nav>
+      <a href="/religiaocebrap/sobre.html">Sobre</a>
+      <div class="dropdown">
+        <a href="#">Pesquisas</a>
+        <div class="dropdown-content">
+          <div class="dropdown">
+            <a href="/religiaocebrap/pesquisas/agrocristianismo.html">Agrocristianismo ▸</a>
+            <div class="dropdown-content">
+              <a href="/religiaocebrap/pesquisas/aglom.html">Aglomerações religiosas</a>
+              <a href="/religiaocebrap/pesquisas/classificacao.html">Classificação de organizações</a>
+            </div>
+          </div>
+          <a href="/religiaocebrap/pesquisas/registros.html">Registros no tempo</a>
+          <a href="/religiaocebrap/pesquisas/representacao.html">Representações da religião</a>
+        </div>
+      </div>
+      <a href="/religiaocebrap/em-debate.html">Em debate</a>
+      <a href="/religiaocebrap/contato.html">Contato</a>
+    </nav>
   </header>
 
-  <main>
-    <section data-aos="fade-up">
-      <h2>Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</h2>
-      <p><strong>Coordenação:</strong> Renata Nagamine<br>
+  <div class="hero-section">
+    <img src="/religiaocebrap/static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" data-aos="zoom-in" />
+  </div>
+
+  <section id="registros" data-aos="fade-up">
+    <h2>Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</h2>
+    <p><strong>Coordenação:</strong> Renata Nagamine<br>
       <strong>Pesquisadoras:</strong> Olívia Barbosa, Paula Montero, Renata Nagamine e Camila Nicácio<br>
       <strong>Duração:</strong> maio de 2025 a outubro de 2026</p>
-    </section>
-
-    <section data-aos="fade-up" data-aos-delay="100">
-      <p>Formas semióticas como antifeminismo, homoafetividade, intolerância religiosa, racismo religioso e racismo ambiental se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público. Nosso interesse é compreender de que modo os termos que selecionamos foram usados para conectar contextos de enunciação a um contexto social em transformação.</p>
-    </section>
-
-    <section data-aos="fade-up" data-aos-delay="200">
-      <p>Sabemos de trabalhos anteriores que as formas selecionadas se relacionam com práticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos desses registros na vida sócio-política brasileira. Teremos em mente as seguintes perguntas: Como o agenciamento desses termos conecta religioso e público no Brasil? Como religioso e público se configuram no contexto em que eles são agenciados?</p>
-    </section>
-
-    <section data-aos="fade-up" data-aos-delay="300">
-      <p>Para responder as perguntas acima, analisaremos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como elaborada pela literatura antropológica sobre semiótica. Segundo esta literatura, registros são formas linguísticas criadas na comunicação e agenciadas como rótulos nas interações sociais, com a produção de efeitos práticos. São artefatos que indexam e classificam signos. Uma análise dos usos de registros implica perceber como seu agenciamento tipifica pessoas, com a produção de estereótipos, classifica e ordena sujeitos, discursos e performances reunidos sob um nome. Implica perceber, igualmente, como essas formas conectam domínios de ação e transferem autoridade.</p>
-    </section>
-  </main>
+    <p>Formas semióticas como antifeminismo, homoafetividade, intolerância religiosa, racismo religioso e racismo ambiental se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público. Nosso interesse é compreender de que modo os termos que selecionamos foram usados para conectar contextos de enunciação a um contexto social em transformação.</p>
+    <p>Sabemos de trabalhos anteriores que as formas selecionadas se relacionam com práticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos desses registros na vida sócio-política brasileira. Teremos em mente as seguintes perguntas: Como o agenciamento desses termos conecta religioso e público no Brasil? Como religioso e público se configuram no contexto em que eles são agenciados?</p>
+    <p>Para responder as perguntas acima, analisaremos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como elaborada pela literatura antropológica sobre semiótica. Segundo esta literatura, registros são formas linguísticas criadas na comunicação e agenciadas como rótulos nas interações sociais, com a produção de efeitos práticos. São artefatos que indexam e classificam signos. Uma análise dos usos de registros implica perceber como seu agenciamento tipifica pessoas, com a produção de estereótipos, classifica e ordena sujeitos, discursos e performances reunidos sob um nome. Implica perceber, igualmente, como essas formas conectam domínios de ação e transferem autoridade.</p>
+  </section>
 
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
