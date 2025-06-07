@@ -1,4 +1,4 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>   
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
@@ -21,11 +21,10 @@
       background-color: #fff;
       border-bottom: 1px solid #ddd;
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
       padding: 10px 40px;
       z-index: 1000;
-      gap: 40px;
     }
 
     nav a {
@@ -168,36 +167,32 @@
     }
 
     nav {
-      margin-left: 60px;
+      display: flex;
+      gap: 40px;
     }
   </style>
 </head>
 <body>
   <header>
-    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-      <a href="https://cebrap.org.br/" target="_blank" style="padding-left: 0;">
-        <img src="static/cebrap-logo.png" alt="Logo Cebrap" style="height: 84px; display: block;">
-      </a>
-      <nav style="padding-right: 60px; display: flex; gap: 16px;">
-        <a href="sobre.html">Sobre</a>
-        <div class="dropdown">
-          <a href="#">Pesquisas</a>
-          <div class="dropdown-content">
-            <div class="dropdown">
-              <a href="pesquisas/agrocristianismo.html">Agrocristianismo ▸</a>
-              <div class="dropdown-content" style="left: 100%; top: 0;">
-                <a href="pesquisas/aglom.html">Aglomerações religiosas</a>
-                <a href="pesquisas/classificacao.html">Classificação de organizações</a>
-              </div>
+    <nav>
+      <a href="sobre.html">Sobre</a>
+      <div class="dropdown">
+        <a href="#">Pesquisas</a>
+        <div class="dropdown-content">
+          <div class="dropdown">
+            <a href="pesquisas/agrocristianismo.html">Agrocristianismo ▸</a>
+            <div class="dropdown-content" style="left: 100%; top: 0;">
+              <a href="pesquisas/aglom.html">Aglomerações religiosas</a>
+              <a href="pesquisas/classificacao.html">Classificação de organizações</a>
             </div>
-            <a href="pesquisas/registros.html">Registros no tempo</a>
-            <a href="pesquisas/representacao.html">Representações da religião</a>
           </div>
+          <a href="pesquisas/registros.html">Registros no tempo</a>
+          <a href="pesquisas/representacao.html">Representações da religião</a>
         </div>
-        <a href="emdebate.html">Em debate</a>
-        <a href="contato.html">Contato</a>
-      </nav>
-    </div>
+      </div>
+      <a href="emdebate.html">Em debate</a>
+      <a href="contato.html">Contato</a>
+    </nav>
   </header>
 
   <div class="hero-section">
