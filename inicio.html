@@ -1,4 +1,4 @@
-<!DOCTYPE html>    
+<!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
@@ -37,12 +37,14 @@
       color: #333;
       font-weight: 500;
       white-space: nowrap;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.2s ease-in-out;
     }
 
     nav a:hover,
     .dropdown-content a:hover {
-      background-color: #f1f1f1;
-      transition: background-color 0.2s ease-in-out;
+      background-color: #f5f5f5;
     }
 
     .hero-section {
@@ -145,20 +147,17 @@
       flex-direction: column;
     }
 
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
     .dropdown-content a {
       color: #333;
       padding: 10px 16px;
       text-decoration: none;
       display: block;
       white-space: nowrap;
+      border-radius: 4px;
     }
 
-    .dropdown-content .dropdown {
-      position: relative;
+    .dropdown:hover > .dropdown-content {
+      display: block;
     }
 
     .dropdown-content .dropdown-content {
@@ -166,13 +165,9 @@
       position: absolute;
       top: 0;
       left: 100%;
-      background-color: #fff;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      min-width: 200px;
-      flex-direction: column;
     }
 
-    .dropdown-content .dropdown:hover .dropdown-content {
+    .dropdown-content .dropdown:hover > .dropdown-content {
       display: block;
     }
   </style>
