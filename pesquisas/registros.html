@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registros no tempo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Lato', sans-serif;
-      background-color: white;
-      scroll-behavior: smooth;
+      background-color: #fff;
       color: #000;
+      scroll-behavior: smooth;
     }
-
     header {
       position: fixed;
       top: 0;
@@ -22,137 +21,127 @@
       background-color: #fff;
       border-bottom: 1px solid #ddd;
       z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .top-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 40px;
     }
-
-    .top-bar img {
-      height: 50px;
+    .logo {
+      height: 60px;
     }
-
     nav {
       display: flex;
-      gap: 32px;
+      gap: 40px;
     }
-
     nav a {
       text-decoration: none;
       color: #333;
       font-weight: 500;
+      white-space: nowrap;
       padding: 6px 12px;
       border-radius: 4px;
       transition: background-color 0.2s ease-in-out;
     }
-
     nav a:hover {
       background-color: #f5f5f5;
     }
-
-    main {
-      padding: 160px 40px 60px;
+    .hero-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 140px;
+      padding-bottom: 60px;
+      text-align: center;
+    }
+    .hero-logo {
+      max-width: 800px;
+      height: auto;
+    }
+    section {
+      padding: 60px 20px;
       max-width: 900px;
       margin: 0 auto;
     }
-
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-
-    p {
-      line-height: 1.9;
-      font-size: 1.1rem;
+    section h2 {
+      font-size: 2rem;
       margin-bottom: 20px;
     }
-
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
     footer {
-      background-color: #f4f4f4;
-      color: #000;
       padding: 20px 40px;
+      background-color: #f4f4f4;
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-size: 0.95rem;
-      border-top: 1px solid #ddd;
     }
-
     footer img {
       height: 110px;
     }
-
     footer p {
       margin: 0;
       text-align: right;
     }
-
     @media (max-width: 768px) {
-      .top-bar {
-        flex-direction: column;
-        gap: 16px;
-      }
       nav {
         flex-wrap: wrap;
         justify-content: center;
         gap: 16px;
       }
-      main {
-        padding: 140px 20px 40px;
+      .hero-logo {
+        max-width: 90%;
       }
       footer {
         flex-direction: column;
         text-align: center;
       }
       footer p {
-        text-align: center;
         margin-top: 20px;
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="top-bar">
-      <a href="/religiaocebrap/index.html">
-        <img src="/religiaocebrap/static/observatorio-logo.jpg" alt="Logo Observatório" />
-      </a>
-      <nav>
-        <a href="/religiaocebrap/sobre.html">Sobre</a>
-        <a href="/religiaocebrap/pesquisas/index.html">Pesquisas</a>
-        <a href="/religiaocebrap/em-debate.html">Em debate</a>
-        <a href="/religiaocebrap/contato.html">Contato</a>
-      </nav>
-    </div>
+    <a href="/religiaocebrap/index.html"><img src="/religiaocebrap/static/observatorio-logo.jpg" alt="Logo Observatório" class="logo"></a>
+    <nav>
+      <a href="/religiaocebrap/sobre.html">Sobre</a>
+      <a href="/religiaocebrap/pesquisas/index.html">Pesquisas</a>
+      <a href="/religiaocebrap/em-debate.html">Em debate</a>
+      <a href="/religiaocebrap/contato.html">Contato</a>
+    </nav>
   </header>
 
-  <main>
-    <h2 data-aos="fade-up">Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</h2>
-    <p data-aos="fade-up" data-aos-delay="100"><strong>Coordenação:</strong> Renata Nagamine<br>
-    <strong>Pesquisadoras:</strong> Olívia Barbosa, Paula Montero, Renata Nagamine e Camila Nicácio<br>
-    <strong>Duração:</strong> maio de 2025 a outubro de 2026</p>
+  <div class="hero-section">
+    <img src="/religiaocebrap/static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" data-aos="zoom-in" />
+  </div>
 
-    <p data-aos="fade-up" data-aos-delay="200">Formas semióticas como antifeminismo, homoafetividade, intolerância religiosa, racismo religioso e racismo ambiental se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público. Nosso interesse é compreender de que modo os termos que selecionamos foram usados para conectar contextos de enunciação a um contexto social em transformação.</p>
-
-    <p data-aos="fade-up" data-aos-delay="300">Sabemos de trabalhos anteriores que as formas selecionadas se relacionam com práticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos desses registros na vida sócio-política brasileira. Teremos em mente as seguintes perguntas: Como o agenciamento desses termos conecta religioso e público no Brasil? Como religioso e público se configuram no contexto em que eles são agenciados?</p>
-
-    <p data-aos="fade-up" data-aos-delay="400">Para responder as perguntas acima, analisaremos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como elaborada pela literatura antropológica sobre semá°tica. Segundo esta literatura, registros são formas linguísticas criadas na comunicação e agenciadas como rótulos nas interações sociais, com a produção de efeitos práticos. São artefatos que indexam e classificam signos. Uma análise dos usos de registros implica perceber como seu agenciamento tipifica pessoas, com a produção de estereótipos, classifica e ordena sujeitos, discursos e performances reunidos sob um nome. Implica perceber, igualmente, como essas formas conectam domínios de ação e transferem autoridade.</p>
-  </main>
+  <section data-aos="fade-up">
+    <h2>Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</h2>
+    <p><strong>Coordenação:</strong> Renata Nagamine<br>
+      <strong>Pesquisadoras:</strong> Olívia Barbosa, Paula Montero, Renata Nagamine e Camila Nicácio<br>
+      <strong>Duração:</strong> maio de 2025 a outubro de 2026</p>
+    <p>Formas semióticas como antifeminismo, homoafetividade, intolerância religiosa, racismo religioso e racismo ambiental se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público. Nosso interesse é compreender de que modo os termos que selecionamos foram usados para conectar contextos de enunciação a um contexto social em transformação.</p>
+    <p>Sabemos de trabalhos anteriores que as formas selecionadas se relacionam com práticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos desses registros na vida sócio-política brasileira. Teremos em mente as seguintes perguntas: Como o agenciamento desses termos conecta religioso e público no Brasil? Como religioso e público se configuram no contexto em que eles são agenciados?</p>
+    <p>Para responder as perguntas acima, analisaremos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como elaborada pela literatura antropológica sobre semática. Segundo esta literatura, registros são formas linguísticas criadas na comunicação e agenciadas como rótulos nas interações sociais, com a produção de efeitos práticos. São artefatos que indexam e classificam signos. Uma análise dos usos de registros implica perceber como seu agenciamento tipifica pessoas, com a produção de estereótipos, classifica e ordena sujeitos, discursos e performances reunidos sob um nome. Implica perceber, igualmente, como essas formas conectam domínios de ação e transferem autoridade.</p>
+  </section>
 
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
-      <img src="/religiaocebrap/static/cebrap-logo.png" alt="Logo Cebrap" />
+      <img src="/religiaocebrap/static/cebrap-logo.png" alt="Logo Cebrap">
     </a>
     <p>
-      <strong><a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">CEBRAP</a></strong><br />
-      R. Morgado de Mateus, 615<br />
-      Vila Mariana, São Paulo – SP, Brazil<br />
-      CEP 04015-051<br />
-      (11) 5574 0399 | (11) 5574 5928<br />
+      <strong><a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">CEBRAP</a></strong><br>
+      R. Morgado de Mateus, 615<br>
+      Vila Mariana, São Paulo – SP, Brazil<br>
+      CEP 04015-051<br>
+      (11) 5574 0399 | (11) 5574 5928<br>
       <a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">Contato</a>
     </p>
   </footer>
