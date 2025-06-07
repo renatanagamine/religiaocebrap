@@ -1,170 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Registros no tempo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Lato', sans-serif;
-      background-color: white;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #fff;
-      border-bottom: 1px solid #ddd;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 40px;
-    }
-
-    .logo-observatorio {
-      height: 110px;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 40px;
-    }
-
-    nav a {
-      margin: 0 8px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      white-space: nowrap;
-      padding: 6px 12px;
-      border-radius: 4px;
-      transition: background-color 0.2s ease-in-out;
-    }
-
-    nav a:hover,
-    .dropdown-content a:hover {
-      background-color: #f5f5f5;
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #fff;
-      min-width: 200px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-      flex-direction: column;
-    }
-
-    .dropdown-content a {
-      color: #333;
-      padding: 10px 16px;
-      text-decoration: none;
-      display: block;
-      white-space: nowrap;
-      border-radius: 4px;
-    }
-
-    .dropdown:hover > .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-content .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 100%;
-    }
-
-    .dropdown-content .dropdown:hover > .dropdown-content {
-      display: block;
-    }
-
-    section {
-      padding: 160px 20px 80px 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    section p {
-      font-size: 1.1rem;
-      line-height: 1.9;
-    }
-
-    footer {
-      padding: 20px 40px;
-      background-color: #f4f4f4;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.95rem;
-    }
-
-    footer img {
-      height: 110px;
-    }
-
-    footer p {
-      margin: 0;
-      text-align: right;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
-      }
-
-      nav a {
-        margin: 8px 0;
-      }
-
-      footer {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      footer p {
-        text-align: center;
-        margin-top: 20px;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-      }
-
-      .logo-observatorio {
-        margin-bottom: 10px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <header>
+<header>
+  <div class="header-content">
     <a href="/religiaocebrap/index.html">
-      <img src="/religiaocebrap/static/observatorio-logo.jpg" alt="Logo Observatório" class="logo-observatorio">
+      <img src="/religiaocebrap/static/observatorio-logo.jpg" alt="Logo Observatório" class="logo-header">
     </a>
     <nav>
       <a href="/religiaocebrap/sobre.html">Sobre</a>
@@ -185,42 +22,25 @@
       <a href="/religiaocebrap/emdebate.html">Em debate</a>
       <a href="/religiaocebrap/contato.html">Contato</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <section data-aos="fade-up">
-    <h2>Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</h2>
-    <p><strong>Coordenação:</strong> Renata Nagamine<br>
-    <strong>Pesquisadoras:</strong> Olívia Barbosa, Paula Montero, Renata Nagamine e Camila Nicácio<br>
-    <strong>Duração:</strong> maio de 2025 a outubro de 2026</p>
+<section data-aos="fade-up">
+  <h2>Título da Página</h2>
+  <p>Parágrafo de conteúdo. Você pode usar quantos quiser.</p>
+  <p>Outro parágrafo com conteúdo. O espaçamento será confortável e legível.</p>
+</section>
 
-    <p data-aos="fade-up" data-aos-delay="100">
-      Formas semióticas como antifeminismo, homoafetividade, intolerância religiosa, racismo religioso e racismo ambiental se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público.
-    </p>
-
-    <p data-aos="fade-up" data-aos-delay="200">
-      Sabemos de trabalhos anteriores que as formas selecionadas se relacionam com práticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos desses registros na vida sócio-política brasileira.
-    </p>
-
-    <p data-aos="fade-up" data-aos-delay="300">
-      Para responder as perguntas acima, analisaremos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como elaborada pela literatura antropológica sobre semiótica.
-    </p>
-  </section>
-
-  <footer>
-    <a href="https://cebrap.org.br/" target="_blank">
-      <img src="/religiaocebrap/static/cebrap-logo.png" alt="Logo Cebrap">
-    </a>
-    <p>
-      <strong><a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">CEBRAP</a></strong><br>
-      R. Morgado de Mateus, 615<br>
-      Vila Mariana, São Paulo – SP, Brazil<br>
-      CEP 04015-051<br>
-      (11) 5574 0399 | (11) 5574 5928<br>
-      <a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">Contato</a>
-    </p>
-  </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
-</body>
-</html>
+<footer>
+  <a href="https://cebrap.org.br/" target="_blank">
+    <img src="/religiaocebrap/static/cebrap-logo.png" alt="Logo Cebrap">
+  </a>
+  <p>
+    <strong><a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">CEBRAP</a></strong><br>
+    R. Morgado de Mateus, 615<br>
+    Vila Mariana, São Paulo – SP, Brazil<br>
+    CEP 04015-051<br>
+    (11) 5574 0399 | (11) 5574 5928<br>
+    <a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">Contato</a>
+  </p>
+</footer>
