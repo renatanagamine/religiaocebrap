@@ -27,6 +27,11 @@
       z-index: 1000;
     }
 
+    nav {
+      display: flex;
+      gap: 40px;
+    }
+
     nav a {
       margin: 0 8px;
       text-decoration: none;
@@ -36,13 +41,13 @@
     }
 
     .hero-section {
-      height: calc(100vh - 120px);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
+      padding-top: 80px;
+      padding-bottom: 120px;
       text-align: center;
-      padding-top: 60px;
     }
 
     .hero-logo {
@@ -96,8 +101,8 @@
 
     @media (max-width: 768px) {
       nav {
-        display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 16px;
       }
 
@@ -164,11 +169,6 @@
 
     .dropdown-content .dropdown:hover .dropdown-content {
       display: block;
-    }
-
-    nav {
-      display: flex;
-      gap: 40px;
     }
   </style>
 </head>
