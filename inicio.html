@@ -39,7 +39,8 @@
       white-space: nowrap;
     }
 
-    nav a:hover {
+    nav a:hover,
+    .dropdown-content a:hover {
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
       transition: box-shadow 0.2s ease-in-out;
     }
@@ -152,10 +153,6 @@
       white-space: nowrap;
     }
 
-    .dropdown-content a:hover {
-      background-color: #f1f1f1;
-    }
-
     .dropdown:hover .dropdown-content {
       display: block;
     }
@@ -203,7 +200,7 @@
     <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" data-aos="zoom-in" />
   </div>
 
-  <section id="sobre" data-aos="fade-up" data-aos-offset="200" data-aos-duration="800">
+  <section id="sobre" data-aos="fade-up">
     <h2>Sobre</h2>
     <p>O Observatório da Religião e Interseccionalidades reúne pesquisas que analisam o papel da religião em contextos sociais diversos, buscando compreender seus cruzamentos com questões políticas, de gênero, raça e outras dimensões da vida pública.</p>
     <p>Trata-se de um espaço de articulação entre pesquisadores/as de diferentes formações, instituições e trajetórias, interessados/as em compreender como a religião é mobilizada em disputas políticas no Brasil contemporâneo.</p>
@@ -247,8 +244,6 @@
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <script>AOS.init();</script>
 </body>
 </html>
