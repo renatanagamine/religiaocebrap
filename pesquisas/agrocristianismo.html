@@ -2,179 +2,168 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agrocristianismo - Observatório da Religião e Interseccionalidades</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: 'Lato', sans-serif;
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-      background-color: #fff;
-      color: #000;
+      background-color: white;
+      scroll-behavior: smooth;
     }
-    .content-wrapper {
-      display: flex;
-      flex: 1;
-      align-items: flex-start;
-    }
-    .sidebar {
-      width: 24%;
-      background-color: #ffffff;
-      padding: 26px 20px 25px 20px;
-      box-sizing: border-box;
-      color: #000;
-      border-right: 1px solid #ddd;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .sidebar-logo {
-      margin-bottom: 20px;
-      max-width: 90%;
-      height: auto;
-      margin-top: -70px;
-      margin-left: -45px;
-    }
-    .sidebar nav {
+
+    header {
+      position: fixed;
+      top: 0;
       width: 100%;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
     }
-    .sidebar ul {
-      list-style-type: none;
-      padding: 0;
-      line-height: 1.6;
-    }
-    .sidebar ul li {
-      margin: 8px 0;
-      transition: transform 0.2s ease, color 0.2s ease;
-    }
-    .sidebar ul li:hover {
-      transform: translateX(4px);
-    }
-    .sidebar ul li ul {
-      margin-top: 5px;
-      margin-left: 15px;
-    }
-    .sidebar ul li ul li {
-      margin: 6px 0;
-    }
-    .sidebar ul li a {
-      text-decoration: none;
-      color: #000;
-      font-weight: 400;
-      transition: color 0.3s ease;
-    }
-    .sidebar ul li a:hover {
-      text-decoration: underline;
-      color: #555;
-    }
-    .main-content {
-      flex: 1;
-      padding: 40px 60px 20px 40px;
-      box-sizing: border-box;
-      line-height: 2;
-      max-width: 1100px;
-    }
-    .main-content-header {
-      margin-bottom: 48px;
-    }
-    h2, h3 {
-      color: #000;
-      margin-top: 0;
-    }
-    h3 {
-      margin-top: 40px;
-    }
-    footer {
-      background-color: #ffffff;
-      color: #000;
-      padding: 20px;
-      font-size: 0.9em;
+
+    nav {
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid #ddd;
+      gap: 40px;
+      padding: 20px 0;
     }
-    .footer-info {
-      margin-left: 20px;
-    }
-    .footer-logo {
-      height: 140px;
-      margin-left: -45px;
-    }
-    a.footer-link {
-      color: #000;
+
+    nav a {
+      margin: 0 8px;
       text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      white-space: nowrap;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.2s ease-in-out;
     }
-    a.footer-link:hover {
-      text-decoration: underline;
+
+    nav a:hover {
+      background-color: #f5f5f5;
+    }
+
+    .logo-observatorio {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 100px;
+    }
+
+    .conteudo {
+      max-width: 800px;
+      margin: 200px auto 60px auto;
+      padding: 0 20px;
+    }
+
+    .titulo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2d3e4f;
+      border-left: 4px solid #e5007e;
+      padding-left: 10px;
+      margin-bottom: 30px;
+    }
+
+    .conteudo p {
+      font-size: 1.1rem;
+      line-height: 2;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      padding: 20px 40px;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    footer img {
+      height: 110px;
+    }
+
+    footer p {
+      margin: 0;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .logo-observatorio {
+        position: static;
+        display: block;
+        margin: 20px auto 0 auto;
+        height: 80px;
+      }
+
+      .conteudo {
+        padding: 20px;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      footer p {
+        margin-top: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="content-wrapper">
-    <div class="sidebar">
-      <img src="/religiaocebrap/static/observatorio-logo.jpg" alt="Logo Observatório" class="sidebar-logo">
-      <nav>
-        <ul>
-          <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
-          <li>
-            <a href="/religiaocebrap/pesquisas/index.html">Pesquisas</a>
-            <ul>
-              <li><a href="/religiaocebrap/pesquisas/agrocristianismo.html">Agrocristianismo</a>
-                <ul>
-                  <li><a href="/religiaocebrap/pesquisas/aglom.html">Aglomerações de estabelecimentos religiosos</a></li>
-                  <li><a href="/religiaocebrap/pesquisas/classificacao.html">Classificação de organizações e associações religiosas</a></li>
-                </ul>
-              </li>
-              <li><a href="/religiaocebrap/pesquisas/registros.html">Registros no tempo</a></li>
-              <li><a href="/religiaocebrap/pesquisas/representacao.html">Representações da religião no Brasil</a></li>
-            </ul>
-          </li>
-          <li><a href="/religiaocebrap/em-debate.html">Em debate</a></li>
-          <li><a href="/religiaocebrap/contato.html">Contato</a></li>
-        </ul>
-      </nav>
-    </div>
+  <header>
+    <a href="../inicio.html">
+      <img src="../static/observatorio-logo.jpg" alt="Logo Observatório" class="logo-observatorio" />
+    </a>
+    <nav>
+      <a href="../sobre.html">Sobre</a>
+      <a href="../pesquisas/index.html">Pesquisas</a>
+      <a href="../emdebate.html">Em debate</a>
+      <a href="../contato.html">Contato</a>
+    </nav>
+  </header>
 
-    <div class="main-content">
-      <div class="main-content-header" data-aos="fade-up">
-        <h2>Um agrocristianismo em formação no Brasil?</h2>
-        <p><strong>Coordenação:</strong> Renata Nagamine<br>
-        <strong>Pesquisadores:</strong> Olívia Barbosa, Dirceu André Gerardi, Renata Nagamine, Aramis Luis Silva, Gustavo Aires Tiago, Lila Zatoni<br>
-        <strong>Colaborador:</strong> Rafael Chiaravalloti<br>
-        <strong>Duração:</strong> março de 2024 a março de 2026</p>
-      </div>
-      <p data-aos="fade-up" data-aos-delay="100">Como o cristianismo se produz nos espaços associados ao agro no Brasil?</p>
-      <p data-aos="fade-up" data-aos-delay="200">Em pesquisa no Observatório da Religião e Interseccionalidades, partimos do pressuposto de que na última década o agro e autodeclarados cristãos se conectaram de diferentes maneiras no Brasil. No Congresso, formaram uma coalizão que, vista de fora, parece tender à estabilidade. Isso também se aplica a pessoas que se autodeclaram cristãs nos espaços do agro?</p>
-      <p data-aos="fade-up" data-aos-delay="300">Para responder à pergunta, usaremos técnicas de pesquisa da Ciência de Dados, que nos possibilitarão apresentar graficamente as fronteiras religiosa e agro no Brasil. Num segundo momento, faremos pesquisa de campo no que Matias de Alencastro chamou de Mega Centro-Oeste. Como observadores, faremos pesquisa de campo em feiras agropecuárias e rodeios no Centro-Oeste e Sudeste. Percorrendo parte do Centro-Oeste e do Nordeste de carro, também visitaremos fazendas, empresas, revendas e igrejas em cidades da Bahia, do Maranhão, do Pará e do Tocantins.</p>
-    </div>
+  <div class="conteudo">
+    <div class="titulo" data-aos="fade-up">Um agrocristianismo em formação no Brasil?</div>
+
+    <p data-aos="fade-up"><strong>Coordenação:</strong> Renata Nagamine<br>
+    <strong>Pesquisadores:</strong> Olívia Barbosa, Dirceu André Gerardi, Renata Nagamine, Aramis Luis Silva, Gustavo Aires Tiago, Lila Zatoni<br>
+    <strong>Colaborador:</strong> Rafael Chiaravalloti<br>
+    <strong>Duração:</strong> março de 2024 a março de 2026</p>
+
+    <p data-aos="fade-up" data-aos-delay="100">Como o cristianismo se produz nos espaços associados ao agro no Brasil?</p>
+
+    <p data-aos="fade-up" data-aos-delay="200">Em pesquisa no Observatório da Religião e Interseccionalidades, partimos do pressuposto de que na última década o agro e autodeclarados cristãos se conectaram de diferentes maneiras no Brasil. No Congresso, formaram uma coalizão que, vista de fora, parece tender à estabilidade. Isso também se aplica a pessoas que se autodeclaram cristãs nos espaços do agro?</p>
+
+    <p data-aos="fade-up" data-aos-delay="300">Para responder à pergunta, usaremos técnicas de pesquisa da Ciência de Dados, que nos possibilitarão apresentar graficamente as fronteiras religiosa e agro no Brasil. Num segundo momento, faremos pesquisa de campo no que Matias de Alencastro chamou de Mega Centro-Oeste. Como observadores, faremos pesquisa de campo em feiras agropecuárias e rodeios no Centro-Oeste e Sudeste. Percorrendo parte do Centro-Oeste e do Nordeste de carro, também visitaremos fazendas, empresas, revendas e igrejas em cidades da Bahia, do Maranhão, do Pará e do Tocantins.</p>
   </div>
 
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
-      <img src="/religiaocebrap/static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo">
+      <img src="../static/cebrap-logo.png" alt="Logo Cebrap" />
     </a>
-    <div class="footer-info">
-      <p>
-        <a class="footer-link" href="https://cebrap.org.br/" target="_blank"><strong>CEBRAP</strong></a><br>
-        R. Morgado de Mateus, 615<br>
-        Vila Mariana, São Paulo – SP, Brazil<br>
-        CEP 04015-051<br>
-        (11) 5574 0399<br>
-        (11) 5574 5928<br>
-        <a class="footer-link" href="https://cebrap.org.br/">Contato</a>
-      </p>
-    </div>
+    <p>
+      <strong><a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">CEBRAP</a></strong><br>
+      R. Morgado de Mateus, 615<br>
+      Vila Mariana, São Paulo – SP, Brazil<br>
+      CEP 04015-051<br>
+      (11) 5574 0399 | (11) 5574 5928<br>
+      <a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">Contato</a>
+    </p>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <script>AOS.init();</script>
 </body>
 </html>
-
