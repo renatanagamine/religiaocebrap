@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registros no tempo</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -25,25 +25,25 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 10px 20px;
+      padding: 10px 0;
     }
 
-    .menu-container {
-      max-width: 1200px;
-      width: 100%;
+    .header-inner {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 40px;
     }
 
     .logo-header {
-      height: 50px;
+      height: 60px;
+      margin-left: 20px;
     }
 
     nav {
       display: flex;
-      gap: 30px;
+      justify-content: center;
       align-items: center;
+      gap: 40px;
     }
 
     nav a {
@@ -141,18 +141,18 @@
 
     @media (max-width: 768px) {
       header {
-        padding: 10px;
+        flex-direction: column;
       }
 
-      .menu-container {
+      .header-inner {
         flex-direction: column;
-        align-items: flex-start;
+        gap: 10px;
       }
 
       nav {
         flex-wrap: wrap;
         justify-content: center;
-        width: 100%;
+        gap: 16px;
       }
 
       .conteudo {
@@ -172,7 +172,7 @@
 </head>
 <body>
   <header>
-    <div class="menu-container">
+    <div class="header-inner">
       <img src="observatorio-logo.jpg" alt="Logo Observatório" class="logo-header" />
       <nav>
         <a href="sobre.html">Sobre</a>
