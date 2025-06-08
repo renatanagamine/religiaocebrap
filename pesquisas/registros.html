@@ -23,27 +23,12 @@
       z-index: 1000;
     }
 
-    .header-inner {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 0;
-    }
-
-    .logo-observatorio {
-      height: 100px;
-      margin-right: auto;
-      margin-left: 30px;
-    }
-
     nav {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 40px;
+      padding: 20px 0;
     }
 
     nav a {
@@ -60,6 +45,13 @@
     nav a:hover,
     .dropdown-content a:hover {
       background-color: #f5f5f5;
+    }
+
+    .logo-observatorio {
+      position: absolute;
+      top: 10px;
+      left: 10px; /* alinhamento com logo do Cebrap */
+      height: 100px;
     }
 
     .conteudo {
@@ -102,20 +94,17 @@
     }
 
     @media (max-width: 768px) {
-      .header-inner {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .logo-observatorio {
-        margin: 0 auto;
-        height: 80px;
-      }
-
       nav {
         flex-wrap: wrap;
         justify-content: center;
         gap: 16px;
+      }
+
+      .logo-observatorio {
+        position: static;
+        display: block;
+        margin: 20px auto 0 auto;
+        height: 80px;
       }
 
       .conteudo {
@@ -174,30 +163,28 @@
 </head>
 <body>
   <header>
-    <div class="header-inner">
-      <a href="../inicio.html">
-        <img src="../static/observatorio-logo.jpg" alt="Logo Observatório" class="logo-observatorio" />
-      </a>
-      <nav>
-        <a href="../sobre.html">Sobre</a>
-        <div class="dropdown">
-          <a href="#">Pesquisas</a>
-          <div class="dropdown-content">
-            <div class="dropdown">
-              <a href="../pesquisas/agrocristianismo.html">Agrocristianismo ▸</a>
-              <div class="dropdown-content">
-                <a href="../pesquisas/aglom.html">Aglomerações religiosas</a>
-                <a href="../pesquisas/classificacao.html">Classificação de organizações</a>
-              </div>
+    <a href="../inicio.html">
+      <img src="../static/observatorio-logo.jpg" alt="Logo Observatório" class="logo-observatorio" />
+    </a>
+    <nav>
+      <a href="../sobre.html">Sobre</a>
+      <div class="dropdown">
+        <a href="#">Pesquisas</a>
+        <div class="dropdown-content">
+          <div class="dropdown">
+            <a href="../pesquisas/agrocristianismo.html">Agrocristianismo ▸</a>
+            <div class="dropdown-content">
+              <a href="../pesquisas/aglom.html">Aglomerações religiosas</a>
+              <a href="../pesquisas/classificacao.html">Classificação de organizações</a>
             </div>
-            <a href="../pesquisas/registros.html">Registros no tempo</a>
-            <a href="../pesquisas/representacao.html">Representações da religião</a>
           </div>
+          <a href="../pesquisas/registros.html">Registros no tempo</a>
+          <a href="../pesquisas/representacao.html">Representações da religião</a>
         </div>
-        <a href="../emdebate.html">Em debate</a>
-        <a href="../contato.html">Contato</a>
-      </nav>
-    </div>
+      </div>
+      <a href="../emdebate.html">Em debate</a>
+      <a href="../contato.html">Contato</a>
+    </nav>
   </header>
 
   <div class="conteudo" data-aos="fade-up">
