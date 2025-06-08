@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registros no tempo</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <style>
     body {
       margin: 0;
       font-family: 'Lato', sans-serif;
       background-color: #fff;
       color: #000;
-      overflow-x: hidden;
     }
 
     header {
-      background-color: #fff;
-      padding: 20px 0;
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 1000;
+      background-color: #fff;
       border-bottom: 1px solid #ccc;
+      z-index: 1000;
+      padding: 20px 40px;
       text-align: center;
     }
 
     nav ul {
       list-style: none;
-      display: inline-flex;
       margin: 0;
       padding: 0;
+      display: inline-flex;
+      gap: 40px;
     }
 
     nav ul li {
-      margin: 0 20px;
       position: relative;
     }
 
@@ -42,16 +41,18 @@
       text-decoration: none;
       color: #000;
       font-weight: 400;
+      font-size: 16px;
     }
 
     nav ul li ul {
       display: none;
       position: absolute;
-      background-color: #fff;
-      border: 1px solid #ccc;
       top: 100%;
       left: 0;
+      background-color: #fff;
+      border: 1px solid #ccc;
       z-index: 1001;
+      padding: 0;
     }
 
     nav ul li:hover ul {
@@ -59,9 +60,8 @@
     }
 
     nav ul li ul li {
-      margin: 0;
-      padding: 8px 12px;
       white-space: nowrap;
+      padding: 8px 12px;
     }
 
     nav ul li ul li a {
@@ -70,27 +70,28 @@
 
     .logo-vertical {
       position: fixed;
-      top: 160px;
+      top: 140px;
       left: 0;
-      height: 300px;
+      height: 280px;
       transform: rotate(180deg);
       writing-mode: vertical-rl;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-left: 10px;
+      padding-left: 12px;
       z-index: 500;
     }
 
     .logo-vertical img {
-      height: 280px;
+      height: 260px;
       object-fit: contain;
     }
 
     .main-content {
       max-width: 1100px;
-      margin: 160px auto 80px 120px;
+      margin: 160px auto 80px auto;
       padding: 0 40px;
+      box-sizing: border-box;
       line-height: 2;
     }
 
@@ -105,13 +106,13 @@
     }
 
     footer {
-      background-color: #ffffff;
+      background-color: #fff;
       color: #000;
       padding: 20px 40px;
       font-size: 0.9em;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       border-top: 1px solid #ddd;
     }
 
@@ -123,12 +124,12 @@
       text-align: right;
     }
 
-    a.footer-link {
+    .footer-link {
       color: #000;
       text-decoration: none;
     }
 
-    a.footer-link:hover {
+    .footer-link:hover {
       text-decoration: underline;
     }
   </style>
@@ -160,6 +161,7 @@
 
   <main class="main-content">
     <h2 data-aos="fade-up">Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</h2>
+
     <p data-aos="fade-up" data-aos-delay="100"><strong>Coordenação:</strong> Renata Nagamine<br>
     <strong>Pesquisadoras:</strong> Olívia Barbosa, Paula Montero, Renata Nagamine e Camila Nicácio<br>
     <strong>Duração:</strong> maio de 2025 a outubro de 2026</p>
