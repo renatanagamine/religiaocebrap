@@ -1,178 +1,230 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registros no tempo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Lato', sans-serif;
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-      background-color: #fff;
+      background-color: white;
+      scroll-behavior: smooth;
       color: #000;
     }
-    .content-wrapper {
-      display: flex;
-      flex: 1;
-      align-items: flex-start;
-    }
-    .sidebar {
-      width: 24%;
-      background-color: #ffffff;
-      padding: 26px 20px 25px 20px;
-      box-sizing: border-box;
-      color: #000;
-      border-right: 1px solid #ddd;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .sidebar-logo {
-      margin-bottom: 20px;
-      max-width: 90%;
-      height: auto;
-      margin-top: -70px;
-      margin-left: -45px;
-    }
-    .sidebar nav {
+
+    header {
+      position: fixed;
+      top: 0;
       width: 100%;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
     }
-    .sidebar ul {
-      list-style-type: none;
-      padding: 0;
-      line-height: 1.6;
-    }
-    .sidebar ul li {
-      margin: 8px 0;
-      transition: transform 0.2s ease, color 0.2s ease;
-    }
-    .sidebar ul li:hover {
-      transform: translateX(4px);
-    }
-    .sidebar ul li ul {
-      margin-top: 5px;
-      margin-left: 15px;
-    }
-    .sidebar ul li ul li {
-      margin: 6px 0;
-    }
-    .sidebar ul li a {
-      text-decoration: none;
-      color: #000;
-      font-weight: 400;
-      transition: color 0.3s ease;
-    }
-    .sidebar ul li a:hover {
-      text-decoration: underline;
-      color: #555;
-    }
-    .main-content {
-      flex: 1;
-      padding: 40px 60px 20px 40px;
-      box-sizing: border-box;
-      line-height: 2;
-      max-width: 1100px;
-    }
-    .main-content-header {
-      margin-bottom: 48px;
-    }
-    h2, h3 {
-      color: #000;
-      margin-top: 0;
-    }
-    h3 {
-      margin-top: 40px;
-    }
-    footer {
-      background-color: #ffffff;
-      color: #000;
-      padding: 20px;
-      font-size: 0.9em;
+
+    nav {
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid #ddd;
+      gap: 40px;
+      padding: 20px 0;
     }
-    .footer-info {
-      margin-left: 20px;
-    }
-    .footer-logo {
-      height: 140px;
-      margin-left: -45px;
-    }
-    a.footer-link {
-      color: #000;
+
+    nav a {
       text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      white-space: nowrap;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.2s ease-in-out;
     }
-    a.footer-link:hover {
-      text-decoration: underline;
+
+    nav a:hover,
+    .dropdown-content a:hover {
+      background-color: #f5f5f5;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      flex-direction: column;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+      border-radius: 4px;
+    }
+
+    .dropdown:hover > .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+    }
+
+    .dropdown-content .dropdown:hover > .dropdown-content {
+      display: block;
+    }
+
+    .hero-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 160px;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+
+    .hero-logo {
+      max-width: 220px;
+      height: auto;
+    }
+
+    .titulo-registros {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2d3e4f;
+      border-left: 4px solid #2d8f89;
+      padding-left: 10px;
+      align-self: flex-start;
+      margin: 40px 0 20px 60px;
+    }
+
+    section {
+      padding: 0 20px 80px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      line-height: 2;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      padding: 20px 40px;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    footer img {
+      height: 110px;
+    }
+
+    footer p {
+      margin: 0;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .hero-logo {
+        max-width: 80%;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      footer p {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .titulo-registros {
+        margin-left: 20px;
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="content-wrapper">
-    <div class="sidebar">
-      <img src="/religiaocebrap/static/observatorio-logo.jpg" alt="Logo Observatório" class="sidebar-logo">
-      <nav>
-        <ul>
-          <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
-          <li>
-            <a href="/religiaocebrap/pesquisas/index.html">Pesquisas</a>
-            <ul>
-              <li><a href="/religiaocebrap/pesquisas/agrocristianismo.html">Agrocristianismo</a>
-                <ul>
-                  <li><a href="/religiaocebrap/pesquisas/aglom.html">Aglomerações de estabelecimentos religiosos</a></li>
-                  <li><a href="/religiaocebrap/pesquisas/classificacao.html">Classificação de organizações e associações religiosas</a></li>
-                </ul>
-              </li>
-              <li><a href="/religiaocebrap/pesquisas/registros.html">Registros no tempo</a></li>
-              <li><a href="/religiaocebrap/pesquisas/representacao.html">Representações da religião no Brasil</a></li>
-            </ul>
-          </li>
-          <li><a href="/religiaocebrap/em-debate.html">Em debate</a></li>
-          <li><a href="/religiaocebrap/contato.html">Contato</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <div class="main-content">
-      <div class="main-content-header" data-aos="fade-up">
-        <h2>Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</h2>
-        <p><strong>Coordenação:</strong> Renata Nagamine<br>
-        <strong>Pesquisadoras:</strong> Olívia Barbosa, Paula Montero, Renata Nagamine e Camila Nicácio<br>
-        <strong>Duração:</strong> maio de 2025 a outubro de 2026</p>
+  <header>
+    <nav>
+      <a href="sobre.html">Sobre</a>
+      <div class="dropdown">
+        <a href="#">Pesquisas</a>
+        <div class="dropdown-content">
+          <div class="dropdown">
+            <a href="pesquisas/agrocristianismo.html">Agrocristianismo ▸</a>
+            <div class="dropdown-content">
+              <a href="pesquisas/aglom.html">Aglomerações religiosas</a>
+              <a href="pesquisas/classificacao.html">Classificação de organizações</a>
+            </div>
+          </div>
+          <a href="pesquisas/registros.html">Registros no tempo</a>
+          <a href="pesquisas/representacao.html">Representações da religião</a>
+        </div>
       </div>
-      <p data-aos="fade-up" data-aos-delay="100">Formas semióticas como antifeminismo, homoafetividade, intolerância religiosa, racismo religioso e racismo ambiental se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público. Nosso interesse é compreender de que modo os termos que selecionamos foram usados para conectar contextos de enunciação a um contexto social em transformação.</p>
-      <p data-aos="fade-up" data-aos-delay="200">Sabemos de trabalhos anteriores que as formas selecionadas se relacionam com práticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos desses registros na vida sócio-política brasileira. Teremos em mente as seguintes perguntas: Como o agenciamento desses termos conecta religioso e público no Brasil? Como religioso e público se configuram no contexto em que eles são agenciados?</p>
-      <p data-aos="fade-up" data-aos-delay="300">Para responder as perguntas acima, analisaremos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como elaborada pela literatura antropológica sobre semiótica. Segundo esta literatura, registros são formas linguísticas criadas na comunicação e agenciadas como rótulos nas interações sociais, com a produção de efeitos práticos. São artefatos que indexam e classificam signos. Uma análise dos usos de registros implica perceber como seu agenciamento tipifica pessoas, com a produção de estereótipos, classifica e ordena sujeitos, discursos e performances reunidos sob um nome. Implica perceber, igualmente, como essas formas conectam domínios de ação e transferem autoridade.</p>
-    </div>
+      <a href="emdebate.html">Em debate</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <div class="hero-section" data-aos="zoom-in">
+    <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" />
   </div>
+
+  <div class="titulo-registros">Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</div>
+
+  <section>
+    <p data-aos="fade-up"><strong>Coordenação:</strong> Renata Nagamine<br>
+    <strong>Pesquisadoras:</strong> Olívia Barbosa, Paula Montero, Renata Nagamine e Camila Nicácio<br>
+    <strong>Duração:</strong> maio de 2025 a outubro de 2026</p>
+
+    <p data-aos="fade-up" data-aos-delay="100">Formas semióticas como antifeminismo, homoafetividade, intolerância religiosa, racismo religioso e racismo ambiental se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público. Nosso interesse é compreender de que modo os termos que selecionamos foram usados para conectar contextos de enunciação a um contexto social em transformação.</p>
+
+    <p data-aos="fade-up" data-aos-delay="200">Sabemos de trabalhos anteriores que as formas selecionadas se relacionam com práticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos desses registros na vida sócio-política brasileira. Teremos em mente as seguintes perguntas: Como o agenciamento desses termos conecta religioso e público no Brasil? Como religioso e público se configuram no contexto em que eles são agenciados?</p>
+
+    <p data-aos="fade-up" data-aos-delay="300">Para responder as perguntas acima, analisaremos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como elaborada pela literatura antropológica sobre semiótica. Segundo esta literatura, registros são formas linguísticas criadas na comunicação e agenciadas como rótulos nas interações sociais, com a produção de efeitos práticos. São artefatos que indexam e classificam signos. Uma análise dos usos de registros implica perceber como seu agenciamento tipifica pessoas, com a produção de estereótipos, classifica e ordena sujeitos, discursos e performances reunidos sob um nome. Implica perceber, igualmente, como essas formas conectam domínios de ação e transferem autoridade.</p>
+  </section>
 
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
-      <img src="/religiaocebrap/static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo">
+      <img src="static/cebrap-logo.png" alt="Logo Cebrap">
     </a>
-    <div class="footer-info">
-      <p>
-        <a class="footer-link" href="https://cebrap.org.br/" target="_blank"><strong>CEBRAP</strong></a><br>
-        R. Morgado de Mateus, 615<br>
-        Vila Mariana, São Paulo – SP, Brazil<br>
-        CEP 04015-051<br>
-        (11) 5574 0399<br>
-        (11) 5574 5928<br>
-        <a class="footer-link" href="https://cebrap.org.br/">Contato</a>
-      </p>
-    </div>
+    <p>
+      <strong><a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">CEBRAP</a></strong><br>
+      R. Morgado de Mateus, 615<br>
+      Vila Mariana, São Paulo – SP, Brazil<br>
+      CEP 04015-051<br>
+      (11) 5574 0399 | (11) 5574 5928<br>
+      <a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">Contato</a>
+    </p>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <script>AOS.init();</script>
 </body>
 </html>
