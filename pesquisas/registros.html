@@ -23,20 +23,27 @@
       border-bottom: 1px solid #ddd;
       z-index: 1000;
       display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .menu-container {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 40px;
     }
 
     .logo-header {
-      height: 60px;
+      height: 50px;
     }
 
     nav {
       display: flex;
-      justify-content: center;
-      align-items: center;
       gap: 30px;
+      align-items: center;
     }
 
     nav a {
@@ -95,7 +102,7 @@
 
     .conteudo {
       max-width: 800px;
-      margin: 180px auto 60px auto; /* AQUI está o espaçamento aumentado */
+      margin: 180px auto 60px auto;
       padding: 0 20px;
     }
 
@@ -134,9 +141,12 @@
 
     @media (max-width: 768px) {
       header {
+        padding: 10px;
+      }
+
+      .menu-container {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
       }
 
       nav {
@@ -162,26 +172,28 @@
 </head>
 <body>
   <header>
-    <img src="observatorio-logo.jpg" alt="Logo Observatório" class="logo-header" />
-    <nav>
-      <a href="sobre.html">Sobre</a>
-      <div class="dropdown">
-        <a href="#">Pesquisas</a>
-        <div class="dropdown-content">
-          <div class="dropdown">
-            <a href="pesquisas/agrocristianismo.html">Agrocristianismo ▸</a>
-            <div class="dropdown-content">
-              <a href="pesquisas/aglom.html">Aglomerações religiosas</a>
-              <a href="pesquisas/classificacao.html">Classificação de organizações</a>
+    <div class="menu-container">
+      <img src="observatorio-logo.jpg" alt="Logo Observatório" class="logo-header" />
+      <nav>
+        <a href="sobre.html">Sobre</a>
+        <div class="dropdown">
+          <a href="#">Pesquisas</a>
+          <div class="dropdown-content">
+            <div class="dropdown">
+              <a href="pesquisas/agrocristianismo.html">Agrocristianismo ▸</a>
+              <div class="dropdown-content">
+                <a href="pesquisas/aglom.html">Aglomerações religiosas</a>
+                <a href="pesquisas/classificacao.html">Classificação de organizações</a>
+              </div>
             </div>
+            <a href="pesquisas/registros.html">Registros no tempo</a>
+            <a href="pesquisas/representacao.html">Representações da religião</a>
           </div>
-          <a href="pesquisas/registros.html">Registros no tempo</a>
-          <a href="pesquisas/representacao.html">Representações da religião</a>
         </div>
-      </div>
-      <a href="emdebate.html">Em debate</a>
-      <a href="contato.html">Contato</a>
-    </nav>
+        <a href="emdebate.html">Em debate</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+    </div>
   </header>
 
   <div class="conteudo">
