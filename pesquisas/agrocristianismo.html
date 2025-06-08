@@ -29,6 +29,7 @@
       align-items: center;
       gap: 40px;
       padding: 20px 0;
+      position: relative;
     }
 
     nav a {
@@ -43,6 +44,39 @@
     }
 
     nav a:hover {
+      background-color: #f5f5f5;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      min-width: 200px;
+      z-index: 1001;
+      text-align: left;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-content a:hover {
       background-color: #f5f5f5;
     }
 
@@ -63,16 +97,9 @@
       font-size: 1.8rem;
       font-weight: 700;
       color: #2d3e4f;
-      border-left: 4px solid #e5007e;
+      border-left: 4px solid #000;
       padding-left: 10px;
       margin-bottom: 30px;
-    }
-
-    .subtitulo {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #2d3e4f;
-      margin: 60px 0 30px 0;
     }
 
     .conteudo p {
@@ -81,17 +108,14 @@
       margin-bottom: 20px;
     }
 
-    .grafico {
-      margin: 60px 0;
-    }
-
-    .grafico h3 {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
+    .painel-titulo {
+      font-size: 1.3rem;
+      font-weight: 700;
       color: #2d3e4f;
+      margin: 60px 0 20px 0;
     }
 
-    .grafico iframe {
+    iframe {
       width: 100%;
       height: 600px;
       border: none;
@@ -151,7 +175,16 @@
     </a>
     <nav>
       <a href="../sobre.html">Sobre</a>
-      <a href="../pesquisas/index.html">Pesquisas</a>
+      <div class="dropdown">
+        <a href="../pesquisas/index.html">Pesquisas</a>
+        <div class="dropdown-content">
+          <a href="../pesquisas/agrocristianismo.html">Agrocristianismo</a>
+          <a href="../pesquisas/aglom.html">Aglomerações religiosas</a>
+          <a href="../pesquisas/classificacao.html">Classificação de organizações religiosas</a>
+          <a href="../pesquisas/registros.html">Registros no tempo</a>
+          <a href="../pesquisas/representacao.html">Representações da religião no Brasil</a>
+        </div>
+      </div>
       <a href="../emdebate.html">Em debate</a>
       <a href="../contato.html">Contato</a>
     </nav>
@@ -169,18 +202,24 @@
 
     <p data-aos="fade-up" data-aos-delay="200">Em pesquisa no Observatório da Religião e Interseccionalidades, partimos do pressuposto de que na última década o agro e autodeclarados cristãos se conectaram de diferentes maneiras no Brasil. No Congresso, formaram uma coalizão que, vista de fora, parece tender à estabilidade. Isso também se aplica a pessoas que se autodeclaram cristãs nos espaços do agro?</p>
 
-    <p data-aos="fade-up" data-aos-delay="300">Para responder a pergunta, usaremos técnicas de pesquisa da Ciência de Dados, que nos possibilitarão apresentar graficamente as fronteiras religiosa e agro no Brasil. Também usaremos técnicas de pesquisa das Ciências Sociais. Faremos pesquisa de campo no que Matias de Alencastro chamou de Mega Centro-Oeste. Iremos a feiras agropecuárias e rodeios no Centro-Oeste e Sudeste. Percorrendo parte do Centro-Oeste e do Nordeste de carro, visitaremos ainda fazendas, empresas, revendas e igrejas em cidades da Bahia, do Maranhão, do Pará e do Tocantins.</p>
+    <p data-aos="fade-up" data-aos-delay="300">Para responder à pergunta, usaremos técnicas de pesquisa da Ciência de Dados, que nos possibilitarão apresentar graficamente as fronteiras religiosa e agro no Brasil. Num segundo momento, faremos pesquisa de campo no que Matias de Alencastro chamou de Mega Centro-Oeste. Como observadores, faremos pesquisa de campo em feiras agropecuárias e rodeios no Centro-Oeste e Sudeste. Percorrendo parte do Centro-Oeste e do Nordeste de carro, também visitaremos fazendas, empresas, revendas e igrejas em cidades da Bahia, do Maranhão, do Pará e do Tocantins.</p>
 
-    <h2 class="subtitulo" data-aos="fade-up" data-aos-delay="350">Produtos da pesquisa</h2>
-
-    <div class="grafico" data-aos="fade-up" data-aos-delay="400">
-      <h3>Aglomerações de estabelecimentos religiosos em municípios brasileiros (Censo 2022)</h3>
-      <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYmNhYzQ5YjAtMDkwMy00ZWFmLWI5NjAtNTIyZTIyM2FmZjFjIiwidCI6IjA1NWY4ODIzLTRmMWQtNDRkNC1hMjEzLTNiYjQ0Y2NmYWI0NiJ9" allowfullscreen></iframe>
+    <div data-aos="fade-up" style="margin-top: 60px;">
+      <h2>Produtos da pesquisa</h2>
     </div>
 
-    <div class="grafico" data-aos="fade-up" data-aos-delay="500">
+    <div data-aos="fade-up">
+      <h3>Aglomerações de estabelecimentos religiosos em municípios brasileiros (Censo 2022)</h3>
+    </div>
+    <div data-aos="fade-up">
+      <iframe title="Aglomerações" src="https://app.powerbi.com/view?r=eyJrIjoiYmNhYzQ5YjAtMDkwMy00ZWFmLWI5NjAtNTIyZTIyM2FmZjFjIiwidCI6IjA1NWY4ODIzLTRmMWQtNDRkNC1hMjEzLTNiYjQ0Y2NmYWI0NiJ9"></iframe>
+    </div>
+
+    <div data-aos="fade-up">
       <h3>Georreferenciamento e classificação de organizações e associações religiosas (CNPJ/Receita Federal)</h3>
-      <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZGMwNjRhNDQtZjI1Ny00YWUwLTgyMjAtNjZjYjhkNTZhY2NmIiwidCI6IjA1NWY4ODIzLTRmMWQtNDRkNC1hMjEzLTNiYjQ0Y2NmYWI0NiJ9" allowfullscreen></iframe>
+    </div>
+    <div data-aos="fade-up">
+      <iframe title="ClassificacaoCNPJ" src="https://app.powerbi.com/view?r=eyJrIjoiZGMwNjRhNDQtZjI1Ny00YWUwLTgyMjAtNjZjYjhkNTZhY2NmIiwidCI6IjA1NWY4ODIzLTRmMWQtNDRkNC1hMjEzLTNiYjQ0Y2NmYWI0NiJ9"></iframe>
     </div>
   </div>
 
