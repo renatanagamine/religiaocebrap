@@ -20,16 +20,18 @@
       background-color: #fff;
       border-bottom: 1px solid #ddd;
       z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 40px;
     }
 
-    .header-wrapper {
+    .menu-container {
       max-width: 1200px;
-      margin: 0 auto;
+      width: 100%;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      padding: 14px 40px;
-      gap: 24px; /* Aproxima logo do menu */
+      justify-content: space-between;
     }
 
     .logo-header {
@@ -38,16 +40,19 @@
 
     nav {
       display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 40px;
+      gap: 30px;
     }
 
     nav a {
       text-decoration: none;
       color: #333;
       font-weight: 500;
+      white-space: nowrap;
       padding: 6px 12px;
       border-radius: 4px;
+      transition: background-color 0.2s ease-in-out;
     }
 
     nav a:hover {
@@ -64,7 +69,7 @@
       font-size: 1.8rem;
       font-weight: 700;
       color: #2d3e4f;
-      border-left: 5px solid #e5007e; /* cor da logo */
+      border-left: 4px solid #e5007e; /* cor da logo */
       padding-left: 10px;
       margin-bottom: 30px;
     }
@@ -94,18 +99,21 @@
     }
 
     @media (max-width: 768px) {
-      .header-wrapper {
+      header {
         flex-direction: column;
         align-items: flex-start;
-        padding: 14px 20px;
-        gap: 16px;
+        gap: 10px;
+      }
+
+      .menu-container {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
       nav {
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
-        gap: 16px;
       }
 
       .conteudo {
@@ -125,7 +133,7 @@
 </head>
 <body>
   <header>
-    <div class="header-wrapper">
+    <div class="menu-container">
       <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="logo-header" />
       <nav>
         <a href="sobre.html">Sobre</a>
