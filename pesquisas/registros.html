@@ -12,40 +12,29 @@
       font-family: 'Lato', sans-serif;
       background-color: #fff;
       color: #000;
+      overflow-x: hidden;
     }
 
     header {
       background-color: #fff;
-      padding: 20px 40px;
+      padding: 20px 0;
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
       border-bottom: 1px solid #ccc;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo-menu {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo-menu img {
-      height: 60px;
-      margin-right: 20px;
+      text-align: center;
     }
 
     nav ul {
       list-style: none;
-      display: flex;
+      display: inline-flex;
       margin: 0;
       padding: 0;
     }
 
     nav ul li {
-      margin: 0 15px;
+      margin: 0 20px;
       position: relative;
     }
 
@@ -81,24 +70,38 @@
 
     .logo-vertical {
       position: fixed;
-      top: 120px;
+      top: 160px;
       left: 0;
-      width: 100px;
-      writing-mode: vertical-rl;
+      height: 300px;
       transform: rotate(180deg);
-      font-weight: bold;
-      font-size: 14px;
-      padding-left: 5px;
+      writing-mode: vertical-rl;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 10px;
+      z-index: 500;
+    }
+
+    .logo-vertical img {
+      height: 280px;
+      object-fit: contain;
     }
 
     .main-content {
-      max-width: 800px;
-      margin: 160px auto 80px auto;
-      padding: 0 20px;
+      max-width: 1100px;
+      margin: 160px auto 80px 120px;
+      padding: 0 40px;
+      line-height: 2;
     }
 
     h2 {
       margin-top: 0;
+      color: #000;
+    }
+
+    p {
+      color: #000;
+      margin-bottom: 24px;
     }
 
     footer {
@@ -113,7 +116,7 @@
     }
 
     .footer-logo {
-      height: 140px;
+      height: 80px;
     }
 
     .footer-info {
@@ -132,42 +135,40 @@
 </head>
 <body>
   <header>
-    <div class="logo-menu">
-      <a href="/religiaocebrap/">
-        <img src="/religiaocebrap/static/observatorio-logo.jpg" alt="Logo Observatório">
-      </a>
-      <nav>
-        <ul>
-          <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
-          <li>
-            <a href="/religiaocebrap/pesquisas/index.html">Pesquisas</a>
-            <ul>
-              <li><a href="/religiaocebrap/pesquisas/agrocristianismo.html">Agrocristianismo</a></li>
-              <li><a href="/religiaocebrap/pesquisas/aglom.html">Aglomerações</a></li>
-              <li><a href="/religiaocebrap/pesquisas/classificacao.html">Classificação</a></li>
-              <li><a href="/religiaocebrap/pesquisas/registros.html">Registros</a></li>
-              <li><a href="/religiaocebrap/pesquisas/representacao.html">Representações</a></li>
-            </ul>
-          </li>
-          <li><a href="/religiaocebrap/em-debate.html">Em debate</a></li>
-          <li><a href="/religiaocebrap/contato.html">Contato</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav>
+      <ul>
+        <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
+        <li>
+          <a href="/religiaocebrap/pesquisas/index.html">Pesquisas</a>
+          <ul>
+            <li><a href="/religiaocebrap/pesquisas/agrocristianismo.html">Agrocristianismo</a></li>
+            <li><a href="/religiaocebrap/pesquisas/aglom.html">Aglomerações</a></li>
+            <li><a href="/religiaocebrap/pesquisas/classificacao.html">Classificação</a></li>
+            <li><a href="/religiaocebrap/pesquisas/registros.html">Registros</a></li>
+            <li><a href="/religiaocebrap/pesquisas/representacao.html">Representações</a></li>
+          </ul>
+        </li>
+        <li><a href="/religiaocebrap/em-debate.html">Em debate</a></li>
+        <li><a href="/religiaocebrap/contato.html">Contato</a></li>
+      </ul>
+    </nav>
   </header>
 
   <div class="logo-vertical">
-    OBSERVATÓRIO DA RELIGIÃO E INTERSECCIONALIDADES
+    <img src="/religiaocebrap/static/9a8d1e75-137e-4b7f-a5b7-a38f83ebf98b.png" alt="Logo vertical Observatório">
   </div>
 
   <main class="main-content">
-    <h2>Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</h2>
-    <p><strong>Coordenação:</strong> Renata Nagamine<br>
+    <h2 data-aos="fade-up">Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</h2>
+    <p data-aos="fade-up" data-aos-delay="100"><strong>Coordenação:</strong> Renata Nagamine<br>
     <strong>Pesquisadoras:</strong> Olívia Barbosa, Paula Montero, Renata Nagamine e Camila Nicácio<br>
     <strong>Duração:</strong> maio de 2025 a outubro de 2026</p>
-    <p>Formas semióticas como antifeminismo, homoafetividade, intolerância religiosa, racismo religioso e racismo ambiental se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público. Nosso interesse é compreender de que modo os termos que selecionamos foram usados para conectar contextos de enunciação a um contexto social em transformação.</p>
-    <p>Sabemos de trabalhos anteriores que as formas selecionadas se relacionam com práticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos desses registros na vida sócio-política brasileira. Teremos em mente as seguintes perguntas: Como o agenciamento desses termos conecta religioso e público no Brasil? Como religioso e público se configuram no contexto em que eles são agenciados?</p>
-    <p>Para responder as perguntas acima, analisaremos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como elaborada pela literatura antropológica sobre semiótica. Segundo esta literatura, registros são formas linguísticas criadas na comunicação e agenciadas como rótulos nas interações sociais, com a produção de efeitos práticos. São artefatos que indexam e classificam signos. Uma análise dos usos de registros implica perceber como seu agenciamento tipifica pessoas, com a produção de estereótipos, classifica e ordena sujeitos, discursos e performances reunidos sob um nome. Implica perceber, igualmente, como essas formas conectam domínios de ação e transferem autoridade.</p>
+
+    <p data-aos="fade-up" data-aos-delay="200">Formas semióticas como antifeminismo, homoafetividade, intolerância religiosa, racismo religioso e racismo ambiental se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público. Nosso interesse é compreender de que modo os termos que selecionamos foram usados para conectar contextos de enunciação a um contexto social em transformação.</p>
+
+    <p data-aos="fade-up" data-aos-delay="300">Sabemos de trabalhos anteriores que as formas selecionadas se relacionam com práticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos desses registros na vida sócio-política brasileira. Teremos em mente as seguintes perguntas: Como o agenciamento desses termos conecta religioso e público no Brasil? Como religioso e público se configuram no contexto em que eles são agenciados?</p>
+
+    <p data-aos="fade-up" data-aos-delay="400">Para responder as perguntas acima, analisaremos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como elaborada pela literatura antropológica sobre semiótica. Segundo esta literatura, registros são formas linguísticas criadas na comunicação e agenciadas como rótulos nas interações sociais, com a produção de efeitos práticos. São artefatos que indexam e classificam signos. Uma análise dos usos de registros implica perceber como seu agenciamento tipifica pessoas, com a produção de estereótipos, classifica e ordena sujeitos, discursos e performances reunidos sob um nome. Implica perceber, igualmente, como essas formas conectam domínios de ação e transferem autoridade.</p>
   </main>
 
   <footer>
