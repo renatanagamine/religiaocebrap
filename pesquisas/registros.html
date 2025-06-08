@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registros no tempo</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: 'Lato', sans-serif;
       background-color: white;
-      color: #000;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -20,32 +21,19 @@
       background-color: #fff;
       border-bottom: 1px solid #ddd;
       z-index: 1000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 12px 40px;
-    }
-
-    .menu-container {
-      max-width: 1200px;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo-header {
-      height: 60px;
     }
 
     nav {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 30px;
+      gap: 40px;
+      padding: 20px 0;
+      margin-left: 40px; /* Aproxima o menu da logo */
     }
 
     nav a {
+      margin: 0 8px;
       text-decoration: none;
       color: #333;
       font-weight: 500;
@@ -55,13 +43,21 @@
       transition: background-color 0.2s ease-in-out;
     }
 
-    nav a:hover {
+    nav a:hover,
+    .dropdown-content a:hover {
       background-color: #f5f5f5;
+    }
+
+    .logo-observatorio {
+      position: absolute;
+      top: 10px;
+      left: 30px;
+      height: 100px;
     }
 
     .conteudo {
       max-width: 800px;
-      margin: 180px auto 60px auto;
+      margin: 200px auto 60px auto;
       padding: 0 20px;
     }
 
@@ -99,21 +95,22 @@
     }
 
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      .menu-container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
       nav {
         flex-wrap: wrap;
         justify-content: center;
-        width: 100%;
+        gap: 16px;
+        margin-left: 0;
+      }
+
+      nav a {
+        margin: 8px 0;
+      }
+
+      .logo-observatorio {
+        position: static;
+        display: block;
+        margin: 20px auto 0 auto;
+        height: 80px;
       }
 
       .conteudo {
@@ -129,19 +126,69 @@
         margin-top: 20px;
       }
     }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      flex-direction: column;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+      border-radius: 4px;
+    }
+
+    .dropdown:hover > .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+    }
+
+    .dropdown-content .dropdown:hover > .dropdown-content {
+      display: block;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="menu-container">
-      <img src="../static/observatorio-logo.jpg" alt="Logo Observatório" class="logo-header" />
-      <nav>
-        <a href="../sobre.html">Sobre</a>
-        <a href="../pesquisas.html">Pesquisas</a>
-        <a href="../em-debate.html">Em debate</a>
-        <a href="../contato.html">Contato</a>
-      </nav>
-    </div>
+    <img src="../static/observatorio-logo.jpg" alt="Logo Observatório" class="logo-observatorio" />
+    <nav>
+      <a href="../sobre.html">Sobre</a>
+      <div class="dropdown">
+        <a href="#">Pesquisas</a>
+        <div class="dropdown-content">
+          <div class="dropdown">
+            <a href="../pesquisas/agrocristianismo.html">Agrocristianismo ▸</a>
+            <div class="dropdown-content">
+              <a href="../pesquisas/aglom.html">Aglomerações religiosas</a>
+              <a href="../pesquisas/classificacao.html">Classificação de organizações</a>
+            </div>
+          </div>
+          <a href="../pesquisas/registros.html">Registros no tempo</a>
+          <a href="../pesquisas/representacao.html">Representações da religião</a>
+        </div>
+      </div>
+      <a href="../emdebate.html">Em debate</a>
+      <a href="../contato.html">Contato</a>
+    </nav>
   </header>
 
   <div class="conteudo">
@@ -163,13 +210,16 @@
       <img src="../static/cebrap-logo.png" alt="Logo Cebrap" />
     </a>
     <p>
-      <strong><a href="https://cebrap.org.br/" style="color: #000; text-decoration: none;">CEBRAP</a></strong><br>
+      <strong><a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">CEBRAP</a></strong><br>
       R. Morgado de Mateus, 615<br>
       Vila Mariana, São Paulo – SP, Brazil<br>
       CEP 04015-051<br>
       (11) 5574 0399 | (11) 5574 5928<br>
-      <a href="https://cebrap.org.br/" style="color: #000; text-decoration: none;">Contato</a>
+      <a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">Contato</a>
     </p>
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
