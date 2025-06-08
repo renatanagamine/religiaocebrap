@@ -1,194 +1,211 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Classificação – Observatório da Religião e Interseccionalidades</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: 'Lato', sans-serif;
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-      background-color: #fff;
-      color: #000;
+      background-color: white;
+      scroll-behavior: smooth;
     }
 
-    .content-wrapper {
-      display: flex;
-      flex: 1;
-      align-items: flex-start;
-    }
-
-    .sidebar {
-      width: 24%;
-      background-color: #ffffff;
-      padding: 26px 20px 25px 20px;
-      box-sizing: border-box;
-      color: #000;
-      border-right: 1px solid #ddd;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .sidebar-logo {
-      margin-bottom: 20px;
-      max-width: 90%;
-      height: auto;
-      margin-top: -70px;
-      margin-left: -45px;
-    }
-
-    .sidebar nav {
+    header {
+      position: fixed;
+      top: 0;
       width: 100%;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
     }
 
-    .sidebar ul {
-      list-style-type: none;
-      padding: 0;
-      line-height: 1.6;
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 20px 0;
     }
 
-    .sidebar ul li {
-      margin: 8px 0;
-      transition: transform 0.2s ease, color 0.2s ease;
-    }
-
-    .sidebar ul li:hover {
-      transform: translateX(4px);
-    }
-
-    .sidebar ul li ul {
-      margin-top: 5px;
-      margin-left: 15px;
-    }
-
-    .sidebar ul li ul li {
-      margin: 6px 0;
-    }
-
-    .sidebar ul li a {
+    nav a {
+      margin: 0 8px;
       text-decoration: none;
-      color: #000;
-      font-weight: 400;
-      transition: color 0.3s ease;
+      color: #333;
+      font-weight: 500;
+      white-space: nowrap;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.2s ease-in-out;
     }
 
-    .sidebar ul li a:hover {
-      text-decoration: underline;
-      color: #555;
+    nav a:hover,
+    .dropdown-content a:hover {
+      background-color: #f5f5f5;
     }
 
-    .main-content {
-      flex: 1;
-      padding: 40px 60px 20px 40px;
-      box-sizing: border-box;
-      line-height: 2;
-      max-width: 1100px;
+    .logo-observatorio {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 100px;
     }
 
-    .main-content-header {
-      margin-bottom: 48px;
+    .conteudo {
+      max-width: 800px;
+      margin: 160px auto 60px auto;
+      padding: 0 20px;
     }
 
-    h2, h3 {
-      color: #000;
-      margin-top: 0;
-    }
-
-    h3 {
-      margin-top: 40px;
+    .titulo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2d3e4f;
+      padding-left: 10px;
+      margin-bottom: 30px;
     }
 
     iframe {
       width: 100%;
-      height: 800px;
+      height: 1000px;
       border: none;
     }
 
     footer {
-      background-color: #ffffff;
-      color: #000;
-      padding: 20px;
-      font-size: 0.9em;
+      padding: 20px 40px;
+      background-color: #f4f4f4;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      border-top: 1px solid #ddd;
+      align-items: center;
+      font-size: 0.95rem;
     }
 
-    .footer-info {
-      margin-left: 20px;
+    footer img {
+      height: 110px;
     }
 
-    .footer-logo {
-      height: 140px;
-      margin-left: -45px;
+    footer p {
+      margin: 0;
+      text-align: right;
     }
 
-    a.footer-link {
-      color: #000;
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .logo-observatorio {
+        position: static;
+        display: block;
+        margin: 20px auto 0 auto;
+        height: 80px;
+      }
+
+      .conteudo {
+        padding: 20px;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      footer p {
+        margin-top: 20px;
+      }
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      flex-direction: column;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 16px;
       text-decoration: none;
+      display: block;
+      white-space: nowrap;
+      border-radius: 4px;
     }
 
-    a.footer-link:hover {
-      text-decoration: underline;
+    .dropdown:hover > .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+    }
+
+    .dropdown-content .dropdown:hover > .dropdown-content {
+      display: block;
     }
   </style>
 </head>
 <body>
-  <div class="content-wrapper">
-    <div class="sidebar">
-      <img src="/religiaocebrap/static/observatorio-logo.jpg" alt="Logo Observatório" class="sidebar-logo">
-      <nav>
-        <ul>
-          <li><a href="/religiaocebrap/sobre.html">Sobre</a></li>
-          <li>
-            <a href="/religiaocebrap/pesquisas/index.html">Pesquisas</a>
-            <ul>
-              <li>
-                <a href="/religiaocebrap/pesquisas/agrocristianismo.html">Agrocristianismo</a>
-                <ul>
-                  <li><a href="/religiaocebrap/pesquisas/aglom.html">Aglomerações de estabelecimentos religiosos</a></li>
-                  <li><a href="/religiaocebrap/pesquisas/classificacao.html">Classificação de organizações e associações religiosas</a></li>
-                </ul>
-              </li>
-              <li><a href="/religiaocebrap/pesquisas/registros.html">Registros no tempo</a></li>
-              <li><a href="/religiaocebrap/pesquisas/representacao.html">Representações da religião no Brasil</a></li>
-            </ul>
-          </li>
-          <li><a href="/religiaocebrap/em-debate.html">Em debate</a></li>
-          <li><a href="/religiaocebrap/contato.html">Contato</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <div class="main-content">
-      <div class="main-content-header">
-        <h2>Georreferenciamento e classificação de organizações e associações religiosas</h2>
+  <header>
+    <a href="../inicio.html">
+      <img src="../static/observatorio-logo.jpg" alt="Logo Observatório" class="logo-observatorio" />
+    </a>
+    <nav>
+      <a href="../sobre.html">Sobre</a>
+      <div class="dropdown">
+        <a href="#">Pesquisas</a>
+        <div class="dropdown-content">
+          <div class="dropdown">
+            <a href="../pesquisas/agrocristianismo.html">Agrocristianismo</a>
+            <div class="dropdown-content">
+              <a href="../pesquisas/aglom.html">Aglomerações religiosas</a>
+              <a href="../pesquisas/classificacao.html">Classificação de organizações</a>
+            </div>
+          </div>
+          <a href="../pesquisas/registros.html">Registros no tempo</a>
+          <a href="../pesquisas/representacao.html">Representações da religião</a>
+        </div>
       </div>
-      <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZGMwNjRhNDQtZjI1Ny00YWUwLTgyMjAtNjZjYjhkNTZhY2NmIiwidCI6IjA1NWY4ODIzLTRmMWQtNDRkNC1hMjEzLTNiYjQ0Y2NmYWI0NiJ9" allowfullscreen></iframe>
-    </div>
+      <a href="../emdebate.html">Em debate</a>
+      <a href="../contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <div class="conteudo" data-aos="fade-up">
+    <div class="titulo">Georreferenciamento e classificação de organizações e associações religiosas</div>
+    <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZGMwNjRhNDQtZjI1Ny00YWUwLTgyMjAtNjZjYjhkNTZhY2NmIiwidCI6IjA1NWY4ODIzLTRmMWQtNDRkNC1hMjEzLTNiYjQ0Y2NmYWI0NiJ9" allowfullscreen></iframe>
   </div>
 
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
-      <img src="../static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo">
+      <img src="../static/cebrap-logo.png" alt="Logo Cebrap" />
     </a>
-    <div class="footer-info">
-      <p>
-        <a class="footer-link" href="https://cebrap.org.br/" target="_blank"><strong>CEBRAP</strong></a><br>
-        R. Morgado de Mateus, 615<br>
-        Vila Mariana, São Paulo – SP, Brazil<br>
-        CEP 04015-051<br>
-        (11) 5574 0399<br>
-        (11) 5574 5928<br>
-        <a class="footer-link" href="https://cebrap.org.br/">Contato</a>
-      </p>
-    </div>
+    <p>
+      <strong><a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">CEBRAP</a></strong><br>
+      R. Morgado de Mateus, 615<br>
+      Vila Mariana, São Paulo – SP, Brazil<br>
+      CEP 04015-051<br>
+      (11) 5574 0399 | (11) 5574 5928<br>
+      <a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">Contato</a>
+    </p>
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
