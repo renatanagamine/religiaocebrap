@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>  
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
@@ -55,7 +55,7 @@
 
     .conteudo {
       max-width: 800px;
-      margin: 160px auto 60px auto;
+      margin: 180px auto 60px auto; /* ligeiramente maior para compensar header */
       padding: 0 20px;
     }
 
@@ -134,8 +134,8 @@
     </nav>
   </header>
 
-  <div class="conteudo">
-    <div class="titulo" data-aos="fade-up">Um agrocristianismo em formação no Brasil?</div>
+  <div class="conteudo" data-aos="fade-up">
+    <div class="titulo">Um agrocristianismo em formação no Brasil?</div>
 
     <p data-aos="fade-up"><strong>Coordenação:</strong> Renata Nagamine<br>
     <strong>Pesquisadores:</strong> Olívia Barbosa, Dirceu André Gerardi, Renata Nagamine, Aramis Luis Silva, Gustavo Aires Tiago, Lila Zatoni<br>
@@ -164,6 +164,13 @@
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({
+        duration: 800,
+        once: true
+      });
+    });
+  </script>
 </body>
 </html>
