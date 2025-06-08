@@ -42,8 +42,52 @@
       transition: background-color 0.2s ease-in-out;
     }
 
-    nav a:hover {
+    nav a:hover,
+    .dropdown-content a:hover {
       background-color: #f5f5f5;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      flex-direction: column;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+      border-radius: 4px;
+    }
+
+    .dropdown:hover > .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+    }
+
+    .dropdown-content .dropdown:hover > .dropdown-content {
+      display: block;
     }
 
     .logo-observatorio {
@@ -55,7 +99,7 @@
 
     .conteudo {
       max-width: 800px;
-      margin: 180px auto 60px auto; /* ligeiramente maior para compensar header */
+      margin: 160px auto 60px auto;
       padding: 0 20px;
     }
 
@@ -128,14 +172,27 @@
     </a>
     <nav>
       <a href="../sobre.html">Sobre</a>
-      <a href="../pesquisas/index.html">Pesquisas</a>
+      <div class="dropdown">
+        <a href="#">Pesquisas</a>
+        <div class="dropdown-content">
+          <div class="dropdown">
+            <a href="../pesquisas/agrocristianismo.html">Agrocristianismo ▸</a>
+            <div class="dropdown-content">
+              <a href="../pesquisas/aglom.html">Aglomerações religiosas</a>
+              <a href="../pesquisas/classificacao.html">Classificação de organizações</a>
+            </div>
+          </div>
+          <a href="../pesquisas/registros.html">Registros no tempo</a>
+          <a href="../pesquisas/representacao.html">Representações da religião</a>
+        </div>
+      </div>
       <a href="../emdebate.html">Em debate</a>
       <a href="../contato.html">Contato</a>
     </nav>
   </header>
 
-  <div class="conteudo" data-aos="fade-up">
-    <div class="titulo">Um agrocristianismo em formação no Brasil?</div>
+  <div class="conteudo">
+    <div class="titulo" data-aos="fade-up">Um agrocristianismo em formação no Brasil?</div>
 
     <p data-aos="fade-up"><strong>Coordenação:</strong> Renata Nagamine<br>
     <strong>Pesquisadores:</strong> Olívia Barbosa, Dirceu André Gerardi, Renata Nagamine, Aramis Luis Silva, Gustavo Aires Tiago, Lila Zatoni<br>
@@ -164,13 +221,6 @@
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      AOS.init({
-        duration: 800,
-        once: true
-      });
-    });
-  </script>
+  <script>AOS.init();</script>
 </body>
 </html>
