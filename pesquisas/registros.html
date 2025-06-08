@@ -22,14 +22,20 @@
       background-color: #fff;
       border-bottom: 1px solid #ddd;
       z-index: 1000;
+      display: flex;
+      align-items: center;
+      padding: 10px 40px;
+    }
+
+    .logo-header {
+      height: 60px;
+      margin-right: 30px;
     }
 
     nav {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 40px;
-      padding: 20px 0;
+      gap: 30px;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -86,38 +92,22 @@
       display: block;
     }
 
-    .hero-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding-top: 160px;
-      padding-bottom: 20px;
-      text-align: center;
+    .conteudo {
+      max-width: 1100px;
+      margin: 140px auto 60px auto;
+      padding: 0 40px;
     }
 
-    .hero-logo {
-      max-width: 220px;
-      height: auto;
-    }
-
-    .titulo-registros {
+    .titulo {
       font-size: 1.8rem;
       font-weight: 700;
       color: #2d3e4f;
       border-left: 4px solid #2d8f89;
       padding-left: 10px;
-      align-self: flex-start;
-      margin: 40px 0 20px 60px;
+      margin-bottom: 30px;
     }
 
-    section {
-      padding: 0 20px 80px 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    section p {
+    .conteudo p {
       font-size: 1.1rem;
       line-height: 2;
       margin-bottom: 20px;
@@ -142,14 +132,22 @@
     }
 
     @media (max-width: 768px) {
-      nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
+      header {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      .hero-logo {
-        max-width: 80%;
+      .logo-header {
+        margin-bottom: 10px;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .conteudo {
+        padding: 20px;
       }
 
       footer {
@@ -158,19 +156,14 @@
       }
 
       footer p {
-        text-align: center;
         margin-top: 20px;
-      }
-
-      .titulo-registros {
-        margin-left: 20px;
-        font-size: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
   <header>
+    <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="logo-header" />
     <nav>
       <a href="sobre.html">Sobre</a>
       <div class="dropdown">
@@ -192,23 +185,19 @@
     </nav>
   </header>
 
-  <div class="hero-section" data-aos="zoom-in">
-    <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" />
-  </div>
+  <div class="conteudo">
+    <div class="titulo">Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</div>
 
-  <div class="titulo-registros">Registros no tempo: linguagem e ação social no Brasil de 2010 a 2020</div>
-
-  <section>
-    <p data-aos="fade-up"><strong>Coordenação:</strong> Renata Nagamine<br>
+    <p><strong>Coordenação:</strong> Renata Nagamine<br>
     <strong>Pesquisadoras:</strong> Olívia Barbosa, Paula Montero, Renata Nagamine e Camila Nicácio<br>
     <strong>Duração:</strong> maio de 2025 a outubro de 2026</p>
 
-    <p data-aos="fade-up" data-aos-delay="100">Formas semióticas como antifeminismo, homoafetividade, intolerância religiosa, racismo religioso e racismo ambiental se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público. Nosso interesse é compreender de que modo os termos que selecionamos foram usados para conectar contextos de enunciação a um contexto social em transformação.</p>
+    <p data-aos="fade-up">Formas semióticas como antifeminismo, homoafetividade, intolerância religiosa, racismo religioso e racismo ambiental se tornaram correntes no Brasil a partir dos anos 2010. Esta pesquisa analisará a interação dos agentes com esses termos num processo de transformação da linguagem da ação social no país, em que mudaram os nomes e os modos de falar em público. Nosso interesse é compreender de que modo os termos que selecionamos foram usados para conectar contextos de enunciação a um contexto social em transformação.</p>
 
-    <p data-aos="fade-up" data-aos-delay="200">Sabemos de trabalhos anteriores que as formas selecionadas se relacionam com práticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos desses registros na vida sócio-política brasileira. Teremos em mente as seguintes perguntas: Como o agenciamento desses termos conecta religioso e público no Brasil? Como religioso e público se configuram no contexto em que eles são agenciados?</p>
+    <p data-aos="fade-up" data-aos-delay="100">Sabemos de trabalhos anteriores que as formas selecionadas se relacionam com práticas classificadas como religiosas na vida social brasileira. Olharemos, então, para os agenciamentos desses registros na vida sócio-política brasileira. Teremos em mente as seguintes perguntas: Como o agenciamento desses termos conecta religioso e público no Brasil? Como religioso e público se configuram no contexto em que eles são agenciados?</p>
 
-    <p data-aos="fade-up" data-aos-delay="300">Para responder as perguntas acima, analisaremos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como elaborada pela literatura antropológica sobre semiótica. Segundo esta literatura, registros são formas linguísticas criadas na comunicação e agenciadas como rótulos nas interações sociais, com a produção de efeitos práticos. São artefatos que indexam e classificam signos. Uma análise dos usos de registros implica perceber como seu agenciamento tipifica pessoas, com a produção de estereótipos, classifica e ordena sujeitos, discursos e performances reunidos sob um nome. Implica perceber, igualmente, como essas formas conectam domínios de ação e transferem autoridade.</p>
-  </section>
+    <p data-aos="fade-up" data-aos-delay="200">Para responder as perguntas acima, analisaremos um material empírico consistente em produções audiovisuais, postagens em mídias sociais, peças jornalísticas e judiciais com a ideia de registro, tal como elaborada pela literatura antropológica sobre semiótica. Segundo esta literatura, registros são formas linguísticas criadas na comunicação e agenciadas como rótulos nas interações sociais, com a produção de efeitos práticos. São artefatos que indexam e classificam signos. Uma análise dos usos de registros implica perceber como seu agenciamento tipifica pessoas, com a produção de estereótipos, classifica e ordena sujeitos, discursos e performances reunidos sob um nome. Implica perceber, igualmente, como essas formas conectam domínios de ação e transferem autoridade.</p>
+  </div>
 
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
