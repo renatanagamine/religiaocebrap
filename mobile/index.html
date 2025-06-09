@@ -27,7 +27,12 @@
       display: none;
       font-size: 28px;
       cursor: pointer;
-      padding: 20px;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1101;
+      background: white;
+      border: none;
     }
 
     .menu-overlay {
@@ -120,10 +125,6 @@
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        z-index: 1100;
       }
 
       .menu-overlay {
@@ -134,7 +135,7 @@
         width: 100%;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.3);
-        z-index: 1040;
+        z-index: 1100;
       }
 
       .menu-overlay.active {
@@ -154,16 +155,16 @@
         height: 100vh;
         width: 250px;
         box-shadow: 2px 0 6px rgba(0,0,0,0.1);
-        z-index: 1060;
+        z-index: 1102;
         justify-content: flex-start;
-      }
-
-      nav a {
-        margin-top: 10px;
       }
 
       nav.active {
         display: flex;
+      }
+
+      nav a {
+        margin-top: 10px;
       }
 
       .hero-logo {
@@ -176,7 +177,6 @@
       }
 
       footer p {
-        text-align: center;
         margin-top: 20px;
       }
     }
@@ -222,11 +222,11 @@
   </style>
 </head>
 <body>
-  <div class="menu-toggle">☰</div>
+  <button class="menu-toggle">☰</button>
   <div class="menu-overlay" id="menuOverlay"></div>
 
   <header>
-    <nav>
+    <nav id="mainNav">
       <a href="sobre.html">Sobre</a>
       <div class="dropdown">
         <a href="#">Pesquisas</a>
@@ -253,30 +253,7 @@
 
   <section id="sobre" data-aos="fade-up">
     <h2>Sobre</h2>
-    <p>O Observatório da Religião e Interseccionalidades desenvolve pesquisas que analisam o papel da religião em contextos sociais diversos. Suas pesquisas se orientam a compreender a relação da religião com questões de gênero, raça e outras dimensões da vida pública.</p>
-    <p>Produzindo e analisando dados, o Observatório contribui para a reflexão crítica sobre o lugar da religião na ação social e na produção de desigualdades no Brasil.</p>
-    <a href="sobre.html" class="btn">Saiba mais</a>
-  </section>
-
-  <section id="pesquisas" data-aos="fade-up">
-    <h2>Pesquisas</h2>
-    <p>Conheça nossas frentes de pesquisa:</p>
-    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-      <a href="pesquisas/agrocristianismo.html" class="btn" style="width: fit-content;">Agrocristianismo</a>
-      <a href="pesquisas/registros.html" class="btn" style="width: fit-content;">Registros no tempo</a>
-      <a href="pesquisas/representacao.html" class="btn" style="width: fit-content;">Repertório religioso na mídia</a>
-    </div>
-  </section>
-
-  <section id="em-debate" data-aos="fade-up">
-    <h2>Em debate</h2>
-    <p>Artigos de opinião, entrevistas e participações em eventos que conectam religião e interseccionalidades.</p>
-    <a href="emdebate.html" class="btn">Saiba mais</a>
-  </section>
-
-  <section id="contato" data-aos="fade-up">
-    <h2>Contato</h2>
-    <p>Entre em contato pelo email observatorio@exemplo.org ou acesse nosso <a href="https://github.com/renatanagamine/religiaocebrap" target="_blank">GitHub</a>.</p>
+    <p>O Observatório da Religião e Interseccionalidades desenvolve pesquisas que analisam o papel da religião em contextos sociais diversos...</p>
   </section>
 
   <footer>
@@ -302,7 +279,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
       const toggle = document.querySelector('.menu-toggle');
-      const nav = document.querySelector('nav');
+      const nav = document.getElementById('mainNav');
       const overlay = document.getElementById('menuOverlay');
 
       toggle.addEventListener('click', () => {
@@ -313,6 +290,10 @@
       overlay.addEventListener('click', () => {
         nav.classList.remove('active');
         overlay.classList.remove('active');
+      });
+
+      nav.addEventListener('click', function (e) {
+        e.stopPropagation(); // Evita que cliques dentro do menu fechem ele
       });
     });
   </script>
