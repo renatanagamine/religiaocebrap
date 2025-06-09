@@ -2,63 +2,267 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sobre - Observatório</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="estilos.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre o Observatório</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      background-color: white;
+      scroll-behavior: smooth;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      padding: 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 20px 0;
+    }
+
+    nav a {
+      margin: 0 8px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      white-space: nowrap;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    nav a:hover,
+    .dropdown-content a:hover {
+      background-color: #f5f5f5;
+    }
+
+    .logo-observatorio {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 100px;
+    }
+
+    .conteudo {
+      max-width: 1100px;
+      margin: 160px auto 60px auto;
+      padding: 0 40px;
+      flex: 1;
+    }
+
+    .conteudo h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2d3e4f;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .conteudo p {
+      font-size: 1.1rem;
+      line-height: 2;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      padding: 20px 40px;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    footer img {
+      height: 110px;
+    }
+
+    footer p {
+      margin: 0;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1100;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 20px;
+        padding-top: 80px;
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 250px;
+        box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+        z-index: 1050;
+        justify-content: flex-start;
+      }
+
+      nav a {
+        margin-top: 10px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .logo-observatorio {
+        position: static;
+        display: block;
+        margin: 20px auto 0 auto;
+        height: 80px;
+      }
+
+      .conteudo {
+        padding: 20px;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      footer p {
+        margin-top: 20px;
+      }
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      flex-direction: column;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+      border-radius: 4px;
+    }
+
+    .dropdown:hover > .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+    }
+
+    .dropdown-content .dropdown:hover > .dropdown-content {
+      display: block;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="menu-toggle">☰</div>
+    <a href="inicio.html">
+      <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="logo-observatorio" />
+    </a>
+    <nav>
+      <a href="sobre.html">Sobre</a>
+      <div class="dropdown">
+        <a href="#">Pesquisas</a>
+        <div class="dropdown-content">
+          <div class="dropdown">
+            <a href="pesquisas/agrocristianismo.html">Agrocristianismo</a>
+            <div class="dropdown-content">
+              <a href="pesquisas/aglom.html">Aglomerações religiosas</a>
+              <a href="pesquisas/classificacao.html">Classificação de organizações</a>
+            </div>
+          </div>
+          <a href="pesquisas/registros.html">Registros no tempo</a>
+          <a href="pesquisas/representacao.html">Repertório religioso</a>
+        </div>
+      </div>
+      <a href="emdebate.html">Em debate</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
 
-  <!-- Botão do menu hamburguer -->
-  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+  <div class="conteudo">
+    <h2 data-aos="fade-up">O que somos</h2>
+    <p data-aos="fade-up" data-aos-delay="100">O Observatório da Religião e Interseccionalidades é um grupo de pesquisa sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social no Brasil do Núcleo de Religiões no Mundo Contemporâneo do Cebrap.</p>
+    <p data-aos="fade-up" data-aos-delay="200">O grupo está vinculado ao Projeto Temático Fapesp "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6).</p>
 
-  <!-- Sidebar -->
-  <nav class="sidebar" id="sidebar">
-    <ul>
-      <li><a href="index.html">Início</a></li>
-      <li>
-        <button class="submenu-toggle" onclick="toggleSubmenu()">Pesquisas ▼</button>
-        <ul class="submenu" id="submenu">
-          <li><a href="pesquisas/agrocristianismo.html">Agrocristianismo</a></li>
-          <li><a href="pesquisas/registros.html">Registros no tempo</a></li>
-          <li><a href="pesquisas/representacao.html">Representações da religião</a></li>
-        </ul>
-      </li>
-      <li><a href="sobre.html">Sobre</a></li>
-      <li><a href="em-debate.html">Em debate</a></li>
-      <li><a href="contato.html">Contato</a></li>
-    </ul>
-  </nav>
+    <h2 data-aos="fade-up" data-aos-delay="300">O que fazemos</h2>
+    <p data-aos="fade-up" data-aos-delay="400">Produzimos dados e os transformamos em matéria-prima para a construção de novas percepções e compreensão a respeito dos fenômenos sociais associados à religião no espaço público brasileiro.</p>
+  </div>
 
-  <!-- Conteúdo principal -->
-  <main class="main-section">
-    <h2>Sobre o Observatório</h2>
-    <p>O Observatório da Religião e Interseccionalidades é um grupo de pesquisa sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social no Brasil do Núcleo de Religiões no Mundo Contemporâneo do Cebrap.</p>
-    <p>O grupo está vinculado ao Projeto Temático Fapesp "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6).</p>
-
-    <h2>O que fazemos</h2>
-    <p>Produzimos dados e os transformamos em matéria-prima para a construção de novas percepções e compreensão a respeito dos fenômenos sociais associados à religião no espaço público brasileiro.</p>
-  </main>
-
-  <!-- Rodapé -->
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
-      <img src="static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo">
+      <img src="static/cebrap-logo.png" alt="Logo Cebrap" />
     </a>
+    <p>
+      <strong><a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">CEBRAP</a></strong><br>
+      R. Morgado de Mateus, 615<br>
+      Vila Mariana, São Paulo – SP, Brazil<br>
+      CEP 04015-051<br>
+      (11) 5574 0399 | (11) 5574 5928<br>
+      <a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">Contato</a>
+    </p>
   </footer>
 
-  <!-- Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('open');
-    }
+    AOS.init({
+      once: false,
+      duration: 800,
+    });
 
-    function toggleSubmenu() {
-      const submenu = document.getElementById('submenu');
-      submenu.classList.toggle('open');
-    }
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('nav');
+      toggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+      });
+    });
   </script>
-
 </body>
 </html>
