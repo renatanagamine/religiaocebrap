@@ -68,7 +68,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding-top: 240px;
+      padding-top: 200px;
       padding-bottom: 120px;
       text-align: center;
     }
@@ -167,6 +167,10 @@
         margin-top: 10px;
       }
 
+      .hero-section {
+        margin-top: 120px;
+      }
+
       .hero-logo {
         max-width: 80%;
       }
@@ -253,7 +257,9 @@
 
   <section id="sobre" data-aos="fade-up">
     <h2>Sobre</h2>
-    <p>O Observatório da Religião e Interseccionalidades desenvolve pesquisas que analisam o papel da religião em contextos sociais diversos...</p>
+    <p>O Observatório da Religião e Interseccionalidades desenvolve pesquisas que analisam o papel da religião em contextos sociais diversos. Suas pesquisas se orientam a compreender a relação da religião com questões de gênero, raça e outras dimensões da vida pública.</p>
+    <p>Produzindo e analisando dados, o Observatório contribui para a reflexão crítica sobre o lugar da religião na ação social e na produção de desigualdades no Brasil.</p>
+    <a href="sobre.html" class="btn">Saiba mais</a>
   </section>
 
   <footer>
@@ -290,10 +296,6 @@
       overlay.addEventListener('click', () => {
         nav.classList.remove('active');
         overlay.classList.remove('active');
-      });
-
-      nav.addEventListener('click', function (e) {
-        e.stopPropagation(); // Evita que cliques dentro do menu fechem ele
       });
     });
   </script>
