@@ -21,7 +21,15 @@
       background-color: #fff;
       border-bottom: 1px solid #ddd;
       z-index: 1000;
-      overflow-x: auto;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      padding: 16px;
+      cursor: pointer;
     }
 
     nav {
@@ -45,6 +53,94 @@
     nav a:hover,
     .dropdown-content a:hover {
       background-color: #f5f5f5;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      flex-direction: column;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+      border-radius: 4px;
+    }
+
+    .dropdown:hover > .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+    }
+
+    .dropdown-content .dropdown:hover > .dropdown-content {
+      display: block;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+        gap: 16px;
+      }
+
+      nav.active {
+        display: flex;
+        background-color: #fff;
+        border-top: 1px solid #ccc;
+      }
+
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        padding-left: 10px;
+      }
+
+      .dropdown > .dropdown-toggle::after {
+        content: " ⯆";
+        font-size: 0.8rem;
+      }
+
+      .dropdown-content .dropdown > .dropdown-toggle::after {
+        content: " ⯈";
+      }
+
+      .dropdown:hover > .dropdown-content {
+        display: none;
+      }
+
+      .dropdown.open > .dropdown-content {
+        display: flex;
+      }
+
+      .dropdown-content .dropdown.open > .dropdown-content {
+        display: flex;
+        padding-left: 20px;
+      }
     }
 
     .hero-section {
@@ -105,91 +201,18 @@
       margin: 0;
       text-align: right;
     }
-
-    @media (max-width: 768px) {
-      nav {
-        display: inline-flex;
-        min-width: max-content;
-        justify-content: flex-start;
-        gap: 20px;
-        padding: 12px 16px;
-        overflow-x: auto;
-        white-space: nowrap;
-      }
-
-      nav a {
-        font-size: 0.95rem;
-        flex-shrink: 0;
-      }
-
-      nav::-webkit-scrollbar {
-        display: none;
-      }
-
-      .hero-logo {
-        max-width: 80%;
-      }
-
-      footer {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      footer p {
-        text-align: center;
-        margin-top: 20px;
-      }
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #fff;
-      min-width: 200px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-      flex-direction: column;
-    }
-
-    .dropdown-content a {
-      color: #333;
-      padding: 10px 16px;
-      text-decoration: none;
-      display: block;
-      white-space: nowrap;
-      border-radius: 4px;
-    }
-
-    .dropdown:hover > .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-content .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 100%;
-    }
-
-    .dropdown-content .dropdown:hover > .dropdown-content {
-      display: block;
-    }
   </style>
 </head>
 <body>
   <header>
-    <nav>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="main-menu">
       <a href="sobre.html">Sobre</a>
       <div class="dropdown">
-        <a href="#">Pesquisas</a>
+        <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Pesquisas</a>
         <div class="dropdown-content">
           <div class="dropdown">
-            <a href="pesquisas/agrocristianismo.html">Agrocristianismo</a>
+            <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Agrocristianismo</a>
             <div class="dropdown-content">
               <a href="pesquisas/aglom.html">Aglomerações religiosas</a>
               <a href="pesquisas/classificacao.html">Classificação de organizações</a>
@@ -206,3 +229,63 @@
 
   <div class="hero-section">
     <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" data-aos="zoom-in" />
+  </div>
+
+  <section id="sobre" data-aos="fade-up">
+    <h2>Sobre</h2>
+    <p>O Observatório da Religião e Interseccionalidades desenvolve pesquisas que analisam o papel da religião em contextos sociais diversos. Suas pesquisas se orientam a compreender a relação da religião com questões de gênero, raça e outras dimensões da vida pública.</p>
+    <p>Produzindo e analisando dados, o Observatório contribui para a reflexão crítica sobre o lugar da religião na ação social e na produção de desigualdades no Brasil.</p>
+    <a href="sobre.html" class="btn">Saiba mais</a>
+  </section>
+
+  <section id="pesquisas" data-aos="fade-up">
+    <h2>Pesquisas</h2>
+    <p>Conheça nossas frentes de pesquisa:</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+      <a href="pesquisas/agrocristianismo.html" class="btn" style="width: fit-content;">Agrocristianismo</a>
+      <a href="pesquisas/registros.html" class="btn" style="width: fit-content;">Registros no tempo</a>
+      <a href="pesquisas/representacao.html" class="btn" style="width: fit-content;">Repertório religioso na mídia</a>
+    </div>
+  </section>
+
+  <section id="em-debate" data-aos="fade-up">
+    <h2>Em debate</h2>
+    <p>Artigos de opinião, entrevistas e participações em eventos que conectam religião e interseccionalidades.</p>
+    <a href="emdebate.html" class="btn">Saiba mais</a>
+  </section>
+
+  <section id="contato" data-aos="fade-up">
+    <h2>Contato</h2>
+    <p>Entre em contato pelo email observatorio@exemplo.org ou acesse nosso <a href="https://github.com/renatanagamine/religiaocebrap" target="_blank">GitHub</a>.</p>
+  </section>
+
+  <footer>
+    <a href="https://cebrap.org.br/" target="_blank">
+      <img src="static/cebrap-logo.png" alt="Logo Cebrap">
+    </a>
+    <p>
+      <strong><a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">CEBRAP</a></strong><br>
+      R. Morgado de Mateus, 615<br>
+      Vila Mariana, São Paulo – SP, Brazil<br>
+      CEP 04015-051<br>
+      (11) 5574 0399 | (11) 5574 5928<br>
+      <a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">Contato</a>
+    </p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: false, duration: 800 });
+
+    function toggleMenu() {
+      document.getElementById("main-menu").classList.toggle("active");
+    }
+
+    function toggleDropdown(event) {
+      event.preventDefault();
+      const parent = event.target.closest(".dropdown");
+      parent.classList.toggle("open");
+    }
+  </script>
+</body>
+</html>
