@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Observatório da Religião e Interseccionalidades</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -23,14 +23,20 @@
       z-index: 1000;
     }
 
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      padding: 20px;
+      text-align: right;
+    }
+
     nav {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 40px;
       padding: 20px 0;
-      flex-wrap: nowrap;
-      overflow-x: auto;
     }
 
     nav a {
@@ -109,18 +115,19 @@
     }
 
     @media (max-width: 768px) {
-      nav {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 24px;
-        padding: 12px 16px;
+      .menu-toggle {
+        display: block;
       }
 
-      nav a {
-        margin: 0;
-        font-size: 0.95rem;
-        white-space: nowrap;
-        flex-shrink: 0;
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      nav.active {
+        display: flex;
       }
 
       .hero-logo {
@@ -180,6 +187,7 @@
 </head>
 <body>
   <header>
+    <div class="menu-toggle">☰</div>
     <nav>
       <a href="sobre.html">Sobre</a>
       <div class="dropdown">
@@ -231,6 +239,14 @@
     AOS.init({
       once: false,
       duration: 800,
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('nav');
+      toggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+      });
     });
   </script>
 </body>
