@@ -1,1 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Em debate - Observatório da Religião e Interseccionalidades</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      background-color: white;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 20px 0;
+    }
+
+    nav a {
+      margin: 0 8px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      white-space: nowrap;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    nav a:hover {
+      background-color: #f5f5f5;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      min-width: 220px;
+      left: 0;
+      top: 100%;
+    }
+
+    .dropdown:hover > .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+    }
+
+    .dropdown-content .dropdown:hover > .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+      border-radius: 4px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f5f5f5;
+    }
+
+    .logo-observatorio {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 100px;
+    }
+
+    .conteudo {
+      max-width: 800px;
+      margin: 160px auto 60px auto;
+      padding: 0 20px;
+    }
+
+    .titulo {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #000;
+      padding-left: 0;
+      margin-bottom: 30px;
+      line-height: 2;
+    }
+
+    .conteudo p {
+      font-size: 1.1rem;
+      line-height: 2;
+      margin-bottom: 20px;
+    }
+
+    .painel-titulo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #000;
+      margin: 40px 0 20px 0;
+      line-height: 2;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+
+    footer {
+      padding: 20px 40px;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    footer img {
+      height: 110px;
+    }
+
+    footer p {
+      margin: 0;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .logo-observatorio {
+        position: static;
+        display: block;
+        margin: 20px auto 0 auto;
+        height: 80px;
+      }
+
+      .conteudo {
+        padding: 20px;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      footer p {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../inicio.html">
+      <img src="../static/observatorio-logo.jpg" alt="Logo Observatório" class="logo-observatorio" />
+    </a>
+    <nav>
+      <a href="../sobre.html">Sobre</a>
+      <div class="dropdown">
+        <a href="#">Pesquisas</a>
+        <div class="dropdown-content">
+          <div class="dropdown">
+            <a href="../pesquisas/agrocristianismo.html">Agrocristianismo</a>
+            <div class="dropdown-content">
+              <a href="../pesquisas/aglom.html">Aglomerações religiosas</a>
+              <a href="../pesquisas/classificacao.html">Classificação de organizações</a>
+            </div>
+          </div>
+          <a href="../pesquisas/registros.html">Registros no tempo</a>
+          <a href="../pesquisas/representacao.html">Repertório religioso</a>
+        </div>
+      </div>
+      <a href="../emdebate.html">Em debate</a>
+      <a href="../contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <div class="conteudo">
+    <div class="titulo" data-aos="fade-up">Em debate</div>
+
+    <p data-aos="fade-up">Nesta seção, reunimos textos curtos, entrevistas, ensaios visuais e links de interesse que aprofundam questões discutidas nas pesquisas do Observatório.</p>
+
+    <p data-aos="fade-up" data-aos-delay="200">Cada entrada tem como objetivo ampliar o diálogo entre pesquisadorxs, público acadêmico e não acadêmico, trazendo à tona debates contemporâneos sobre religião, política, direitos, território, e muito mais.</p>
+
+    <!-- Exemplo de item com link -->
+    <p data-aos="fade-up" data-aos-delay="300"><a href="#" target="_blank">[Título do conteúdo em debate]</a></p>
+
+    <!-- Você pode duplicar os blocos acima para incluir outros links ou incorporar vídeos e painéis com iframes -->
+  </div>
+
+  <footer>
+    <a href="https://cebrap.org.br/" target="_blank">
+      <img src="../static/cebrap-logo.png" alt="Logo Cebrap" />
+    </a>
+    <p>
+      <strong><a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">CEBRAP</a></strong><br>
+      R. Morgado de Mateus, 615<br>
+      Vila Mariana, São Paulo – SP, Brazil<br>
+      CEP 04015-051<br>
+      (11) 5574 0399 | (11) 5574 5928<br>
+      <a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">Contato</a>
+    </p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
 
