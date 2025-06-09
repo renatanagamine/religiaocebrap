@@ -28,7 +28,6 @@
       font-size: 28px;
       cursor: pointer;
       padding: 20px;
-      text-align: right;
     }
 
     nav {
@@ -117,13 +116,26 @@
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1100;
       }
 
       nav {
         display: none;
         flex-direction: column;
-        align-items: center;
-        gap: 20px;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 20px;
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 250px;
+        box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+        z-index: 1050;
       }
 
       nav.active {
@@ -220,9 +232,30 @@
     <a href="sobre.html" class="btn">Saiba mais</a>
   </section>
 
+  <section id="pesquisas" data-aos="fade-up">
+    <h2>Pesquisas</h2>
+    <p>Conheça nossas frentes de pesquisa:</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+      <a href="pesquisas/agrocristianismo.html" class="btn" style="width: fit-content;">Agrocristianismo</a>
+      <a href="pesquisas/registros.html" class="btn" style="width: fit-content;">Registros no tempo</a>
+      <a href="pesquisas/representacao.html" class="btn" style="width: fit-content;">Repertório religioso na mídia</a>
+    </div>
+  </section>
+
+  <section id="em-debate" data-aos="fade-up">
+    <h2>Em debate</h2>
+    <p>Artigos de opinião, entrevistas e participações em eventos que conectam religião e interseccionalidades.</p>
+    <a href="emdebate.html" class="btn">Saiba mais</a>
+  </section>
+
+  <section id="contato" data-aos="fade-up">
+    <h2>Contato</h2>
+    <p>Entre em contato pelo email observatorio@exemplo.org ou acesse nosso <a href="https://github.com/renatanagamine/religiaocebrap" target="_blank">GitHub</a>.</p>
+  </section>
+
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
-      <img src="../static/cebrap-logo.png" alt="Logo Cebrap" />
+      <img src="../static/cebrap-logo.png" alt="Logo Cebrap">
     </a>
     <p>
       <strong><a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">CEBRAP</a></strong><br>
@@ -236,10 +269,7 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
-      once: false,
-      duration: 800,
-    });
+    AOS.init({ once: false, duration: 800 });
 
     document.addEventListener('DOMContentLoaded', function () {
       const toggle = document.querySelector('.menu-toggle');
