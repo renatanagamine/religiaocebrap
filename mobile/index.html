@@ -1,86 +1,258 @@
-<!DOCTYPE html>
+Aqui está o código **completo e ajustado** para que todos os itens do menu apareçam em **uma única linha no mobile**. A única modificação foi no bloco `@media (max-width: 768px)` para impedir a quebra de linha no menu:
+
+```html
+<!DOCTYPE html>  
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Observatório da Religião e Interseccionalidades</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Lato', sans-serif;
+      background-color: white;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
       background-color: #fff;
-      color: #000;
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 20px 0;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+
+    nav a {
+      margin: 0 8px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      white-space: nowrap;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    nav a:hover,
+    .dropdown-content a:hover {
+      background-color: #f5f5f5;
     }
 
     .hero-section {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      height: 100vh;
-      padding-top: 80px; /* aumenta o espaço no topo */
+      justify-content: center;
+      padding-top: 200px;
+      padding-bottom: 120px;
       text-align: center;
     }
 
     .hero-logo {
-      width: 80vw;
-      max-width: 300px;
+      max-width: 700px;
+      height: auto;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
       margin-bottom: 20px;
     }
 
-    .scroll-text {
-      font-size: 1em;
-      color: #666;
-      animation: fadeInUp 1.5s ease-in-out infinite alternate;
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0.5; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .main-section {
-      padding: 40px 20px;
-      max-width: 700px;
-      margin: 0 auto;
+    section p {
+      font-size: 1.1rem;
       line-height: 1.9;
     }
 
-    footer {
-      text-align: center;
-      padding: 40px 0 20px;
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
     }
 
-    .footer-logo {
-      height: 90px;
-      opacity: 0.9;
+    footer {
+      padding: 20px 40px;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    footer img {
+      height: 110px;
+    }
+
+    footer p {
+      margin: 0;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 24px;
+        padding: 16px;
+      }
+
+      nav a {
+        margin: 0;
+        font-size: 0.95rem;
+        flex-shrink: 0;
+      }
+
+      .hero-logo {
+        max-width: 80%;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      footer p {
+        text-align: center;
+        margin-top: 20px;
+      }
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      flex-direction: column;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+      border-radius: 4px;
+    }
+
+    .dropdown:hover > .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+    }
+
+    .dropdown-content .dropdown:hover > .dropdown-content {
+      display: block;
     }
   </style>
 </head>
 <body>
+  <header>
+    <nav>
+      <a href="sobre.html">Sobre</a>
+      <div class="dropdown">
+        <a href="#">Pesquisas</a>
+        <div class="dropdown-content">
+          <div class="dropdown">
+            <a href="pesquisas/agrocristianismo.html">Agrocristianismo</a>
+            <div class="dropdown-content">
+              <a href="pesquisas/aglom.html">Aglomerações religiosas</a>
+              <a href="pesquisas/classificacao.html">Classificação de organizações</a>
+            </div>
+          </div>
+          <a href="pesquisas/registros.html">Registros no tempo</a>
+          <a href="pesquisas/representacao.html">Repertório religioso</a>
+        </div>
+      </div>
+      <a href="emdebate.html">Em debate</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
 
   <div class="hero-section">
-    <img src="../static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" />
-    <p class="scroll-text">Role a página</p>
+    <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" data-aos="zoom-in" />
   </div>
 
-  <section class="main-section">
-    <h1 data-aos="fade-up">Sobre o Observatório</h1>
-    <p data-aos="fade-up" data-aos-delay="100">O Observatório da Religião e Interseccionalidades é um grupo de pesquisa sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social no Brasil do Núcleo de Religiões no Mundo Contemporâneo do Cebrap.</p>
-    <p data-aos="fade-up" data-aos-delay="200">O grupo está vinculado ao Projeto Temático Fapesp "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6).</p>
+  <section id="sobre" data-aos="fade-up">
+    <h2>Sobre</h2>
+    <p>O Observatório da Religião e Interseccionalidades desenvolve pesquisas que analisam o papel da religião em contextos sociais diversos. Suas pesquisas se orientam a compreender a relação da religião com questões de gênero, raça e outras dimensões da vida pública.</p>
+    <p>Produzindo e analisando dados, o Observatório contribui para a reflexão crítica sobre o lugar da religião na ação social e na produção de desigualdades no Brasil.</p>
+    <a href="sobre.html" class="btn">Saiba mais</a>
+  </section>
+
+  <section id="pesquisas" data-aos="fade-up">
+    <h2>Pesquisas</h2>
+    <p>Conheça nossas frentes de pesquisa:</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+      <a href="pesquisas/agrocristianismo.html" class="btn" style="width: fit-content;">Agrocristianismo</a>
+      <a href="pesquisas/registros.html" class="btn" style="width: fit-content;">Registros no tempo</a>
+      <a href="pesquisas/representacao.html" class="btn" style="width: fit-content;">Repertório religioso na mídia</a>
+    </div>
+  </section>
+
+  <section id="em-debate" data-aos="fade-up">
+    <h2>Em debate</h2>
+    <p>Artigos de opinião, entrevistas e participações em eventos que conectam religião e interseccionalidades.</p>
+    <a href="emdebate.html" class="btn">Saiba mais</a>
+  </section>
+
+  <section id="contato" data-aos="fade-up">
+    <h2>Contato</h2>
+    <p>Entre em contato pelo email observatorio@exemplo.org ou acesse nosso <a href="https://github.com/renatanagamine/religiaocebrap" target="_blank">GitHub</a>.</p>
   </section>
 
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
-      <img src="../static/cebrap-logo.png" alt="Logo Cebrap" class="footer-logo">
+      <img src="static/cebrap-logo.png" alt="Logo Cebrap">
     </a>
+    <p>
+      <strong><a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">CEBRAP</a></strong><br>
+      R. Morgado de Mateus, 615<br>
+      Vila Mariana, São Paulo – SP, Brazil<br>
+      CEP 04015-051<br>
+      (11) 5574 0399 | (11) 5574 5928<br>
+      <a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">Contato</a>
+    </p>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <script>AOS.init();</script>
 </body>
 </html>
+```
+
+Agora o menu no mobile deve manter todos os itens em **uma única linha com rolagem horizontal automática**, evitando que o "Contato" vá para a linha de baixo. Se quiser, posso limitar a largura máxima do menu ou ajustar o espaçamento entre os itens.
