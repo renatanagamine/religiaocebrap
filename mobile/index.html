@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
@@ -87,6 +87,12 @@
     section h2 {
       font-size: 2rem;
       margin-bottom: 20px;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+    }
+
+    section[data-aos].aos-animate h2 {
+      opacity: 1;
     }
 
     section p {
@@ -250,8 +256,6 @@
     <p>O Observatório da Religião e Interseccionalidades desenvolve pesquisas que analisam o papel da religião em contextos sociais diversos.</p>
   </section>
 
-  <!-- ... outras seções ... -->
-
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
       <img src="../static/cebrap-logo.png" alt="Logo Cebrap">
@@ -289,10 +293,20 @@
         overlay.classList.remove('active');
       });
 
+      // Fecha o menu ao clicar em qualquer link dentro dele
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('active');
+          overlay.classList.remove('active');
+        });
+      });
+
+      // Impede fechamento ao clicar dentro do menu
       nav.addEventListener('click', (e) => {
         e.stopPropagation();
       });
 
+      // Fecha o menu se clicar fora
       document.body.addEventListener('click', (e) => {
         if (!nav.contains(e.target) && !toggle.contains(e.target)) {
           nav.classList.remove('active');
