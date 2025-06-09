@@ -245,7 +245,7 @@
     <img src="../static/observatorio-logo.jpg" alt="Logo Observatório" class="hero-logo" data-aos="zoom-in" />
   </div>
 
-  <section id="sobre" data-aos="fade-up" data-aos-delay="300">
+  <section id="sobre" data-aos="fade-up" data-aos-delay="400">
     <h2>Sobre</h2>
     <p>O Observatório da Religião e Interseccionalidades desenvolve pesquisas que analisam o papel da religião em contextos sociais diversos.</p>
   </section>
@@ -297,9 +297,9 @@
       const overlay = document.getElementById('menuOverlay');
 
       toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
         nav.classList.toggle('active');
         overlay.classList.toggle('active');
-        e.stopPropagation();
       });
 
       overlay.addEventListener('click', () => {
@@ -307,12 +307,10 @@
         overlay.classList.remove('active');
       });
 
-      // Impede que o clique dentro do menu feche o menu
       nav.addEventListener('click', (e) => {
         e.stopPropagation();
       });
 
-      // Fecha menu ao clicar fora
       document.body.addEventListener('click', (e) => {
         if (!nav.contains(e.target) && !toggle.contains(e.target)) {
           nav.classList.remove('active');
