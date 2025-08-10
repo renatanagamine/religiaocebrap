@@ -78,6 +78,48 @@
       margin-bottom: 20px;
     }
 
+    /* ====== QUEM SOMOS (cards dos membros) ====== */
+    .membros {
+      display: grid;
+      grid-template-columns: repeat( auto-fit, minmax(220px, 1fr) );
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .membro {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .membro img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 12px auto;
+      filter: grayscale(10%);
+    }
+
+    .membro .papel {
+      display: block;
+      font-size: 0.95rem;
+      color: #546375;
+      margin-bottom: 4px;
+    }
+
+    /* Links dos nomes: sem sublinhado, com cor e negrito */
+    .membro a {
+      text-decoration: none;
+      font-weight: 700;
+      color: #2a5d9f; /* azul suave para indicar clicável */
+      transition: color 0.2s ease-in-out;
+    }
+
+    .membro a:hover {
+      color: #1a3f6c; /* azul mais escuro no hover */
+    }
+
     footer {
       padding: 20px 40px;
       background-color: #f4f4f4;
@@ -191,12 +233,57 @@
   </header>
 
   <div class="conteudo">
-    <h2 data-aos="fade-up">O que somos</h2>
-    <p data-aos="fade-up" data-aos-delay="100">O Observatório da Religião e Interseccionalidades é um grupo de pesquisa sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social no Brasil do Núcleo de Religiões.</p>
-    <p data-aos="fade-up" data-aos-delay="200">O grupo está vinculado ao Núcleo de Religiões no Mundo Contemporâneo pelo projeto temático "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6). Também está vinculado ao Center for Critical Imagination. (CCI/CEBRAP)</p>
+    <!-- Bloco novo -->
+    <h2 data-aos="fade-up">Quem somos</h2>
+    <div class="membros">
+      <!-- Bolsistas -->
+      <div class="membro" data-aos="fade-up" data-aos-delay="100">
+        <img src="static/lila.png" alt="Lila Zatoni">
+        <span class="papel">Bolsista</span>
+        <span class="nome">Lila Zatoni</span>
+      </div>
+      <div class="membro" data-aos="fade-up" data-aos-delay="150">
+        <img src="static/carolina-1.png" alt="Carolina Nicoletti">
+        <span class="papel">Bolsista</span>
+        <span class="nome">Carolina Nicoletti</span>
+      </div>
+      <div class="membro" data-aos="fade-up" data-aos-delay="200">
+        <img src="static/gustavo.png" alt="Gustavo Aires Tiago">
+        <span class="papel">Bolsista</span>
+        <span class="nome">Gustavo Aires Tiago</span>
+      </div>
 
-    <h2 data-aos="fade-up" data-aos-delay="300">O que fazemos</h2>
-    <p data-aos="fade-up" data-aos-delay="400">Produzimos dados e os transformamos em matéria-prima para a construção de novas percepções e compreensão de fenômenos sociais associados à religião no espaço público brasileiro.</p>
+      <!-- Pesquisadores -->
+      <div class="membro" data-aos="fade-up" data-aos-delay="300">
+        <img src="static/renata.png" alt="Renata Nagamine">
+        <span class="papel">Pesquisadora</span>
+        <a class="nome" href="http://lattes.cnpq.br/5808712334043224" target="_blank" rel="noopener">Renata Nagamine</a>
+      </div>
+      <div class="membro" data-aos="fade-up" data-aos-delay="350">
+        <img src="static/andre.png" alt="Dirceu André Gerardi">
+        <span class="papel">Pesquisador</span>
+        <a class="nome" href="http://lattes.cnpq.br/4672904222329316" target="_blank" rel="noopener">Dirceu André Gerardi</a>
+      </div>
+      <div class="membro" data-aos="fade-up" data-aos-delay="400">
+        <img src="static/aramis.png" alt="Aramis Luis Silva">
+        <span class="papel">Pesquisador</span>
+        <a class="nome" href="http://lattes.cnpq.br/9557020798857347" target="_blank" rel="noopener">Aramis Luis Silva</a>
+      </div>
+
+      <!-- Supervisão -->
+      <div class="membro" data-aos="fade-up" data-aos-delay="450">
+        <img src="static/paula.png" alt="Paula Montero">
+        <span class="papel">Supervisora</span>
+        <a class="nome" href="http://lattes.cnpq.br/1873338237971936" target="_blank" rel="noopener">Paula Montero</a>
+      </div>
+    </div>
+
+    <h2 data-aos="fade-up" data-aos-delay="500">O que somos</h2>
+    <p data-aos="fade-up" data-aos-delay="600">O Observatório da Religião e Interseccionalidades é um grupo de pesquisa sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social no Brasil do Núcleo de Religiões.</p>
+    <p data-aos="fade-up" data-aos-delay="700">O grupo está vinculado ao Núcleo de Religiões no Mundo Contemporâneo pelo projeto temático "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6). Também está vinculado ao Center for Critical Imagination. (CCI/CEBRAP)</p>
+
+    <h2 data-aos="fade-up" data-aos-delay="800">O que fazemos</h2>
+    <p data-aos="fade-up" data-aos-delay="900">Produzimos dados e os transformamos em matéria-prima para a construção de novas percepções e compreensão de fenômenos sociais associados à religião no espaço público brasileiro.</p>
   </div>
 
   <footer>
