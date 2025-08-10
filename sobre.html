@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sobre o Observatório</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     body {
@@ -75,12 +75,13 @@
       margin-bottom: 20px;
     }
 
-    /* ---- Membros centralizados e em 2 linhas ---- */
-    .membros {
+    /* ---- Estrutura de linhas ---- */
+    .linha-membros {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       gap: 24px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
     }
 
     .membro {
@@ -105,15 +106,17 @@
       margin-bottom: 4px;
     }
 
-    /* Links: preto e efeito de sombra no hover */
-    .membro a {
+    /* Links e nomes: sem negrito e sombra aprimorada */
+    .membro a,
+    .membro span.nome {
       text-decoration: none;
-      font-weight: 700;
+      font-weight: normal;
       color: #000;
-      transition: text-shadow 0.2s ease-in-out;
+      transition: text-shadow 0.3s ease-in-out;
     }
-    .membro a:hover {
-      text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    .membro a:hover,
+    .membro span.nome:hover {
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
     }
 
     footer {
@@ -177,8 +180,8 @@
   <div class="conteudo">
     <h2 data-aos="fade-up">Quem somos</h2>
 
-    <div class="membros" data-aos="fade-up" data-aos-delay="50">
-      <!-- Primeira linha -->
+    <!-- Primeira linha -->
+    <div class="linha-membros" data-aos="fade-up" data-aos-delay="50">
       <div class="membro">
         <img src="static/paula.png" alt="Paula Montero" loading="lazy">
         <span class="papel">Supervisora</span>
@@ -199,22 +202,24 @@
         <span class="papel">Pesquisador</span>
         <a href="http://lattes.cnpq.br/9557020798857347" target="_blank" rel="noopener">Aramis Luis Silva</a>
       </div>
+    </div>
 
-      <!-- Segunda linha -->
+    <!-- Segunda linha -->
+    <div class="linha-membros" data-aos="fade-up" data-aos-delay="100">
       <div class="membro">
         <img src="static/carolina-1.png" alt="Carolina Nicoletti" loading="lazy">
         <span class="papel">Bolsista</span>
-        <span>Carolina Nicoletti</span>
+        <span class="nome">Carolina Nicoletti</span>
       </div>
       <div class="membro">
         <img src="static/lila.png" alt="Lila Zatoni" loading="lazy">
         <span class="papel">Bolsista</span>
-        <span>Lila Zatoni</span>
+        <span class="nome">Lila Zatoni</span>
       </div>
       <div class="membro">
         <img src="static/gustavo.png" alt="Gustavo Aires Tiago" loading="lazy">
         <span class="papel">Bolsista</span>
-        <span>Gustavo Aires Tiago</span>
+        <span class="nome">Gustavo Aires Tiago</span>
       </div>
     </div>
 
@@ -224,7 +229,7 @@
     </p>
     <p data-aos="fade-up" data-aos-delay="400">
       O grupo está vinculado ao Núcleo de Religiões no Mundo Contemporâneo pelo projeto temático "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6). 
-      Também está vinculado ao <a href="https://cci-cebrap.org.br/" target="_blank" style="color: #000; font-weight: 700; text-decoration: none; transition: text-shadow 0.2s ease-in-out;" onmouseover="this.style.textShadow='0 0 5px rgba(0,0,0,0.3)'" onmouseout="this.style.textShadow='none'">Center for Critical Imagination</a> (CCI/CEBRAP).
+      Também está vinculado ao <a href="https://cci-cebrap.org.br/" target="_blank" style="color: #000; font-weight: normal; text-decoration: none; transition: text-shadow 0.3s ease-in-out;" onmouseover="this.style.textShadow='0 2px 6px rgba(0,0,0,0.35)'" onmouseout="this.style.textShadow='none'">Center for Critical Imagination</a> (CCI/CEBRAP).
     </p>
 
     <h2 data-aos="fade-up" data-aos-delay="450">O que fazemos</h2>
