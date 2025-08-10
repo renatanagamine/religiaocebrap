@@ -75,21 +75,17 @@
       margin-bottom: 20px;
     }
 
-    /* ---- Membros em uma única linha ---- */
+    /* ---- Membros centralizados e em 2 linhas ---- */
     .membros {
       display: flex;
-      flex-wrap: nowrap;     /* impede quebra de linha */
-      justify-content: flex-start;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 24px;
-      overflow-x: auto;      /* rolagem horizontal se faltar espaço */
-      padding-bottom: 10px;
-      -webkit-overflow-scrolling: touch;
     }
 
     .membro {
       text-align: center;
-      width: 150px;          /* largura fixa para layout consistente */
-      flex: 0 0 150px;       /* evita encolher/quebrar */
+      width: 150px;
     }
 
     .membro img {
@@ -109,14 +105,16 @@
       margin-bottom: 4px;
     }
 
-    /* Links sem sublinhado e com cor */
+    /* Links: preto e efeito de sombra no hover */
     .membro a {
       text-decoration: none;
       font-weight: 700;
-      color: #2a5d9f;
-      transition: color 0.2s ease-in-out;
+      color: #000;
+      transition: text-shadow 0.2s ease-in-out;
     }
-    .membro a:hover { color: #1a3f6c; }
+    .membro a:hover {
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
 
     footer {
       padding: 20px 40px;
@@ -180,43 +178,39 @@
     <h2 data-aos="fade-up">Quem somos</h2>
 
     <div class="membros" data-aos="fade-up" data-aos-delay="50">
-      <!-- Paula -->
+      <!-- Primeira linha -->
       <div class="membro">
         <img src="static/paula.png" alt="Paula Montero" loading="lazy">
         <span class="papel">Supervisora</span>
         <a href="http://lattes.cnpq.br/1873338237971936" target="_blank" rel="noopener">Paula Montero</a>
       </div>
-      <!-- Dirceu -->
       <div class="membro">
         <img src="static/andre.png" alt="Dirceu André Gerardi" loading="lazy">
         <span class="papel">Pesquisador</span>
         <a href="http://lattes.cnpq.br/4672904222329316" target="_blank" rel="noopener">Dirceu André Gerardi</a>
       </div>
-      <!-- Renata -->
       <div class="membro">
         <img src="static/renata.png" alt="Renata Nagamine" loading="lazy">
         <span class="papel">Pesquisadora</span>
         <a href="http://lattes.cnpq.br/5808712334043224" target="_blank" rel="noopener">Renata Nagamine</a>
       </div>
-      <!-- Aramis -->
       <div class="membro">
         <img src="static/aramis.png" alt="Aramis Luis Silva" loading="lazy">
         <span class="papel">Pesquisador</span>
         <a href="http://lattes.cnpq.br/9557020798857347" target="_blank" rel="noopener">Aramis Luis Silva</a>
       </div>
-      <!-- Carolina -->
+
+      <!-- Segunda linha -->
       <div class="membro">
         <img src="static/carolina-1.png" alt="Carolina Nicoletti" loading="lazy">
         <span class="papel">Bolsista</span>
         <span>Carolina Nicoletti</span>
       </div>
-      <!-- Lila -->
       <div class="membro">
         <img src="static/lila.png" alt="Lila Zatoni" loading="lazy">
         <span class="papel">Bolsista</span>
         <span>Lila Zatoni</span>
       </div>
-      <!-- Gustavo -->
       <div class="membro">
         <img src="static/gustavo.png" alt="Gustavo Aires Tiago" loading="lazy">
         <span class="papel">Bolsista</span>
@@ -225,11 +219,18 @@
     </div>
 
     <h2 data-aos="fade-up" data-aos-delay="300">O que somos</h2>
-    <p data-aos="fade-up" data-aos-delay="350">O Observatório da Religião e Interseccionalidades é um grupo que aplica recursos da Ciência de Dados à pesquisa nas Ciências Sociais sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social na esfera pública brasileira.</p>
-    <p data-aos="fade-up" data-aos-delay="400">O grupo está vinculado ao Núcleo de Religiões no Mundo Contemporâneo pelo projeto temático "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6). Também está vinculado ao Center for Critical Imagination. (CCI/CEBRAP)</p>
+    <p data-aos="fade-up" data-aos-delay="350">
+      O Observatório da Religião e Interseccionalidades é um grupo de pesquisa sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social no Brasil do Núcleo de Religiões.
+    </p>
+    <p data-aos="fade-up" data-aos-delay="400">
+      O grupo está vinculado ao Núcleo de Religiões no Mundo Contemporâneo pelo projeto temático "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6). 
+      Também está vinculado ao <a href="https://cci-cebrap.org.br/" target="_blank" style="color: #000; font-weight: 700; text-decoration: none; transition: text-shadow 0.2s ease-in-out;" onmouseover="this.style.textShadow='0 0 5px rgba(0,0,0,0.3)'" onmouseout="this.style.textShadow='none'">Center for Critical Imagination</a> (CCI/CEBRAP).
+    </p>
 
     <h2 data-aos="fade-up" data-aos-delay="450">O que fazemos</h2>
-    <p data-aos="fade-up" data-aos-delay="500">Produzimos dados e os transformamos em matéria-prima para a construção de novas percepções e compreensão de fenômenos sociais associados à religião no espaço público brasileiro.</p>
+    <p data-aos="fade-up" data-aos-delay="500">
+      Produzimos dados e os transformamos em matéria-prima para a construção de novas percepções e compreensão de fenômenos sociais associados à religião no espaço público brasileiro.
+    </p>
   </div>
 
   <footer>
