@@ -7,40 +7,135 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
-    body { margin: 0; font-family: 'Lato', sans-serif; background-color: #fff; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      background-color: white;
+      scroll-behavior: smooth;
+    }
 
-    header { position: fixed; top: 0; width: 100%; background-color: #fff; border-bottom: 1px solid #ddd; z-index: 1000; }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
+    }
 
-    nav { display: flex; justify-content: center; align-items: center; gap: 40px; padding: 20px 0; }
-    nav a { margin: 0 8px; text-decoration: none; color: #333; font-weight: 500; white-space: nowrap; padding: 6px 12px; border-radius: 4px; transition: background-color .2s; }
-    nav a:hover { background-color: #f5f5f5; }
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 20px 0;
+    }
+
+    nav a {
+      margin: 0 8px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      white-space: nowrap;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    nav a:hover {
+      background-color: #f5f5f5;
+    }
 
     .dropdown { position: relative; display: inline-block; }
-    .dropdown-content { display: none; position: absolute; background-color: #fff; box-shadow: 0 8px 16px rgba(0,0,0,.2); z-index: 1; min-width: 220px; left: 0; top: 100%; }
+    .dropdown-content {
+      display: none; position: absolute; background-color: #fff;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1; min-width: 220px; left: 0; top: 100%;
+    }
     .dropdown:hover > .dropdown-content { display: block; }
     .dropdown-content .dropdown { position: relative; }
     .dropdown-content .dropdown-content { display: none; position: absolute; top: 0; left: 100%; }
     .dropdown-content .dropdown:hover > .dropdown-content { display: block; }
-    .dropdown-content a { color: #333; padding: 10px 16px; text-decoration: none; display: block; white-space: nowrap; border-radius: 4px; }
+    .dropdown-content a {
+      color: #333; padding: 10px 16px; text-decoration: none; display: block; white-space: nowrap; border-radius: 4px;
+    }
     .dropdown-content a:hover { background-color: #f5f5f5; }
 
-    .logo-observatorio { position: absolute; top: 10px; left: 10px; height: 100px; }
+    .logo-observatorio {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 100px;
+    }
 
-    .conteudo { max-width: 800px; margin: 160px auto 60px auto; padding: 0 20px; }
+    .conteudo {
+      max-width: 800px;
+      margin: 160px auto 60px auto;
+      padding: 0 20px;
+    }
 
-    /* ====== HERO COLAGEM ====== */
+    .titulo {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #000;
+      padding-left: 0;
+      margin-bottom: 30px;
+      line-height: 2;
+    }
+
+    .conteudo p {
+      font-size: 1.1rem;
+      line-height: 2;
+      margin-bottom: 20px;
+    }
+
+    .painel-titulo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #000;
+      margin: 40px 0 20px 0;
+      line-height: 2;
+    }
+
+    iframe { width: 100%; height: 600px; border: none; }
+
+    footer {
+      padding: 20px 40px;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    footer img { height: 110px; }
+    footer p { margin: 0; text-align: right; }
+
+    .conteudo a { color: #000; text-decoration: underline; }
+
+    /* ===== HERO COLAGEM (5 fotos em ../static/) ===== */
     .hero-colagem {
-      position: relative; width: 100%; height: 380px; margin: 10px 0 30px 0;
-      border-radius: 12px; overflow: hidden; box-shadow: 0 14px 40px rgba(0,0,0,.12);
+      position: relative;
+      width: 100%;
+      height: 380px;
+      margin: 10px 0 30px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 14px 40px rgba(0,0,0,.12);
       background: #e9ecef;
     }
     .hero-grid {
-      position: absolute; inset: 0; display: grid;
-      grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(3, 1fr);
+      position: absolute; inset: 0;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(3, 1fr);
       gap: 6px; padding: 6px;
     }
     .hero-grid img {
-      width: 100%; height: 100%; object-fit: cover; border-radius: 8px; background: #dfe3e6;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #dfe3e6;
     }
     /* layout para 5 imagens */
     .hero-grid img:nth-child(1) { grid-column: 1 / 3; grid-row: 1 / 3; }
@@ -50,20 +145,9 @@
     .hero-grid img:nth-child(5) { grid-column: 1 / 3; grid-row: 3 / 4; }
 
     .hero-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.45), rgba(0,0,0,.15)); }
-
     .hero-heading { position: absolute; left: 28px; bottom: 22px; right: 28px; color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,.35); }
     .hero-heading h1 { margin: 0 0 6px 0; font-size: 1.9rem; line-height: 1.2; font-weight: 700; }
     .hero-heading p { margin: 0; font-size: 1rem; opacity: .95; }
-
-    .conteudo p { font-size: 1.1rem; line-height: 2; margin-bottom: 20px; }
-    .painel-titulo { font-size: 1.3rem; font-weight: 700; color: #000; margin: 40px 0 20px 0; line-height: 2; }
-
-    iframe { width: 100%; height: 600px; border: none; }
-
-    footer { padding: 20px 40px; background-color: #f4f4f4; display: flex; justify-content: space-between; align-items: center; font-size: .95rem; }
-    footer img { height: 110px; }
-    footer p { margin: 0; text-align: right; }
-    .conteudo a { color: #000; text-decoration: underline; }
 
     @media (max-width: 768px) {
       nav { flex-wrap: wrap; justify-content: center; gap: 16px; }
@@ -81,39 +165,39 @@
 </head>
 <body>
   <header>
-    <a href="/inicio.html">
-      <img src="/static/observatorio-logo.jpg" alt="Logo Observatório" class="logo-observatorio" />
+    <a href="../inicio.html">
+      <img src="../static/observatorio-logo.jpg" alt="Logo Observatório" class="logo-observatorio" />
     </a>
     <nav>
-      <a href="/sobre.html">Sobre</a>
+      <a href="../sobre.html">Sobre</a>
       <div class="dropdown">
         <a href="#">Pesquisas</a>
         <div class="dropdown-content">
           <div class="dropdown">
-            <a href="/pesquisas/agrocristianismo.html">Agrocristianismo</a>
+            <a href="../pesquisas/agrocristianismo.html">Agrocristianismo</a>
             <div class="dropdown-content">
-              <a href="/pesquisas/aglom.html">Aglomerações religiosas</a>
-              <a href="/pesquisas/classificacao.html">Classificação de organizações</a>
+              <a href="../pesquisas/aglom.html">Aglomerações religiosas</a>
+              <a href="../pesquisas/classificacao.html">Classificação de organizações</a>
             </div>
           </div>
-          <a href="/pesquisas/registros.html">Registros no tempo</a>
-          <a href="/pesquisas/representacao.html">Repertório religioso</a>
+          <a href="../pesquisas/registros.html">Registros no tempo</a>
+          <a href="../pesquisas/representacao.html">Repertório religioso</a>
         </div>
       </div>
-      <a href="/emdebate.html">Em debate</a>
-      <a href="/contato.html">Contato</a>
+      <a href="../emdebate.html">Em debate</a>
+      <a href="../contato.html">Contato</a>
     </nav>
   </header>
 
   <div class="conteudo">
-    <!-- HERO COLAGEM com 5 fotos -->
+    <!-- HERO COLAGEM com 5 fotos (na pasta ../static/) -->
     <section class="hero-colagem" data-aos="fade-up">
       <div class="hero-grid">
-        <img loading="lazy" src="/static/20240429_114640.jpg" alt="Estrada de terra vermelha com postes e torres de energia">
-        <img loading="lazy" src="/static/20240429_115731.jpg" alt="Feira agropecuária com equipe de TV">
-        <img loading="lazy" src="/static/20240429_120213.jpg" alt="Máquinas agrícolas em exposição">
-        <img loading="lazy" src="/static/20240818_182011.jpg" alt="Entrada do parque com estátua de peão ao entardecer">
-        <img loading="lazy" src="/static/20240818_201343.jpg" alt="Arena de rodeio iluminada">
+        <img loading="lazy" src="../static/20240429_114640.jpg" alt="Estrada de terra vermelha com postes e torres de energia">
+        <img loading="lazy" src="../static/20240429_115731.jpg" alt="Feira agropecuária com equipe de TV">
+        <img loading="lazy" src="../static/20240429_120213.jpg" alt="Máquinas agrícolas em exposição">
+        <img loading="lazy" src="../static/20240818_182011.jpg" alt="Entrada do parque com estátua de peão ao entardecer">
+        <img loading="lazy" src="../static/20240818_201343.jpg" alt="Arena de rodeio iluminada">
       </div>
       <div class="hero-overlay"></div>
       <div class="hero-heading">
@@ -158,12 +242,12 @@
     <p data-aos="fade-up" data-aos-delay="810"><a href="https://www1.folha.uol.com.br/poder/2024/02/malafaia-enlacou-direito-e-religiao-ao-lado-de-bolsonaro.shtml" target="_blank">Malafaia enlaçou direito e religião ao lado de Bolsonaro</a>, por Renata Nagamine e Aramis Luis Silva (fevereiro de 2024)</p>
     <p data-aos="fade-up" data-aos-delay="820"><a href="https://diplomatique.org.br/lula-milagre-evangelicos/" target="_blank">Lula à espera de um milagre</a>, por Renata Nagamine e Aramis Luis Silva (abril de 2024)</p>
     <p data-aos="fade-up" data-aos-delay="830"><a href="https://www.estadao.com.br/opiniao/espaco-aberto/no-brasil-abrir-igreja-e-fazer-um-pais/?utm_source=estadao:app&utm_medium=noticia:compartilhamento" target="_blank">No Brasil, abrir igreja é fazer um país</a>, por Renata Nagamine e Aramis Luis Silva (abril de 2024)</p>
-    <p data-aos="fade-up" data-aos-delay="840"><a href="https://diplomatique.org.br/um-evangelista-em-barretos/" target="_blank">Um evangelista em Barretos</a>, por Renata Nagamine e Aramis Luis Silva (agosto de 2024)</p>
+    <p data-aos="fade-up" data-aos-delay="840"><a href="https://diplomatique.org.br/um-evangelista em barretos/" target="_blank">Um evangelista em Barretos</a>, por Renata Nagamine e Aramis Luis Silva (agosto de 2024)</p>
   </div>
 
   <footer>
     <a href="https://cebrap.org.br/" target="_blank">
-      <img src="/static/cebrap-logo.png" alt="Logo Cebrap" />
+      <img src="../static/cebrap-logo.png" alt="Logo Cebrap" />
     </a>
     <p>
       <strong><a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">CEBRAP</a></strong><br>
