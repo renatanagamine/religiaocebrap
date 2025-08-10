@@ -7,14 +7,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
+    /* Base existente */
     body { margin: 0; font-family: 'Lato', sans-serif; background-color: #fff; scroll-behavior: smooth; }
-
     header { position: fixed; top: 0; width: 100%; background: #fff; border-bottom: 1px solid #ddd; z-index: 1000; }
-
     nav { display: flex; justify-content: center; align-items: center; gap: 40px; padding: 20px 0; }
     nav a { margin: 0 8px; text-decoration: none; color: #333; font-weight: 500; white-space: nowrap; padding: 6px 12px; border-radius: 4px; transition: background-color .2s; }
-    nav a:hover { background-color: #f5f5f5; }
-
+    nav a:hover { background: #f5f5f5; }
     .dropdown { position: relative; display: inline-block; }
     .dropdown-content { display: none; position: absolute; background: #fff; box-shadow: 0 8px 16px rgba(0,0,0,.2); z-index: 1; min-width: 220px; left: 0; top: 100%; }
     .dropdown:hover>.dropdown-content { display: block; }
@@ -23,57 +21,52 @@
     .dropdown-content .dropdown:hover>.dropdown-content { display: block; }
     .dropdown-content a { color: #333; padding: 10px 16px; text-decoration: none; display: block; white-space: nowrap; border-radius: 4px; }
     .dropdown-content a:hover { background: #f5f5f5; }
-
     .logo-observatorio { position: absolute; top: 10px; left: 10px; height: 100px; }
 
     .conteudo { max-width: 800px; margin: 160px auto 60px; padding: 0 20px; }
-
-    .titulo { font-size: 2rem; font-weight: 700; color: #000; margin: 30px 0; line-height: 1.35; }
-
     .conteudo p { font-size: 1.1rem; line-height: 2; margin-bottom: 20px; }
-
     .painel-titulo { font-size: 1.3rem; font-weight: 700; color: #000; margin: 40px 0 20px; line-height: 2; }
-
     iframe { width: 100%; height: 600px; border: none; }
-
     footer { padding: 20px 40px; background: #f4f4f4; display: flex; justify-content: space-between; align-items: center; font-size: .95rem; }
     footer img { height: 110px; }
     footer p { margin: 0; text-align: right; }
     .conteudo a { color: #000; text-decoration: underline; }
 
-    /* ===== HERO FULL-WIDTH (colagem) ===== */
-    .hero-fullbleed {
-      margin-top: 120px;
-      width: 100%;
-      background: linear-gradient(#fff, #fff) padding-box;
-    }
+    /* ===== HERO full‑width (colagem 1+4, título abaixo) ===== */
+    .hero { margin-top: 120px; } /* empurra para baixo do header fixo */
     .hero-inner {
       width: 100%;
-      max-height: 460px;
+      height: clamp(280px, 40vw, 460px); /* altura responsiva */
       overflow: hidden;
       border-radius: 16px;
       box-shadow: 0 18px 50px rgba(0,0,0,.12);
-      margin: 0 auto 10px auto;
+      background: #e9ecef;
+      /* pequenas margens laterais para não encostar no viewport em telas enormes */
+      margin: 0 auto;
     }
-
-    .hero-grid-5 {
+    .hero-collage {
+      height: 100%;
       display: grid;
-      grid-template-columns: 1.25fr 1fr;
-      grid-template-rows: repeat(2, minmax(180px, 1fr));
+      grid-template-columns: 1.25fr 1fr; /* esquerda maior */
       gap: 12px;
       padding: 12px;
-      background: #e9ecef;
+      box-sizing: border-box;
     }
-    .hero-grid-5 img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center;
-      border-radius: 12px; background: #dfe3e6;
-      display: block;
+    .hero-left,
+    .hero-right { height: 100%; }
+    .hero-left img,
+    .hero-right img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center;
+      border-radius: 12px; display: block; background: #dfe3e6;
     }
-    .hero-grid-5 .dominate { grid-column: 1 / 2; grid-row: 1 / 3; }
-
+    .hero-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 12px;
+    }
     .hero-caption {
-      max-width: 800px;
+      max-width: 1200px;
       margin: 18px auto 0 auto;
       padding: 0 20px;
       color: #111;
@@ -82,18 +75,18 @@
     .hero-caption p { margin: 0; color: #555; }
 
     @media (max-width: 1024px) {
-      .hero-inner { max-height: 420px; }
+      .hero-inner { height: clamp(260px, 45vw, 420px); }
+      .hero-caption { max-width: 900px; }
     }
     @media (max-width: 768px) {
       .logo-observatorio { position: static; display: block; margin: 20px auto 0; height: 80px; }
-      .conteudo { padding: 20px; }
-      .hero-fullbleed { margin-top: 140px; }
-      .hero-inner { border-radius: 12px; max-height: 360px; }
-      .hero-grid-5 { gap: 8px; padding: 8px; grid-template-columns: 1fr; grid-template-rows: 1.2fr .8fr .8fr; }
-      .hero-grid-5 .dominate { grid-column: 1; grid-row: 1; }
-      .hero-grid-5 img:nth-of-type(3),
-      .hero-grid-5 img:nth-of-type(5) { display: none; }
+      .hero { margin-top: 140px; }
+      .hero-inner { border-radius: 12px; height: 360px; }
+      .hero-collage { grid-template-columns: 1fr; }
+      .hero-right { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
+      .hero-right img:nth-child(n+3) { display: none; } /* mostra só 2 de apoio p/ não poluir */
       .hero-caption h1 { font-size: 1.5rem; }
+      .conteudo { padding: 20px; }
     }
   </style>
 </head>
@@ -123,17 +116,21 @@
     </nav>
   </header>
 
-  <!-- HERO FULL-WIDTH -->
-  <section class="hero-fullbleed" data-aos="fade-up">
+  <!-- HERO full‑width -->
+  <section class="hero" data-aos="fade-up">
     <div class="hero-inner">
-      <div class="hero-grid-5">
-        <!-- dominante à esquerda (arena) -->
-        <img class="dominate" loading="lazy" src="../static/20240818_201343.jpg" alt="Arena de rodeio iluminada">
-        <!-- quatro de apoio à direita -->
-        <img loading="lazy" src="../static/20240429_114640.jpg" alt="Estrada de terra vermelha">
-        <img loading="lazy" src="../static/20240429_115731.jpg" alt="Feira agropecuária">
-        <img loading="lazy" src="../static/20240429_120213.jpg" alt="Máquinas agrícolas">
-        <img loading="lazy" src="../static/20240818_182011.jpg" alt="Entrada do parque ao entardecer">
+      <div class="hero-collage">
+        <!-- Esquerda: dominante (arena) -->
+        <div class="hero-left">
+          <img src="../static/20240818_201343.jpg" alt="Arena de rodeio iluminada">
+        </div>
+        <!-- Direita: 4 fotos em 2x2 -->
+        <div class="hero-right">
+          <img src="../static/20240429_114640.jpg" alt="Estrada de terra vermelha">
+          <img src="../static/20240429_115731.jpg" alt="Feira agropecuária">
+          <img src="../static/20240429_120213.jpg" alt="Máquinas agrícolas">
+          <img src="../static/20240818_182011.jpg" alt="Entrada do parque ao entardecer">
+        </div>
       </div>
     </div>
     <div class="hero-caption">
