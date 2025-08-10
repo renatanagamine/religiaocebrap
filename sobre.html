@@ -44,11 +44,8 @@
       border-radius: 4px;
       transition: background-color 0.2s ease-in-out;
     }
-
     nav a:hover,
-    .dropdown-content a:hover {
-      background-color: #f5f5f5;
-    }
+    .dropdown-content a:hover { background-color: #f5f5f5; }
 
     .logo-observatorio {
       position: absolute;
@@ -78,12 +75,19 @@
       margin-bottom: 20px;
     }
 
-    /* ====== QUEM SOMOS (cards dos membros) ====== */
+    /* ---- Grupos ---- */
+    .grupos .subtitulo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #546375;
+      margin: 16px 0 12px;
+    }
+
     .membros {
       display: grid;
-      grid-template-columns: repeat( auto-fit, minmax(220px, 1fr) );
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 24px;
-      margin-bottom: 40px;
+      margin-bottom: 28px;
     }
 
     .membro {
@@ -108,17 +112,14 @@
       margin-bottom: 4px;
     }
 
-    /* Links dos nomes: sem sublinhado, com cor e negrito */
+    /* Links sem sublinhado e com cor */
     .membro a {
       text-decoration: none;
       font-weight: 700;
-      color: #2a5d9f; /* azul suave para indicar clicável */
+      color: #2a5d9f;
       transition: color 0.2s ease-in-out;
     }
-
-    .membro a:hover {
-      color: #1a3f6c; /* azul mais escuro no hover */
-    }
+    .membro a:hover { color: #1a3f6c; }
 
     footer {
       padding: 20px 40px;
@@ -128,82 +129,28 @@
       align-items: center;
       font-size: 0.95rem;
     }
-
-    footer img {
-      height: 110px;
-    }
-
-    footer p {
-      margin: 0;
-      text-align: right;
-    }
+    footer img { height: 110px; }
+    footer p { margin: 0; text-align: right; }
 
     @media (max-width: 768px) {
-      nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
-      }
-
-      .logo-observatorio {
-        position: static;
-        display: block;
-        margin: 20px auto 0 auto;
-        height: 80px;
-      }
-
-      .conteudo {
-        padding: 20px;
-      }
-
-      footer {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      footer p {
-        margin-top: 20px;
-      }
+      nav { flex-wrap: wrap; justify-content: center; gap: 16px; }
+      .logo-observatorio { position: static; display: block; margin: 20px auto 0 auto; height: 80px; }
+      .conteudo { padding: 20px; }
+      footer { flex-direction: column; text-align: center; }
+      footer p { margin-top: 20px; }
     }
 
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
+    .dropdown { position: relative; display: inline-block; }
     .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #fff;
-      min-width: 200px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-      flex-direction: column;
+      display: none; position: absolute; background-color: #fff; min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2); z-index: 1; flex-direction: column;
     }
-
     .dropdown-content a {
-      color: #333;
-      padding: 10px 16px;
-      text-decoration: none;
-      display: block;
-      white-space: nowrap;
-      border-radius: 4px;
+      color: #333; padding: 10px 16px; text-decoration: none; display: block; white-space: nowrap; border-radius: 4px;
     }
-
-    .dropdown:hover > .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-content .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 100%;
-    }
-
-    .dropdown-content .dropdown:hover > .dropdown-content {
-      display: block;
-    }
+    .dropdown:hover > .dropdown-content { display: block; }
+    .dropdown-content .dropdown-content { display: none; position: absolute; top: 0; left: 100%; }
+    .dropdown-content .dropdown:hover > .dropdown-content { display: block; }
   </style>
 </head>
 <body>
@@ -233,57 +180,72 @@
   </header>
 
   <div class="conteudo">
-    <!-- Bloco novo -->
     <h2 data-aos="fade-up">Quem somos</h2>
-    <div class="membros">
-      <!-- Bolsistas -->
-      <div class="membro" data-aos="fade-up" data-aos-delay="100">
-        <img src="static/lila.png" alt="Lila Zatoni">
-        <span class="papel">Bolsista</span>
-        <span class="nome">Lila Zatoni</span>
-      </div>
-      <div class="membro" data-aos="fade-up" data-aos-delay="150">
-        <img src="static/carolina-1.png" alt="Carolina Nicoletti">
-        <span class="papel">Bolsista</span>
-        <span class="nome">Carolina Nicoletti</span>
-      </div>
-      <div class="membro" data-aos="fade-up" data-aos-delay="200">
-        <img src="static/gustavo.png" alt="Gustavo Aires Tiago">
-        <span class="papel">Bolsista</span>
-        <span class="nome">Gustavo Aires Tiago</span>
+
+    <div class="grupos">
+      <!-- Supervisão -->
+      <div class="grupo" data-aos="fade-up" data-aos-delay="50">
+        <div class="subtitulo">Supervisão</div>
+        <div class="membros">
+          <div class="membro">
+            <img src="static/paula.png" alt="Paula Montero" loading="lazy">
+            <span class="papel">Supervisora</span>
+            <a href="http://lattes.cnpq.br/1873338237971936" target="_blank" rel="noopener">Paula Montero</a>
+          </div>
+        </div>
       </div>
 
       <!-- Pesquisadores -->
-      <div class="membro" data-aos="fade-up" data-aos-delay="300">
-        <img src="static/renata.png" alt="Renata Nagamine">
-        <span class="papel">Pesquisadora</span>
-        <a class="nome" href="http://lattes.cnpq.br/5808712334043224" target="_blank" rel="noopener">Renata Nagamine</a>
-      </div>
-      <div class="membro" data-aos="fade-up" data-aos-delay="350">
-        <img src="static/andre.png" alt="Dirceu André Gerardi">
-        <span class="papel">Pesquisador</span>
-        <a class="nome" href="http://lattes.cnpq.br/4672904222329316" target="_blank" rel="noopener">Dirceu André Gerardi</a>
-      </div>
-      <div class="membro" data-aos="fade-up" data-aos-delay="400">
-        <img src="static/aramis.png" alt="Aramis Luis Silva">
-        <span class="papel">Pesquisador</span>
-        <a class="nome" href="http://lattes.cnpq.br/9557020798857347" target="_blank" rel="noopener">Aramis Luis Silva</a>
+      <div class="grupo" data-aos="fade-up" data-aos-delay="100">
+        <div class="subtitulo">Pesquisadores</div>
+        <div class="membros">
+          <div class="membro">
+            <img src="static/andre.png" alt="Dirceu André Gerardi" loading="lazy">
+            <span class="papel">Pesquisador</span>
+            <a href="http://lattes.cnpq.br/4672904222329316" target="_blank" rel="noopener">Dirceu André Gerardi</a>
+          </div>
+          <div class="membro">
+            <img src="static/renata.png" alt="Renata Nagamine" loading="lazy">
+            <span class="papel">Pesquisadora</span>
+            <a href="http://lattes.cnpq.br/5808712334043224" target="_blank" rel="noopener">Renata Nagamine</a>
+          </div>
+          <div class="membro">
+            <img src="static/aramis.png" alt="Aramis Luis Silva" loading="lazy">
+            <span class="papel">Pesquisador</span>
+            <a href="http://lattes.cnpq.br/9557020798857347" target="_blank" rel="noopener">Aramis Luis Silva</a>
+          </div>
+        </div>
       </div>
 
-      <!-- Supervisão -->
-      <div class="membro" data-aos="fade-up" data-aos-delay="450">
-        <img src="static/paula.png" alt="Paula Montero">
-        <span class="papel">Supervisora</span>
-        <a class="nome" href="http://lattes.cnpq.br/1873338237971936" target="_blank" rel="noopener">Paula Montero</a>
+      <!-- Bolsistas -->
+      <div class="grupo" data-aos="fade-up" data-aos-delay="150">
+        <div class="subtitulo">Bolsistas</div>
+        <div class="membros">
+          <div class="membro">
+            <img src="static/lila.png" alt="Lila Zatoni" loading="lazy">
+            <span class="papel">Bolsista</span>
+            <span>Lila Zatoni</span>
+          </div>
+          <div class="membro">
+            <img src="static/carolina-1.png" alt="Carolina Nicoletti" loading="lazy">
+            <span class="papel">Bolsista</span>
+            <span>Carolina Nicoletti</span>
+          </div>
+          <div class="membro">
+            <img src="static/gustavo.png" alt="Gustavo Aires Tiago" loading="lazy">
+            <span class="papel">Bolsista</span>
+            <span>Gustavo Aires Tiago</span>
+          </div>
+        </div>
       </div>
     </div>
 
-    <h2 data-aos="fade-up" data-aos-delay="500">O que somos</h2>
-    <p data-aos="fade-up" data-aos-delay="600">O Observatório da Religião e Interseccionalidades é um grupo de pesquisa sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social no Brasil do Núcleo de Religiões.</p>
-    <p data-aos="fade-up" data-aos-delay="700">O grupo está vinculado ao Núcleo de Religiões no Mundo Contemporâneo pelo projeto temático "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6). Também está vinculado ao Center for Critical Imagination. (CCI/CEBRAP)</p>
+    <h2 data-aos="fade-up" data-aos-delay="300">O que somos</h2>
+    <p data-aos="fade-up" data-aos-delay="350">O Observatório da Religião e Interseccionalidades é um grupo de pesquisa sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social no Brasil do Núcleo de Religiões.</p>
+    <p data-aos="fade-up" data-aos-delay="400">O grupo está vinculado ao Núcleo de Religiões no Mundo Contemporâneo pelo projeto temático "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6). Também está vinculado ao Center for Critical Imagination. (CCI/CEBRAP)</p>
 
-    <h2 data-aos="fade-up" data-aos-delay="800">O que fazemos</h2>
-    <p data-aos="fade-up" data-aos-delay="900">Produzimos dados e os transformamos em matéria-prima para a construção de novas percepções e compreensão de fenômenos sociais associados à religião no espaço público brasileiro.</p>
+    <h2 data-aos="fade-up" data-aos-delay="450">O que fazemos</h2>
+    <p data-aos="fade-up" data-aos-delay="500">Produzimos dados e os transformamos em matéria-prima para a construção de novas percepções e compreensão de fenômenos sociais associados à religião no espaço público brasileiro.</p>
   </div>
 
   <footer>
@@ -301,8 +263,6 @@
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <script> AOS.init(); </script>
 </body>
 </html>
