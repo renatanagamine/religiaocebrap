@@ -137,4 +137,113 @@
     .dropdown { position: relative; display: inline-block; }
     .dropdown-content {
       display: none; position: absolute; background-color: #fff; min-width: 200px;
-      box-shadow: 0px 8px 16px r
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2); z-index: 1; flex-direction: column;
+    }
+    .dropdown-content a {
+      color: #333; padding: 10px 16px; text-decoration: none; display: block; white-space: nowrap; border-radius: 4px;
+    }
+    .dropdown:hover > .dropdown-content { display: block; }
+    .dropdown-content .dropdown-content { display: none; position: absolute; top: 0; left: 100%; }
+    .dropdown-content .dropdown:hover > .dropdown-content { display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="inicio.html">
+      <img src="static/observatorio-logo.jpg" alt="Logo Observatório" class="logo-observatorio" />
+    </a>
+    <nav>
+      <a href="sobre.html">Sobre</a>
+      <div class="dropdown">
+        <a href="#">Pesquisas</a>
+        <div class="dropdown-content">
+          <div class="dropdown">
+            <a href="pesquisas/agrocristianismo.html">Agrocristianismo</a>
+            <div class="dropdown-content">
+              <a href="pesquisas/aglom.html">Aglomerações religiosas</a>
+              <a href="pesquisas/classificacao.html">Classificação de organizações</a>
+            </div>
+          </div>
+          <a href="pesquisas/registros.html">Registros no tempo</a>
+          <a href="pesquisas/representacao.html">Repertório religioso</a>
+        </div>
+      </div>
+      <a href="emdebate.html">Em debate</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <div class="conteudo">
+    <h2 data-aos="fade-up">Quem somos</h2>
+
+    <div class="membros" data-aos="fade-up" data-aos-delay="50">
+      <!-- Paula -->
+      <div class="membro">
+        <img src="static/paula.png" alt="Paula Montero" loading="lazy">
+        <span class="papel">Supervisora</span>
+        <a href="http://lattes.cnpq.br/1873338237971936" target="_blank" rel="noopener">Paula Montero</a>
+      </div>
+      <!-- Dirceu -->
+      <div class="membro">
+        <img src="static/andre.png" alt="Dirceu André Gerardi" loading="lazy">
+        <span class="papel">Pesquisador</span>
+        <a href="http://lattes.cnpq.br/4672904222329316" target="_blank" rel="noopener">Dirceu André Gerardi</a>
+      </div>
+      <!-- Renata -->
+      <div class="membro">
+        <img src="static/renata.png" alt="Renata Nagamine" loading="lazy">
+        <span class="papel">Pesquisadora</span>
+        <a href="http://lattes.cnpq.br/5808712334043224" target="_blank" rel="noopener">Renata Nagamine</a>
+      </div>
+      <!-- Aramis -->
+      <div class="membro">
+        <img src="static/aramis.png" alt="Aramis Luis Silva" loading="lazy">
+        <span class="papel">Pesquisador</span>
+        <a href="http://lattes.cnpq.br/9557020798857347" target="_blank" rel="noopener">Aramis Luis Silva</a>
+      </div>
+      <!-- Carolina -->
+      <div class="membro">
+        <img src="static/carolina-1.png" alt="Carolina Nicoletti" loading="lazy">
+        <span class="papel">Bolsista</span>
+        <span>Carolina Nicoletti</span>
+      </div>
+      <!-- Lila -->
+      <div class="membro">
+        <img src="static/lila.png" alt="Lila Zatoni" loading="lazy">
+        <span class="papel">Bolsista</span>
+        <span>Lila Zatoni</span>
+      </div>
+      <!-- Gustavo -->
+      <div class="membro">
+        <img src="static/gustavo.png" alt="Gustavo Aires Tiago" loading="lazy">
+        <span class="papel">Bolsista</span>
+        <span>Gustavo Aires Tiago</span>
+      </div>
+    </div>
+
+    <h2 data-aos="fade-up" data-aos-delay="300">O que somos</h2>
+    <p data-aos="fade-up" data-aos-delay="350">O Observatório da Religião e Interseccionalidades é um grupo de pesquisa sobre religião e suas intersecções com raça, etnia, gênero, sexualidade e classe social no Brasil do Núcleo de Religiões.</p>
+    <p data-aos="fade-up" data-aos-delay="400">O grupo está vinculado ao Núcleo de Religiões no Mundo Contemporâneo pelo projeto temático "Pluralismo Religioso e Diversidades no Brasil Pós-Constituinte", financiado pela Fapesp (Processo n. 2021/14.038-6). Também está vinculado ao Center for Critical Imagination. (CCI/CEBRAP)</p>
+
+    <h2 data-aos="fade-up" data-aos-delay="450">O que fazemos</h2>
+    <p data-aos="fade-up" data-aos-delay="500">Produzimos dados e os transformamos em matéria-prima para a construção de novas percepções e compreensão de fenômenos sociais associados à religião no espaço público brasileiro.</p>
+  </div>
+
+  <footer>
+    <a href="https://cebrap.org.br/" target="_blank">
+      <img src="static/cebrap-logo.png" alt="Logo Cebrap" />
+    </a>
+    <p>
+      <strong><a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">CEBRAP</a></strong><br>
+      R. Morgado de Mateus, 615<br>
+      Vila Mariana, São Paulo – SP, Brazil<br>
+      CEP 04015-051<br>
+      (11) 5574 0399 | (11) 5574 5928<br>
+      <a href="https://cebrap.org.br/" target="_blank" style="color: #000; text-decoration: none;">Contato</a>
+    </p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script> AOS.init(); </script>
+</body>
+</html>
